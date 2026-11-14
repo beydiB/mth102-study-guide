@@ -869,10 +869,12 @@ details.answers[open]>summary{border-bottom:1px solid var(--rule)}
 <ul>
 <li><strong>Implied domain</strong> (p.27): if only a formula is given, the domain is every real $x$ for which the formula makes sense. Exclude (i) zero denominators, (ii) even roots of negative numbers, and later (iii) logarithms of non-positive numbers.</li>
 <li>$f(x)$ is "$f$ of $x$", the <em>value</em> of $f$ at $x$. It does <strong>not</strong> mean $f\times x$ (p.24).</li>
+<li><strong>Variables (p.20).</strong> In $y=4x^2+3$, $x$ is the <em>independent</em> variable (the input) and $y$ the <em>dependent</em> variable (the output). A function can be given by a table, a graph, a diagram or, most often, a formula.</li>
+<li><strong>Function notation (p.23).</strong> Solve for $y$, then write $y=f(x)$: $x+3y=1\Rightarrow f(x)=\dfrac{1-x}3$. A number such as $f(3)$ is a <em>function value</em>; it lies in the range, and $(3,f(3))$ is a point of the graph.</li>
 <li>To test an equation: <strong>solve for $y$</strong>. If the result has $\pm$ (two values of $y$ for some $x$) it does not define $y$ as a function of $x$ (pp.20–23).</li>
 </ul>
 <h4 id="u1-key-h2" data-md-heading="2. Graphs and the two line tests">2. Graphs and the two line tests</h4>
-<p>The graph of $f$ is the set of points $(x,f(x))$ (p.27).
+<p>The graph of $f$ is the set of points $(x,f(x))$ (p.27). By convention the horizontal axis carries the independent variable $x$ (p.27).
 - <strong>Vertical line test.</strong> Every vertical line meets the graph at most once $\iff$ the graph is the graph of a function of $x$.
 - <strong>One-to-one.</strong> $f$ is one-to-one if $f(a)=f(b)\Rightarrow a=b$ (each output comes from only one input). <strong>Horizontal line test:</strong> every horizontal line meets the graph at most once $\iff$ $f$ is one-to-one.
 - A <strong>piecewise</strong> function uses different formulas on different parts of its domain (Example 6b, p.27).</p>
@@ -965,7 +967,7 @@ details.answers[open]>summary{border-bottom:1px solid var(--rule)}
 <li>(f) $y=\pm\sqrt{1-x^2}$ no.</li>
 </ul>
 <p>(sympy-verified.)</p>
-<h4 id="u1-examples-h2" data-md-heading="Example 2 — Evaluating functions (Course Examples 3, 4, 7, pp.24–25, 30)">Example 2 — Evaluating functions (Course Examples 3, 4, 7, pp.24–25, 30)</h4>
+<h4 id="u1-examples-h2" data-md-heading="Example 2 — Evaluating functions (Course p.23 and Examples 3, 4, 7, pp.24–25, 30)">Example 2 — Evaluating functions (Course p.23 and Examples 3, 4, 7, pp.24–25, 30)</h4>
 <p><strong>(a) Example 3 (p.24).</strong> $f(x)=2x^2-4x+1$:</p>
 <ul>
 <li>$f(-1)=2+4+1=7$</li>
@@ -980,6 +982,11 @@ details.answers[open]>summary{border-bottom:1px solid var(--rule)}
 <blockquote class="slip"><p><strong>Course slip:</strong> Example 7 on p.30 prints $f(1)=-5$; that is wrong, and p.25 has the right $-3$.</p>
 </blockquote>
 <p>The question "is $f$ one-to-one?" is left unanswered on p.30: <strong>no</strong>, because $f(0)=f(5)=1$ (roots of $x^2-5x=0$). The vertex is at $x=\tfrac52$, $f(\tfrac52)=-\tfrac{21}4$. (sympy-verified.)</p>
+<p><strong>(d) Function notation (p.23).</strong> Write $x+3y=1$ as a function of $x$: solve for $y$.</p>
+<div class="math-display">$$y=\frac{1-x}3,\qquad f(x)=\frac{1-x}3$$</div>
+<p>Then</p>
+<div class="math-display">$$f(3)=\frac{1-3}3=\frac{-2}3$$</div>
+<p>so <strong>$f(3)=-\tfrac23$</strong>, and the point $(3,-\tfrac23)$ lies on the graph of $f$. (sympy-verified.)</p>
 <h4 id="u1-examples-h3" data-md-heading="Example 3 — Difference quotients (Course Example 5, p.26; Exercises 9–11, p.39)">Example 3 — Difference quotients (Course Example 5, p.26; Exercises 9–11, p.39)</h4>
 <p><strong>(a) Example 5.</strong> $f(x)=x^2-4x+7$.</p>
 <p>$f(x+\Delta x)=x^2+2x\Delta x+(\Delta x)^2-4x-4\Delta x+7$, so</p>
@@ -1026,7 +1033,8 @@ details.answers[open]>summary{border-bottom:1px solid var(--rule)}
 <li>$fg=2x^3-3x^2+2x-3$</li>
 <li>$f/g=\dfrac{2x-3}{x^2+1}$, defined for all real $x$ because $x^2+1\ne0$.</li>
 </ul>
-<p>All correct.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> p.33 prints the quotient as $\dfrac{2x-3}{x^2}$; the denominator must be all of $g(x)=x^2+1$. The sum, difference and product lines are correct.</p>
+</blockquote>
 <p><strong>(b) Unnumbered example, p.33.</strong> $f(x)=2x-4$, $g(x)=x^2+3$.</p>
 <div class="math-display">$$f(g(x))=2(x^2+3)-4=2x^2+2=2(x^2+1)$$</div>
 <blockquote class="slip"><p><strong>Course slip:</strong> the course writes this under the label $g(f(x))$ and gets $2x^2-2$; the right value is $2x^2+2$.</p>
@@ -1072,7 +1080,7 @@ details.answers[open]>summary{border-bottom:1px solid var(--rule)}
 <blockquote class="slip"><p><strong>Course slip:</strong> p.36 labels the first check "$f^{-1}(f(x))$"; it is $f(f^{-1}(x))$.</p>
 </blockquote>
 <p><strong>(c) Checkpoint p.35.</strong> $f=\frac15x$: $f^{-1}=5x$. $f=3x+2$: $f^{-1}(x)=\dfrac{x-2}3$.</p>
-<h4 id="u1-examples-h8" data-md-heading="Example 8 — No inverse; restricting the domain (Course Example 10, p.37; Checkpoints pp.36, 38; Exercises 16, 17)">Example 8 — No inverse; restricting the domain (Course Example 10, p.37; Checkpoints pp.36, 38; Exercises 16, 17)</h4>
+<h4 id="u1-examples-h8" data-md-heading="Example 8 — No inverse; restricting the domain (Course Example 10, p.37; Checkpoints pp.36, 38; Exercises 15–17)">Example 8 — No inverse; restricting the domain (Course Example 10, p.37; Checkpoints pp.36, 38; Exercises 15–17)</h4>
 <p><strong>(a) Example 10.</strong> $f(x)=x^2-1$ on $\mathbb R$: $f(2)=f(-2)=3$, so $f$ is not one-to-one; solving $x=y^2-1$ gives $y=\pm\sqrt{x+1}$, two values, not a function. <strong>No inverse.</strong> Restrict to $x\ge0$: range of $f$ is $[-1,\infty)$ and $f^{-1}(x)=\sqrt{x+1}$, $x\ge-1$.</p>
 <p><strong>(b) Checkpoint p.38.</strong> $f(x)=x^2+4$: $f(1)=f(-1)=5$, not one-to-one, <strong>no inverse</strong> on $\mathbb R$.</p>
 <p><strong>(c) Checkpoint p.36.</strong> $f(x)=x^2+2$, $x\ge0$: $x=y^2+2$, $y=\sqrt{x-2}$ (positive root because $y\ge0$). <strong>$f^{-1}(x)=\sqrt{x-2}$, $x\ge2$</strong> (the range of $f$ is $[2,\infty)$).</p>
@@ -1083,6 +1091,13 @@ details.answers[open]>summary{border-bottom:1px solid var(--rule)}
 </ul>
 <p>The condition $x\ge0$ in $f$ is exactly what makes the second check work.</p>
 <p><strong>(e) Exercise 17.</strong> $f(x)=\sqrt{9-x^2}$, $0\le x\le3$: range $[0,3]$. $x=\sqrt{9-y^2}\Rightarrow y=\sqrt{9-x^2}$ ($y\ge0$): <strong>$f^{-1}=f$</strong>, domain $[0,3]$ (the quarter circle is symmetric about $y=x$). (sympy-verified.)</p>
+<p><strong>(f) Sketches asked in Exercises 15–17 (p.40).</strong> Draw each pair on the same axes, with the dashed line $y=x$; the two graphs are mirror images in it.</p>
+<ul>
+<li>Exercise 15: $f=5x+1$ through $(0,1)$ and $(-\tfrac15,0)$; $g=\dfrac{x-1}5$ through $(1,0)$ and $(0,-\tfrac15)$. They cross on $y=x$ at $(-\tfrac14,-\tfrac14)$.</li>
+<li>Exercise 16: $f=9-x^2$, $x\ge0$, a falling arc through $(0,9)$, $(2,5)$, $(3,0)$. $g=\sqrt{9-x}$, $x\le9$, through $(9,0)$, $(5,2)$, $(0,3)$. Mirror pairs: $(0,9)\leftrightarrow(9,0)$, $(2,5)\leftrightarrow(5,2)$, $(3,0)\leftrightarrow(0,3)$.</li>
+<li>Exercise 17: $f$ is the quarter circle of radius $3$ from $(0,3)$ to $(3,0)$. Since $f^{-1}=f$ there is one curve, meeting $y=x$ at $\left(\tfrac{3\sqrt2}2,\tfrac{3\sqrt2}2\right)$.</li>
+</ul>
+<p>(sympy-verified points.)</p>
 <h4 id="u1-examples-h9" data-md-heading="Example 9 — Exam-level: rational inverse and composite domain (new)">Example 9 — Exam-level: rational inverse and composite domain (new)</h4>
 <p><strong>(a)</strong> $h(x)=\dfrac{2x+1}{x-3}$. Domain $x\ne3$. Swap:</p>
 <div class="math-display">$$\begin{aligned}&amp;x=\dfrac{2y+1}{y-3}\\
@@ -1123,8 +1138,8 @@ details.answers[open]>summary{border-bottom:1px solid var(--rule)}
 <li><strong>Checkpoint pp.31–32; Exercises 18–19 (p.40).</strong> Vertical line test for the five graphs (i)–(v) (two horizontal lines; a vertical line; a downward parabola; a vertical ellipse; a parabola opening left). Does $x^2+y^2=9$ define $y$ as a function of $x$? Does $x^2=xy-1$?</li>
 <li><strong>Exercises 12, 13 (pp.39–40).</strong> For $f=2x-5$, $g=5$ and for $f=x^2+1$, $g=x-1$ find $f+g$, $fg$, $f/g$, $f(g(x))$, $g(f(x))$.</li>
 <li><strong>Checkpoint p.34 and Exercise 14 (p.40).</strong> (a) $f=2x+1$, $g=x^2+2$: find $f(g(x))$, $g(f(x))$. (b) $f=\sqrt x$, $g=x^2-1$: find $f(g(1))$, $g(f(1))$, $g(f(0))$, $f(g(-4))$, $f(g(x))$ with its domain, $g(f(x))$ with its domain.</li>
-<li><strong>Exercises 15, 16 (p.40).</strong> Show $f,g$ are inverses: (a) $f=5x+1$, $g=\frac{x-1}5$; (b) $f=9-x^2$, $x\ge0$, $g=\sqrt{9-x}$, $x\le9$. State the domain and range of each.</li>
-<li><strong>Checkpoint p.35, p.36; Exercise 17 (p.40).</strong> Find the inverse (with domain): (a) $f=\frac15x$; (b) $f=3x+2$; (c) $f=x^2+2$, $x\ge0$; (d) $f=\sqrt{9-x^2}$, $0\le x\le3$.</li>
+<li><strong>Exercises 15, 16 (p.40).</strong> Show $f,g$ are inverses: (a) $f=5x+1$, $g=\frac{x-1}5$; (b) $f=9-x^2$, $x\ge0$, $g=\sqrt{9-x}$, $x\le9$. State the domain and range of each, and sketch each pair on the same axes.</li>
+<li><strong>Checkpoint p.35, p.36; Exercise 17 (p.40).</strong> Find the inverse (with domain): (a) $f=\frac15x$; (b) $f=3x+2$; (c) $f=x^2+2$, $x\ge0$; (d) $f=\sqrt{9-x^2}$, $0\le x\le3$, and sketch $f$ and $f^{-1}$ on the same axes.</li>
 <li><strong>Checkpoint p.38.</strong> Show that $f(x)=x^2+4$ has no inverse function. Restrict its domain so that it has one and find $f^{-1}$.</li>
 <li>For $f(x)=x^2-4x+7$ with domain $x\ge2$: show it is one-to-one, find its range and $f^{-1}$.</li>
 <li>$h(x)=\dfrac{x+2}{x-1}$. Find the domain, range and $h^{-1}$, and verify $h(h^{-1}(x))=x$. Is $h$ its own inverse?</li>
@@ -1174,12 +1189,13 @@ details.answers[open]>summary{border-bottom:1px solid var(--rule)}
 <li>
 <p>(a) $f(g(x))=5\cdot\frac{x-1}5+1=x$; $g(f(x))=\frac{(5x+1)-1}5=x$; both domain and range $\mathbb R$.</p>
 <p>(b) $f(g(x))=9-(9-x)=x$ ($x\le9$); $g(f(x))=\sqrt{x^2}=x$ ($x\ge0$). $f$: domain $[0,\infty)$, range $(-\infty,9]$; $g$: domain $(-\infty,9]$, range $[0,\infty)$.</p>
+<p>Sketches: see Example 8(f) (key points of each curve and the mirror line $y=x$).</p>
 </li>
 <li>
 <p>(a) $5x$ (domain $\mathbb R$).</p>
 <p>(b) $\dfrac{x-2}3$ (domain $\mathbb R$).</p>
 <p>(c) $\sqrt{x-2}$, domain $x\ge2$.</p>
-<p>(d) $f^{-1}(x)=\sqrt{9-x^2}$, domain $[0,3]$ (so $f^{-1}=f$).</p>
+<p>(d) $f^{-1}(x)=\sqrt{9-x^2}$, domain $[0,3]$ (so $f^{-1}=f$). Sketch: one quarter circle, see Example 8(f).</p>
 </li>
 <li>
 <p>$f(1)=f(-1)=5$ (also the horizontal line $y=5$ meets the graph twice), so $f$ is not one-to-one, no inverse on $\mathbb R$. Restrict to $x\ge0$:</p>
@@ -1351,6 +1367,9 @@ Tool: the factor theorem. For a polynomial $p$, $p(c)=0\iff(x-c)$ is a factor of
 <h4 id="u2-examples-h3" data-md-heading="Example 3 — Factor and cancel (Course Example 4, p.44; Checkpoint p.45)">Example 3 — Factor and cancel (Course Example 4, p.44; Checkpoint p.45)</h4>
 <p>Find $\lim_{x\to1}\dfrac{x^3-1}{x-1}$ and $\lim_{x\to2}\dfrac{x^3-8}{x-2}$.</p>
 <p><strong>Solution.</strong> Numerator and denominator are both $0$ at $x=1$ ($1-1=0$), so $(x-1)$ is a factor of both. The correct factorisation is $x^3-1=(x-1)(x^2+x+1)$.</p>
+<p><strong>How to find the other factor</strong> (the course says "using division of polynomial", p.44): once you know $(x-c)$ divides the numerator, divide it out.</p>
+<div class="math-display">$$\begin{aligned}x^3-1&amp;=x^2(x-1)+(x^2-1)\\&amp;=x^2(x-1)+x(x-1)+(x-1)\\&amp;=\mathbf{(x-1)(x^2+x+1)}.\end{aligned}$$</div>
+<p>Synthetic division gives the same quotient: with $c=1$ and coefficients $1,0,0,-1$, the bottom row is $1,1,1,0$. The quotient is $x^2+x+1$ and the remainder is $0$.</p>
 <blockquote class="slip"><p><strong>Course slip:</strong> the course's line "$\frac{x^3-1}{x-1}=(x^2+x+1)(x-1)$" has dropped the division; see Errata.</p>
 </blockquote>
 <p>For $x\ne1$:</p>
@@ -2057,7 +2076,12 @@ Tool: the factor theorem. For a polynomial $p$, $p(c)=0\iff(x-c)$ is a factor of
 <div class="math-display">$$\frac{dy}{dx}=\lim_{\delta x\to0}\frac{\delta y}{\delta x}=\lim_{\delta x\to0}\frac{f(x+\delta x)-f(x)}{\delta x}.$$</div>
 <p>This is the <strong>first principle</strong> (definition) of differentiation. Points to hold on to:</p>
 <ul>
-<li>$\delta x,\ \delta y$ are small <strong>increments</strong> (changes), not "differentials". The course (p.69) calls them differentials; strictly, $dx,\ dy$ are the differentials. See Errata.</li>
+<li>
+<p><strong>Course definitions (p.67).</strong> The derivative measures how sensitive a quantity (the function value, the dependent variable) is to a change in the quantity that determines it (the independent variable). At a chosen input it is the slope of the tangent line to the graph, so it gives the <strong>best linear approximation</strong> of the function near that point. <strong>Differentiation</strong> is the action of computing a derivative.</p>
+</li>
+<li>
+<p>$\delta x,\ \delta y$ are small <strong>increments</strong> (changes), not "differentials". The course (p.69) calls them differentials; strictly, $dx,\ dy$ are the differentials. See Errata.</p>
+</li>
 <li><strong>Notation.</strong> $\dfrac{\delta y}{\delta x}$ is a chord gradient and depends on $\delta x$. $\dfrac{dy}{dx}$ is the derivative: the <em>limit</em>. The course writes "$\delta y/\delta x=6x$" at the end of its derivations; the right-hand side is the limit, so the left-hand side must be $dy/dx$.</li>
 <li>$dy/dx$ is <strong>not</strong> "$0/0$". The ratio $\delta y/\delta x$ is simplified <em>first</em> (cancel $\delta x\ne0$), and only then is $\delta x$ set to $0$.</li>
 <li>The derivative exists at $x$ only if the limit exists as a finite number. A corner, like $|x|$ at $0$, has no derivative there.</li>
@@ -2452,6 +2476,8 @@ Tool: the factor theorem. For a polynomial $p$, $p(c)=0\iff(x-c)$ is a factor of
 <p>Note on the course's argument (p.88): "cancel $\delta u$" is only a heuristic, since $\delta u$ may be $0$ for some $\delta x$. The theorem is true; the one-line cancellation is not a proof.</p>
 <p>Special case used all the time: $\dfrac{d}{dx}(ax+b)^n=na\,(ax+b)^{n-1}$; $\dfrac d{dx}\sin(ax+b)=a\cos(ax+b)$; $\dfrac d{dx}e^{ax+b}=a\,e^{ax+b}$.</p>
 <h4 id="u5-key-h4" data-md-heading="4. Implicit functions">4. Implicit functions</h4>
+<p><strong>Explicit function (p.91).</strong> $y$ is written directly in terms of $x$, for example $y=x^3+5x-3$.</p>
+<p><strong>Implicit function (p.91).</strong> The relation between $x$ and $y$ is mixed up and $y$ cannot be separated on the left, for example $xy+\cos y=5$. Here $y=f(x)$ is only <em>implied</em> by the equation.</p>
 <p>A relation like $x^3+y^3=2xy$ defines $y$ as a function of $x$ (near a point) without solving for $y$. To find $dy/dx$:
 1. Differentiate <strong>both sides</strong> with respect to $x$.
 2. Every time you differentiate an expression in $y$, multiply by $dy/dx$ (chain rule): $\dfrac d{dx}y^2=2y\dfrac{dy}{dx}$. Products like $xy$ need the product rule: $\dfrac d{dx}(xy)=y+x\dfrac{dy}{dx}$.
@@ -2575,6 +2601,12 @@ Tool: the factor theorem. For a polynomial $p$, $p(c)=0\iff(x-c)$ is a factor of
 &amp;=\frac{x(x+2)-(x^2+1)}{(x+2)^2\sqrt{x^2+1}}\\
 &amp;=\frac{2x-1}{(x+2)^2\sqrt{x^2+1}}.\end{aligned}$$</div>
 <h4 id="u5-examples-h8" data-md-heading="Example 8 — Implicit differentiation (Course Examples 1 and 3, p.91 and p.93; Checkpoint p.94)">Example 8 — Implicit differentiation (Course Examples 1 and 3, p.91 and p.93; Checkpoint p.94)</h4>
+<p><strong>(0) The course's example of an implicit function, $xy+\cos y=5$ (p.91; it states the equation but does not differentiate it).</strong> Differentiate with respect to $x$: the product rule on $xy$, the chain rule on $\cos y$:</p>
+<div class="math-display">$$y+x\,y'-\sin y\;y'=0\ \Longrightarrow\ y'(x-\sin y)=-y.$$</div>
+<p>So:</p>
+<ul>
+<li>$y'=-\dfrac{y}{x-\sin y}$, for $x\ne\sin y$.</li>
+</ul>
 <p><strong>(a) $2x^2+3y^2=16$.</strong> Differentiate: $4x+6y\,y'=0$, so $y'=-\dfrac{4x}{6y}=-\dfrac{2x}{3y}$ ($y\ne0$) <span class="tick">✓</span> (course leaves it as $-4x/6y$).</p>
 <p><strong>(b) $x^3+y^3=2xy$.</strong></p>
 <blockquote class="slip"><p><strong>Course slip:</strong> the course says "differentiating with respect to $y$"; it means $x$.</p>
@@ -2776,6 +2808,15 @@ Tool: the factor theorem. For a polynomial $p$, $p(c)=0\iff(x-c)$ is a factor of
 <h3 id="u6-key" data-md-heading="Key ideas">Key ideas</h3>
 <h4 id="u6-key-h1" data-md-heading="1. Integration as the reverse of differentiation (p.98)">1. Integration as the reverse of differentiation (p.98)</h4>
 <p><strong>Intuition.</strong> Differentiation turns a function into its slope function. Integration asks the reverse question: <em>which function has this slope function?</em> Since $\frac{d}{dx}\,\frac{x^{n+1}}{n+1}=x^n$, the antiderivative of $x^n$ is $\frac{x^{n+1}}{n+1}$.</p>
+<p><strong>What it is for (p.97).</strong> The course describes integration as "a way of adding slices to find the whole": like a tap filling a tank, integrating the flow rate (adding up all the little bits of water) gives the volume in the tank.</p>
+<p>Applications it lists:</p>
+<ul>
+<li>the strength design of the Petronas Tower (Kuala Lumpur) against wind forces;</li>
+<li>areas under curved surfaces and centre of mass;</li>
+<li>displacement and velocity;</li>
+<li>fluid flow;</li>
+<li>stress on objects (engine blocks, pistons, curved beams of houses and bridges).</li>
+</ul>
 <p><strong>Precise statement.</strong> $F$ is an antiderivative of $f$ on an interval if $F'(x)=f(x)$ there. Then</p>
 <div class="math-display">$$\int f(x)\,dx=F(x)+c,\qquad c\ \text{an arbitrary constant}.$$</div>
 <p>Any two antiderivatives on an interval differ by a constant (that is why the constant is needed). Linearity: $\int(af+bg)\,dx=a\int f\,dx+b\int g\,dx$.</p>
@@ -3706,6 +3747,12 @@ $y^2=(-x^2+3x)^2=x^4-6x^3+9x^2$ (the course's expansion is right).</p>
 </tr>
 <tr>
 <td>33</td>
+<td>Quotient for $f=2x-3$, $g=x^2+1$ printed as $\dfrac{2x-3}{x^2}$</td>
+<td>$\dfrac{2x-3}{x^2+1}$</td>
+<td>The denominator lost its "$+1$".</td>
+</tr>
+<tr>
+<td>33</td>
 <td>$(f.g)(x)=f(g(x))$; domain: "$g(x)$ is the domain of $f$"</td>
 <td>$(f\circ g)(x)=f(g(x))$; "$g(x)$ is <strong>in</strong> the domain of $f$"</td>
 <td>Notation and wording.</td>
@@ -4067,6 +4114,12 @@ $y^2=(-x^2+3x)^2=x^4-6x^3+9x^2$ (the course's expansion is right).</p>
 <td>Four separate parts i–iv</td>
 <td>Typesetting; the four questions are $x^3$, $5x^2+2$, $6x^2-1$, $4x^3$.</td>
 </tr>
+<tr>
+<td>78</td>
+<td>Summary (i): "The derivate of a function $f(x)$ … is a measure of the rate at which the changes with respect to the change of the variable"</td>
+<td>"The <strong>derivative</strong> … the rate at which the <strong>function</strong> changes with respect to the change of the variable"</td>
+<td>Misspelling and a missing word (the function) in the sentence.</td>
+</tr>
 </tbody>
 </table></div><span class="table-fade table-fade-l" aria-hidden="true"></span><span class="table-fade table-fade-r" aria-hidden="true"></span></div></div>
 <div class="errata-unit"><h3 id="errata-5" data-md-heading="Unit 5 — Differentiation Techniques">Unit 5 — Differentiation Techniques</h3><h4 class="errata-label" data-md-heading="Errata: mistakes in the course text">Errata: mistakes in the course text</h4><p>Pages are <strong>PDF page numbers</strong> (the unit has no printed page numbers). Every item was checked against the rendered page image and, for calculations, with sympy.</p>
@@ -4322,6 +4375,12 @@ $y^2=(-x^2+3x)^2=x^4-6x^3+9x^2$ (the course's expansion is right).</p>
 <td>Same issue.</td>
 </tr>
 <tr>
+<td>105</td>
+<td>Example 1: "Let $u=\ln x$, $v=x^2$"</td>
+<td>$u=\ln x$, $\frac{dv}{dx}=x^2$ (so $v=\frac{x^3}3$)</td>
+<td>Notation slip: the next lines use $\frac{dv}{dx}=x^2$ and $v=\frac{x^3}3$.</td>
+</tr>
+<tr>
 <td>107</td>
 <td>"Integration by partial fraction for a irreducible denominator … Since the denominator is irreducible, we will have to factorize it"</td>
 <td>$x^2-3x+2=(x-2)(x-1)$ is <strong>reducible</strong> (distinct linear factors)</td>
@@ -4348,7 +4407,7 @@ $y^2=(-x^2+3x)^2=x^4-6x^3+9x^2$ (the course's expansion is right).</p>
 <tr>
 <td>109</td>
 <td>Final answer $\frac14\ln(x+1)+\frac34\ln(x-1)+\frac1{2(x-1)}+c$</td>
-<td>$\ldots-\frac1{2(x-1)}+c$</td>
+<td>$\frac14\ln\lvert x+1\rvert+\frac34\ln\lvert x-1\rvert-\frac1{2(x-1)}+c$</td>
 <td><strong>Serious.</strong> $\int(x-1)^{-2}dx=-(x-1)^{-1}$. With the course's sign, the derivative of the answer differs from the integrand by $-\frac1{(x-1)^2}$ (sympy).</td>
 </tr>
 <tr>
