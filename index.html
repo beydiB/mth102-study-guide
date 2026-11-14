@@ -264,6 +264,27 @@ blockquote{
   margin:1.2em 0;padding:.1em 0 .1em 1.1em;border-left:3px solid var(--rule-strong);
   color:var(--ink-2);
 }
+blockquote.slip{
+  margin:1em 0;padding:.55em .85em;
+  border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  background:var(--accent-wash);color:var(--ink-2);
+  font-size:.95rem;line-height:1.55;
+}
+blockquote.slip p{margin:0}
+blockquote.slip strong{color:var(--ink)}
+.math-inline-wide{
+  display:block;max-width:100%;margin:.4em 0;
+  overflow-x:auto;overflow-y:hidden;white-space:nowrap;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent;
+}
+.math-inline-wide.is-scrollable:not(.at-end){
+  -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 18px),transparent 100%);
+  mask-image:linear-gradient(to right,#000 calc(100% - 18px),transparent 100%);
+}
+.math-inline-wide::-webkit-scrollbar{height:6px}
+.math-inline-wide::-webkit-scrollbar-thumb{background:var(--rule-strong);border-radius:3px}
+.math-inline-wide::-webkit-scrollbar-track{background:transparent}
 
 /* ---------- tables ---------- */
 .table-frame{position:relative;margin:1.1rem 0 1.4rem}
@@ -922,67 +943,161 @@ details.answers[open]>summary{border-bottom:1px solid var(--rule)}
 </table></div><span class="table-fade table-fade-l" aria-hidden="true"></span><span class="table-fade table-fade-r" aria-hidden="true"></span></div>
 <h3 id="u1-examples" data-md-heading="Worked examples">Worked examples</h3>
 <h4 id="u1-examples-h1" data-md-heading="Example 1 — Is $y$ a function of $x$? (Course Examples 1 and 2, pp.20–23; Checkpoint p.22)">Example 1 — Is $y$ a function of $x$? (Course Examples 1 and 2, pp.20–23; Checkpoint p.22)</h4>
-<p>Solve each equation for $y$.
-(a) $x+y=1\Rightarrow y=1-x$: one $y$ for each $x$. <strong>Function.</strong> (The course prints "$y=v-x$" on p.20; it means $1-x$.)
-(b) $x^2+y^2=1\Rightarrow y=\pm\sqrt{1-x^2}$. At $x=0$: $y=1$ or $y=-1$. <strong>Not a function.</strong>
-(c) $x^2+y=1\Rightarrow y=1-x^2$. <strong>Function.</strong>
-(d) $x+y^2=1\Rightarrow y=\pm\sqrt{1-x}$. At $x=0$: $y=\pm1$. <strong>Not a function.</strong>
-Course Example 2 (p.22; the printed equation (a) lost its "$=4$"): $x^2+y=4\Rightarrow y=4-x^2$ <strong>function</strong>; $x^2+y^2=4\Rightarrow y=\pm\sqrt{4-x^2}$, and at $x=1$ $y=\pm\sqrt3$: <strong>not a function</strong>.
-<strong>Checkpoint p.22:</strong> (a) $y=x-1$ yes; (b) $y=\pm\sqrt{4-x^2}$ no; (c) $y=\pm\sqrt{2-x}$ no; (d) $y=x^2$ yes; (e) $y=6-2x$ yes; (f) $y=\pm\sqrt{1-x^2}$ no. (sympy-verified.)</p>
+<p>Solve each equation for $y$.</p>
+<p><strong>(a)</strong> $x+y=1\Rightarrow y=1-x$: one $y$ for each $x$. <strong>Function.</strong></p>
+<blockquote class="slip"><p><strong>Course slip:</strong> p.20 prints "$y=v-x$"; it means $1-x$.</p>
+</blockquote>
+<p><strong>(b)</strong> $x^2+y^2=1\Rightarrow y=\pm\sqrt{1-x^2}$. At $x=0$: $y=1$ or $y=-1$. <strong>Not a function.</strong></p>
+<p><strong>(c)</strong> $x^2+y=1\Rightarrow y=1-x^2$. <strong>Function.</strong></p>
+<p><strong>(d)</strong> $x+y^2=1\Rightarrow y=\pm\sqrt{1-x}$. At $x=0$: $y=\pm1$. <strong>Not a function.</strong></p>
+<p><strong>Course Example 2 (p.22).</strong> The printed equation (a) lost its "$=4$":</p>
+<ul>
+<li>$x^2+y=4\Rightarrow y=4-x^2$: <strong>function</strong>.</li>
+<li>$x^2+y^2=4\Rightarrow y=\pm\sqrt{4-x^2}$, and at $x=1$, $y=\pm\sqrt3$: <strong>not a function</strong>.</li>
+</ul>
+<p><strong>Checkpoint p.22.</strong></p>
+<ul>
+<li>(a) $y=x-1$ yes.</li>
+<li>(b) $y=\pm\sqrt{4-x^2}$ no.</li>
+<li>(c) $y=\pm\sqrt{2-x}$ no.</li>
+<li>(d) $y=x^2$ yes.</li>
+<li>(e) $y=6-2x$ yes.</li>
+<li>(f) $y=\pm\sqrt{1-x^2}$ no.</li>
+</ul>
+<p>(sympy-verified.)</p>
 <h4 id="u1-examples-h2" data-md-heading="Example 2 — Evaluating functions (Course Examples 3, 4, 7, pp.24–25, 30)">Example 2 — Evaluating functions (Course Examples 3, 4, 7, pp.24–25, 30)</h4>
-<p><strong>(a) Example 3 (p.24).</strong> $f(x)=2x^2-4x+1$: $f(-1)=2+4+1=7$; $f(0)=1$; $f(2)=8-8+1=1$. Since $f(0)=f(2)=1$ with $0\ne2$, $f$ is <strong>not one-to-one</strong> (the line $y=1$ meets the graph twice).
-<strong>(b) Example 4 (p.25).</strong> $f(x)=x^2+5x+5$.
-$f(x+2)=(x+2)^2+5(x+2)+5=x^2+4x+4+5x+10+5=x^2+9x+19$.
-$f(-x)=x^2-5x+5$.
-<strong>(c) Example 7 and its Checkpoint (pp.25, 30).</strong> $f(x)=x^2-5x+1$: $f(0)=1$, $f(1)=1-5+1=\mathbf{-3}$, $f(4)=16-20+1=-3$. (The course's Example 7 on p.30 prints $f(1)=-5$: wrong; p.25 has the right $-3$.) The question "is $f$ one-to-one?" is left unanswered on p.30: <strong>no</strong>, because $f(0)=f(5)=1$ (roots of $x^2-5x=0$). The vertex is at $x=\tfrac52$, $f(\tfrac52)=-\tfrac{21}4$. (sympy-verified.)</p>
+<p><strong>(a) Example 3 (p.24).</strong> $f(x)=2x^2-4x+1$:</p>
+<ul>
+<li>$f(-1)=2+4+1=7$</li>
+<li>$f(0)=1$</li>
+<li>$f(2)=8-8+1=1$</li>
+</ul>
+<p>Since $f(0)=f(2)=1$ with $0\ne2$, $f$ is <strong>not one-to-one</strong> (the line $y=1$ meets the graph twice).</p>
+<p><strong>(b) Example 4 (p.25).</strong> $f(x)=x^2+5x+5$.</p>
+<div class="math-display">$$f(x+2)=(x+2)^2+5(x+2)+5=x^2+4x+4+5x+10+5=x^2+9x+19$$</div>
+<p>$f(-x)=x^2-5x+5$.</p>
+<p><strong>(c) Example 7 and its Checkpoint (pp.25, 30).</strong> $f(x)=x^2-5x+1$: $f(0)=1$; $f(1)=1-5+1=\mathbf{-3}$; $f(4)=16-20+1=-3$.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> Example 7 on p.30 prints $f(1)=-5$; that is wrong, and p.25 has the right $-3$.</p>
+</blockquote>
+<p>The question "is $f$ one-to-one?" is left unanswered on p.30: <strong>no</strong>, because $f(0)=f(5)=1$ (roots of $x^2-5x=0$). The vertex is at $x=\tfrac52$, $f(\tfrac52)=-\tfrac{21}4$. (sympy-verified.)</p>
 <h4 id="u1-examples-h3" data-md-heading="Example 3 — Difference quotients (Course Example 5, p.26; Exercises 9–11, p.39)">Example 3 — Difference quotients (Course Example 5, p.26; Exercises 9–11, p.39)</h4>
-<p><strong>(a) Example 5.</strong> $f(x)=x^2-4x+7$.
-$f(x+\Delta x)=x^2+2x\Delta x+(\Delta x)^2-4x-4\Delta x+7$, so</p>
+<p><strong>(a) Example 5.</strong> $f(x)=x^2-4x+7$.</p>
+<p>$f(x+\Delta x)=x^2+2x\Delta x+(\Delta x)^2-4x-4\Delta x+7$, so</p>
 <div class="math-display">$$\frac{f(x+\Delta x)-f(x)}{\Delta x}=\frac{2x\Delta x+(\Delta x)^2-4\Delta x}{\Delta x}=2x+\Delta x-4\quad(\Delta x\ne0).$$</div>
 <p><strong>(b) Exercise 11.</strong> $f(x)=\dfrac1{x-2}$:</p>
-<div class="math-display">$$\frac{\frac1{x+\Delta x-2}-\frac1{x-2}}{\Delta x}=\frac{(x-2)-(x+\Delta x-2)}{\Delta x\,(x+\Delta x-2)(x-2)}=\frac{-1}{(x+\Delta x-2)(x-2)} .$$</div>
+<div class="math-display">$$\begin{aligned}&amp;\frac{\frac1{x+\Delta x-2}-\frac1{x-2}}{\Delta x}=\frac{(x-2)-(x+\Delta x-2)}{\Delta x\,(x+\Delta x-2)(x-2)}\\
+&amp;=\frac{-1}{(x+\Delta x-2)(x-2)} .\end{aligned}$$</div>
 <p><strong>(c) Exercise 10.</strong> $g(x)=\sqrt{x+3}$: multiply top and bottom by the conjugate:</p>
-<div class="math-display">$$\frac{\sqrt{x+\Delta x+3}-\sqrt{x+3}}{\Delta x}=\frac{(x+\Delta x+3)-(x+3)}{\Delta x(\sqrt{x+\Delta x+3}+\sqrt{x+3})}=\frac{1}{\sqrt{x+\Delta x+3}+\sqrt{x+3}} .$$</div>
+<div class="math-display">$$\begin{aligned}&amp;\frac{\sqrt{x+\Delta x+3}-\sqrt{x+3}}{\Delta x}=\frac{(x+\Delta x+3)-(x+3)}{\Delta x(\sqrt{x+\Delta x+3}+\sqrt{x+3})}\\
+&amp;=\frac{1}{\sqrt{x+\Delta x+3}+\sqrt{x+3}} .\end{aligned}$$</div>
 <p>(sympy: the difference of the two sides is $0$; as $\Delta x\to0$ it tends to $\frac1{2\sqrt{x+3}}$, which is where this is used in Unit 2.)</p>
 <h4 id="u1-examples-h4" data-md-heading="Example 4 — Domain and range (Course Example 6, pp.27–28)">Example 4 — Domain and range (Course Example 6, pp.27–28)</h4>
-<p><strong>(a) $y=\sqrt{x-1}$.</strong> Need $x-1\ge0$: domain $[1,\infty)$ (the point $x=1$ is included, $y=0$). A square root is never negative and takes every value $\ge0$: range $[0,\infty)$.
-<strong>(b) $y=\begin{cases}1-x,&amp;x&lt;1\\\sqrt{x-1},&amp;x\ge1\end{cases}$.</strong> The two pieces cover $x&lt;1$ and $x\ge1$, so the domain is <strong>all real $x$</strong>. For $x&lt;1$: $1-x&gt;0$, range $(0,\infty)$. For $x\ge1$: range $[0,\infty)$. Union: <strong>range $[0,\infty)$</strong>. $y=1$ comes from $x=0$ and $x=2$, so the function is <strong>not one-to-one</strong>.
-<strong>(c) New.</strong> $y=\dfrac1{x^2-4}$: exclude $x=\pm2$ (p.27): domain $(-\infty,-2)\cup(-2,2)\cup(2,\infty)$. Range: for $|x|&gt;2$ the denominator is positive, so $y&gt;0$; for $|x|&lt;2$ it is in $[-4,0)$, so $y\le-\tfrac14$. Range $(-\infty,-\tfrac14]\cup(0,\infty)$.
-<strong>(d) Exercises 5, 6.</strong> $f(x)=x^3$: domain $\mathbb R$, range $\mathbb R$. $f(x)=4-x^2$: domain $\mathbb R=(-\infty,\infty)$, range $(-\infty,4]$. (sympy-verified.)</p>
+<p><strong>(a) $y=\sqrt{x-1}$.</strong> Need $x-1\ge0$: domain $[1,\infty)$ (the point $x=1$ is included, $y=0$). A square root is never negative and takes every value $\ge0$: range $[0,\infty)$.</p>
+<p><strong>(b) $y=\begin{cases}1-x,&amp;x&lt;1\\\sqrt{x-1},&amp;x\ge1\end{cases}$.</strong> The two pieces cover $x&lt;1$ and $x\ge1$, so the domain is <strong>all real $x$</strong>. For $x&lt;1$: $1-x&gt;0$, range $(0,\infty)$. For $x\ge1$: range $[0,\infty)$. Union: <strong>range $[0,\infty)$</strong>. $y=1$ comes from $x=0$ and $x=2$, so the function is <strong>not one-to-one</strong>.</p>
+<p><strong>(c) New.</strong> $y=\dfrac1{x^2-4}$: exclude $x=\pm2$ (p.27): domain $(-\infty,-2)\cup(-2,2)\cup(2,\infty)$. Range: for $|x|&gt;2$ the denominator is positive, so $y&gt;0$; for $|x|&lt;2$ it is in $[-4,0)$, so $y\le-\tfrac14$. Range $(-\infty,-\tfrac14]\cup(0,\infty)$.</p>
+<p><strong>(d) Exercises 5, 6.</strong> $f(x)=x^3$: domain $\mathbb R$, range $\mathbb R$. $f(x)=4-x^2$: domain $\mathbb R=(-\infty,\infty)$, range $(-\infty,4]$. (sympy-verified.)</p>
 <h4 id="u1-examples-h5" data-md-heading="Example 5 — Line tests and one-to-one (Course pp.28–32)">Example 5 — Line tests and one-to-one (Course pp.28–32)</h4>
-<p><strong>Vertical line test (p.29).</strong> (a) ellipse: a vertical line meets it twice, <strong>not</strong> a function. (b) straight line, <strong>function</strong>. (c) upward parabola $y=ax^2+\dots$, <strong>function</strong>. (d) sideways parabola, <strong>not</strong>.
-<strong>Checkpoint pp.31–32.</strong> (i) two horizontal lines: a vertical line meets both, <strong>not</strong> a function. (ii) a vertical line: the one $x$ has infinitely many $y$, <strong>not</strong>. (iii) downward parabola: <strong>function</strong>. (iv) vertical ellipse: <strong>not</strong>. (v) sideways parabola opening left: <strong>not</strong>.
-<strong>One-to-one.</strong> A function of $x$ passes the vertical test; if it also passes the horizontal test it is one-to-one. Examples: the line (b) is one-to-one; the parabola (c) is not (a horizontal line cuts it twice); $y=\sqrt{x-1}$ is (strictly increasing).</p>
+<p><strong>Vertical line test (p.29).</strong></p>
+<ul>
+<li>(a) ellipse: a vertical line meets it twice, <strong>not</strong> a function.</li>
+<li>(b) straight line, <strong>function</strong>.</li>
+<li>(c) upward parabola $y=ax^2+\dots$, <strong>function</strong>.</li>
+<li>(d) sideways parabola, <strong>not</strong>.</li>
+</ul>
+<p><strong>Checkpoint pp.31–32.</strong></p>
+<ul>
+<li>(i) two horizontal lines: a vertical line meets both, <strong>not</strong> a function.</li>
+<li>(ii) a vertical line: the one $x$ has infinitely many $y$, <strong>not</strong>.</li>
+<li>(iii) downward parabola: <strong>function</strong>.</li>
+<li>(iv) vertical ellipse: <strong>not</strong>.</li>
+<li>(v) sideways parabola opening left: <strong>not</strong>.</li>
+</ul>
+<p><strong>One-to-one.</strong> A function of $x$ passes the vertical test; if it also passes the horizontal test it is one-to-one. Examples:</p>
+<ul>
+<li>the line (b) is one-to-one;</li>
+<li>the parabola (c) is not (a horizontal line cuts it twice);</li>
+<li>$y=\sqrt{x-1}$ is (strictly increasing).</li>
+</ul>
 <h4 id="u1-examples-h6" data-md-heading="Example 6 — Combinations and composition (Course p.33, redone; Exercises 12–14)">Example 6 — Combinations and composition (Course p.33, redone; Exercises 12–14)</h4>
-<p><strong>(a) Sum, difference, product, quotient</strong> (p.33): $f(x)=2x-3$, $g(x)=x^2+1$:
-$f+g=x^2+2x-2$; $f-g=-x^2+2x-4$; $fg=2x^3-3x^2+2x-3$; $f/g=\dfrac{2x-3}{x^2+1}$ (defined for all real $x$ because $x^2+1\ne0$). All correct.
-<strong>(b) Unnumbered example, p.33.</strong> $f(x)=2x-4$, $g(x)=x^2+3$.
-$f(g(x))=2(x^2+3)-4=2x^2+2=2(x^2+1)$. (The course writes this under the label $g(f(x))$ and gets $2x^2-2$ because of a slip; the right value is $2x^2+2$.)
-$g(f(x))=(2x-4)^2+3=4x^2-16x+16+3=\mathbf{4x^2-16x+19}$. (The course adds $+1$ instead of $+3$ and prints $4x^2-16x+17$.)
-<strong>(c) Exercise 14.</strong> $f(x)=\sqrt x$, $g(x)=x^2-1$.
-$f(g(1))=f(0)=0$; $g(f(1))=g(1)=0$; $g(f(0))=g(0)=-1$; $f(g(-4))=f(15)=\sqrt{15}$;
-$f(g(x))=\sqrt{x^2-1}$, defined only when $x^2-1\ge0$: <strong>domain $(-\infty,-1]\cup[1,\infty)$</strong>;
-$g(f(x))=(\sqrt x)^2-1=x-1$, but the domain is $x\ge0$ (the domain of $f$ comes first). (sympy-verified.)
-<strong>(d) Exercises 12, 13.</strong> $f=2x-5$, $g=5$: $f+g=2x$; $fg=10x-25$; $f/g=\dfrac{2x-5}5$; $f(g(x))=f(5)=5$; $g(f(x))=5$. $f=x^2+1$, $g=x-1$: $f+g=x^2+x$; $fg=x^3-x^2+x-1$; $f/g=\dfrac{x^2+1}{x-1}$ ($x\ne1$); $f(g(x))=x^2-2x+2$; $g(f(x))=x^2$.</p>
+<p><strong>(a) Sum, difference, product, quotient</strong> (p.33). $f(x)=2x-3$, $g(x)=x^2+1$.</p>
+<ul>
+<li>$f+g=x^2+2x-2$</li>
+<li>$f-g=-x^2+2x-4$</li>
+<li>$fg=2x^3-3x^2+2x-3$</li>
+<li>$f/g=\dfrac{2x-3}{x^2+1}$, defined for all real $x$ because $x^2+1\ne0$.</li>
+</ul>
+<p>All correct.</p>
+<p><strong>(b) Unnumbered example, p.33.</strong> $f(x)=2x-4$, $g(x)=x^2+3$.</p>
+<div class="math-display">$$f(g(x))=2(x^2+3)-4=2x^2+2=2(x^2+1)$$</div>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course writes this under the label $g(f(x))$ and gets $2x^2-2$; the right value is $2x^2+2$.</p>
+</blockquote>
+<div class="math-display">$$\begin{aligned}&amp;g(f(x))=(2x-4)^2+3\\
+&amp;=4x^2-16x+16+3\\
+&amp;=\mathbf{4x^2-16x+19}\end{aligned}$$</div>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course adds $+1$ instead of $+3$ and prints $4x^2-16x+17$.</p>
+</blockquote>
+<p><strong>(c) Exercise 14.</strong> $f(x)=\sqrt x$, $g(x)=x^2-1$.</p>
+<ul>
+<li>$f(g(1))=f(0)=0$</li>
+<li>$g(f(1))=g(1)=0$</li>
+<li>$g(f(0))=g(0)=-1$</li>
+<li>$f(g(-4))=f(15)=\sqrt{15}$</li>
+<li>$f(g(x))=\sqrt{x^2-1}$, defined only when $x^2-1\ge0$: <strong>domain $(-\infty,-1]\cup[1,\infty)$</strong></li>
+<li>$g(f(x))=(\sqrt x)^2-1=x-1$, but the domain is $x\ge0$ (the domain of $f$ comes first).</li>
+</ul>
+<p>(sympy-verified.)</p>
+<p><strong>(d) Exercises 12, 13.</strong></p>
+<ul>
+<li>$f=2x-5$, $g=5$: $f+g=2x$; $fg=10x-25$; $f/g=\dfrac{2x-5}5$; $f(g(x))=f(5)=5$; $g(f(x))=5$.</li>
+<li>$f=x^2+1$, $g=x-1$: $f+g=x^2+x$; $fg=x^3-x^2+x-1$; $f/g=\dfrac{x^2+1}{x-1}$ ($x\ne1$); $f(g(x))=x^2-2x+2$; $g(f(x))=x^2$.</li>
+</ul>
 <h4 id="u1-examples-h7" data-md-heading="Example 7 — Finding and checking inverses (Course Examples 8 and 9, pp.34–36)">Example 7 — Finding and checking inverses (Course Examples 8 and 9, pp.34–36)</h4>
-<p><strong>(a) Example 8, redone.</strong> (a) $f=2x\Rightarrow f^{-1}=\frac x2$. (b) $f=\frac15x\Rightarrow f^{-1}=5x$. (c) $f=x+8\Rightarrow f^{-1}=x-8$. (d) $f=3x+7$: $y=3x+7$, swap $x=3y+7$, $y=\dfrac{x-7}3$. <strong>The course prints $\tfrac13(x+7)$: wrong.</strong> Check: $f\!\big(\frac{x-7}3\big)=x-7+7=x$ <span class="tick">✓</span>, whereas $f\!\big(\frac{x+7}3\big)=x+14\ne x$. (e) $x^3\to\sqrt[3]x$. (f) $\frac1x\to\frac1x$ (it is its own inverse).
-<strong>(b) Example 9.</strong> $f(x)=\sqrt{2x-3}$. Domain: $2x-3\ge0$, $x\ge\frac32$; range $[0,\infty)$.
-$y=\sqrt{2x-3}\ \to\ x=\sqrt{2y-3}$, so $x\ge0$ and $x^2=2y-3$, $y=\dfrac{x^2+3}2$. So $f^{-1}(x)=\dfrac{x^2+3}2$ with <strong>domain $x\ge0$</strong> (= range of $f$) and range $[\frac32,\infty)$ (= domain of $f$).
-Checks: $f(f^{-1}(x))=\sqrt{2\cdot\frac{x^2+3}2-3}=\sqrt{x^2}=x$ for $x\ge0$ <span class="tick">✓</span>. $f^{-1}(f(x))=\dfrac{(\sqrt{2x-3})^2+3}2=\dfrac{2x}2=x$ for $x\ge\frac32$ <span class="tick">✓</span>. Points: $(\frac32,0),(2,1)\in f$ and $(0,\frac32),(1,2)\in f^{-1}$ (swapped coordinates) <span class="tick">✓</span>. (The course's p.36 labels the first check "$f^{-1}(f(x))$"; it is $f(f^{-1}(x))$.)
-<strong>(c) Checkpoint p.35.</strong> $f=\frac15x$: $f^{-1}=5x$. $f=3x+2$: $f^{-1}(x)=\dfrac{x-2}3$.</p>
+<p><strong>(a) Example 8, redone.</strong></p>
+<ul>
+<li>(a) $f=2x\Rightarrow f^{-1}=\frac x2$.</li>
+<li>(b) $f=\frac15x\Rightarrow f^{-1}=5x$.</li>
+<li>(c) $f=x+8\Rightarrow f^{-1}=x-8$.</li>
+<li>(d) $f=3x+7$: $y=3x+7$, swap $x=3y+7$, $y=\dfrac{x-7}3$.</li>
+</ul>
+<blockquote class="slip"><p><strong>Course slip:</strong> for (d) the course prints $\tfrac13(x+7)$; that is wrong. Check: $f\!\big(\frac{x-7}3\big)=x-7+7=x$ <span class="tick">✓</span>, whereas $f\!\big(\frac{x+7}3\big)=x+14\ne x$.</p>
+</blockquote>
+<ul>
+<li>(e) $x^3\to\sqrt[3]x$.</li>
+<li>(f) $\frac1x\to\frac1x$ (it is its own inverse).</li>
+</ul>
+<p><strong>(b) Example 9.</strong> $f(x)=\sqrt{2x-3}$. Domain: $2x-3\ge0$, $x\ge\frac32$; range $[0,\infty)$.</p>
+<div class="math-display">$$y=\sqrt{2x-3}\ \to\ x=\sqrt{2y-3}$$</div>
+<p>so $x\ge0$ and $x^2=2y-3$, $y=\dfrac{x^2+3}2$. So $f^{-1}(x)=\dfrac{x^2+3}2$ with <strong>domain $x\ge0$</strong> (= range of $f$) and range $[\frac32,\infty)$ (= domain of $f$).</p>
+<p>Checks: $f(f^{-1}(x))=\sqrt{2\cdot\frac{x^2+3}2-3}=\sqrt{x^2}=x$ for $x\ge0$ <span class="tick">✓</span>. $f^{-1}(f(x))=\dfrac{(\sqrt{2x-3})^2+3}2=\dfrac{2x}2=x$ for $x\ge\frac32$ <span class="tick">✓</span>. Points: $(\frac32,0),(2,1)\in f$ and $(0,\frac32),(1,2)\in f^{-1}$ (swapped coordinates) <span class="tick">✓</span>.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> p.36 labels the first check "$f^{-1}(f(x))$"; it is $f(f^{-1}(x))$.</p>
+</blockquote>
+<p><strong>(c) Checkpoint p.35.</strong> $f=\frac15x$: $f^{-1}=5x$. $f=3x+2$: $f^{-1}(x)=\dfrac{x-2}3$.</p>
 <h4 id="u1-examples-h8" data-md-heading="Example 8 — No inverse; restricting the domain (Course Example 10, p.37; Checkpoints pp.36, 38; Exercises 16, 17)">Example 8 — No inverse; restricting the domain (Course Example 10, p.37; Checkpoints pp.36, 38; Exercises 16, 17)</h4>
-<p><strong>(a) Example 10.</strong> $f(x)=x^2-1$ on $\mathbb R$: $f(2)=f(-2)=3$, so $f$ is not one-to-one; solving $x=y^2-1$ gives $y=\pm\sqrt{x+1}$, two values, not a function. <strong>No inverse.</strong> Restrict to $x\ge0$: range of $f$ is $[-1,\infty)$ and $f^{-1}(x)=\sqrt{x+1}$, $x\ge-1$.
-<strong>(b) Checkpoint p.38.</strong> $f(x)=x^2+4$: $f(1)=f(-1)=5$, not one-to-one, <strong>no inverse</strong> on $\mathbb R$.
-<strong>(c) Checkpoint p.36.</strong> $f(x)=x^2+2$, $x\ge0$: $x=y^2+2$, $y=\sqrt{x-2}$ (positive root because $y\ge0$). <strong>$f^{-1}(x)=\sqrt{x-2}$, $x\ge2$</strong> (the range of $f$ is $[2,\infty)$).
-<strong>(d) Exercise 16.</strong> $f(x)=9-x^2$, $x\ge0$ (range $(-\infty,9]$); $g(x)=\sqrt{9-x}$, $x\le9$ (range $[0,\infty)$).
-$f(g(x))=9-(9-x)=x$ for $x\le9$ <span class="tick">✓</span>; $g(f(x))=\sqrt{9-(9-x^2)}=\sqrt{x^2}=|x|=x$ because $x\ge0$ <span class="tick">✓</span>. The condition $x\ge0$ in $f$ is exactly what makes the second check work.
-<strong>(e) Exercise 17.</strong> $f(x)=\sqrt{9-x^2}$, $0\le x\le3$: range $[0,3]$. $x=\sqrt{9-y^2}\Rightarrow y=\sqrt{9-x^2}$ ($y\ge0$): <strong>$f^{-1}=f$</strong>, domain $[0,3]$ (the quarter circle is symmetric about $y=x$). (sympy-verified.)</p>
+<p><strong>(a) Example 10.</strong> $f(x)=x^2-1$ on $\mathbb R$: $f(2)=f(-2)=3$, so $f$ is not one-to-one; solving $x=y^2-1$ gives $y=\pm\sqrt{x+1}$, two values, not a function. <strong>No inverse.</strong> Restrict to $x\ge0$: range of $f$ is $[-1,\infty)$ and $f^{-1}(x)=\sqrt{x+1}$, $x\ge-1$.</p>
+<p><strong>(b) Checkpoint p.38.</strong> $f(x)=x^2+4$: $f(1)=f(-1)=5$, not one-to-one, <strong>no inverse</strong> on $\mathbb R$.</p>
+<p><strong>(c) Checkpoint p.36.</strong> $f(x)=x^2+2$, $x\ge0$: $x=y^2+2$, $y=\sqrt{x-2}$ (positive root because $y\ge0$). <strong>$f^{-1}(x)=\sqrt{x-2}$, $x\ge2$</strong> (the range of $f$ is $[2,\infty)$).</p>
+<p><strong>(d) Exercise 16.</strong> $f(x)=9-x^2$, $x\ge0$ (range $(-\infty,9]$); $g(x)=\sqrt{9-x}$, $x\le9$ (range $[0,\infty)$).</p>
+<ul>
+<li>$f(g(x))=9-(9-x)=x$ for $x\le9$ <span class="tick">✓</span></li>
+<li>$g(f(x))=\sqrt{9-(9-x^2)}=\sqrt{x^2}=|x|=x$ because $x\ge0$ <span class="tick">✓</span></li>
+</ul>
+<p>The condition $x\ge0$ in $f$ is exactly what makes the second check work.</p>
+<p><strong>(e) Exercise 17.</strong> $f(x)=\sqrt{9-x^2}$, $0\le x\le3$: range $[0,3]$. $x=\sqrt{9-y^2}\Rightarrow y=\sqrt{9-x^2}$ ($y\ge0$): <strong>$f^{-1}=f$</strong>, domain $[0,3]$ (the quarter circle is symmetric about $y=x$). (sympy-verified.)</p>
 <h4 id="u1-examples-h9" data-md-heading="Example 9 — Exam-level: rational inverse and composite domain (new)">Example 9 — Exam-level: rational inverse and composite domain (new)</h4>
-<p><strong>(a)</strong> $h(x)=\dfrac{2x+1}{x-3}$. Domain $x\ne3$. Swap: $x=\dfrac{2y+1}{y-3}\Rightarrow xy-3x=2y+1\Rightarrow y(x-2)=3x+1$, so</p>
+<p><strong>(a)</strong> $h(x)=\dfrac{2x+1}{x-3}$. Domain $x\ne3$. Swap:</p>
+<div class="math-display">$$\begin{aligned}&amp;x=\dfrac{2y+1}{y-3}\\
+&amp;\Rightarrow xy-3x=2y+1\\
+&amp;\Rightarrow y(x-2)=3x+1\end{aligned}$$</div>
+<p>so</p>
 <div class="math-display">$$h^{-1}(x)=\frac{3x+1}{x-2},\quad x\ne2.$$</div>
-<p>Range of $h$ is $\mathbb R\setminus\{2\}$ (it never takes the value $2$) = domain of $h^{-1}$ <span class="tick">✓</span>. Check: $h(h^{-1}(x))=x$ and $h^{-1}(h(x))=x$ (sympy simplifies both to $x$).
-<strong>(b)</strong> $f(x)=\sqrt{4-x}$, $g(x)=\dfrac1x$. $f(g(x))=\sqrt{4-\frac1x}$ needs $x\ne0$ and $4-\frac1x\ge0$. If $x&gt;0$: $\frac1x\le4$, $x\ge\frac14$. If $x&lt;0$: $\frac1x&lt;0$, always true. <strong>Domain $(-\infty,0)\cup[\frac14,\infty)$</strong>; range $[0,2)\cup(2,\infty)$ (value $2$ would need $\frac1x=0$).
-<strong>(c)</strong> $f(x)=2x+1$, $g(x)=x^3$. $(f\circ g)(x)=2x^3+1$; its inverse is $\sqrt[3]{\dfrac{x-1}2}$, which equals $g^{-1}(f^{-1}(x))=\sqrt[3]{\frac{x-1}2}$ <span class="tick">✓</span> (reverse order). (sympy-verified.)</p>
+<p>Range of $h$ is $\mathbb R\setminus\{2\}$ (it never takes the value $2$) = domain of $h^{-1}$ <span class="tick">✓</span>. Check: $h(h^{-1}(x))=x$ and $h^{-1}(h(x))=x$ (sympy simplifies both to $x$).</p>
+<p><strong>(b)</strong> $f(x)=\sqrt{4-x}$, $g(x)=\dfrac1x$. $f(g(x))=\sqrt{4-\frac1x}$ needs $x\ne0$ and $4-\frac1x\ge0$.</p>
+<ul>
+<li>If $x&gt;0$: $\frac1x\le4$, $x\ge\frac14$.</li>
+<li>If $x&lt;0$: $\frac1x&lt;0$, always true.</li>
+</ul>
+<p><strong>Domain $(-\infty,0)\cup[\frac14,\infty)$</strong>; range $[0,2)\cup(2,\infty)$ (value $2$ would need $\frac1x=0$).</p>
+<p><strong>(c)</strong> $f(x)=2x+1$, $g(x)=x^3$. $(f\circ g)(x)=2x^3+1$; its inverse is $\sqrt[3]{\dfrac{x-1}2}$, which equals $g^{-1}(f^{-1}(x))=\sqrt[3]{\frac{x-1}2}$ <span class="tick">✓</span> (reverse order). (sympy-verified.)</p>
 <h3 id="u1-mistakes" data-md-heading="Common mistakes">Common mistakes</h3>
 <ul>
 <li><strong>Reading $f(x)$ as $f\times x$.</strong> It is the value of $f$ at $x$ (p.24).</li>
@@ -1015,18 +1130,71 @@ $f(g(x))=9-(9-x)=x$ for $x\le9$ <span class="tick">✓</span>; $g(f(x))=\sqrt{9-
 <li>$h(x)=\dfrac{x+2}{x-1}$. Find the domain, range and $h^{-1}$, and verify $h(h^{-1}(x))=x$. Is $h$ its own inverse?</li>
 </ol>
 <details class="answers"><summary>Show answers</summary><div class="answers-body"><h4 class="answers-title" data-md-heading="Answers">Answers</h4><ol>
-<li>(a) $y=x-1$ yes. (b) $y=\pm\sqrt{4-x^2}$ no. (c) $y=\pm\sqrt{2-x}$ no. (d) $y=x^2$ yes. (e) $y=6-2x$ yes. (f) $y=\pm\sqrt{1-x^2}$ no. (g) $y=\frac{x}{12}+\frac12$ yes. (h) $y=4-x^2$ yes. (i) $y=\pm\sqrt{x^2-1}$ no (two values when $|x|&gt;1$).</li>
-<li>(a) domain $\mathbb R$, range $\mathbb R$. (b) domain $\mathbb R$, range $(-\infty,4]$. (c) domain $[-2,2]$, range $[0,2]$. (d) domain $(-\infty,2)\cup(2,\infty)$, range $(-\infty,0)\cup(0,\infty)$. (e) domain $\mathbb R$, range $[-1,\infty)$ (vertex at $x=-1$).</li>
-<li>(a) $1,\ -3,\ -3$. (b) $-3,\ -9,\ 2(x-1)-3=2x-5,\ 2(1+\Delta x)-3=2\Delta x-1$. (c) $\frac12,\ 4,\ \dfrac1{x+\Delta x},\ -\dfrac{\Delta x}{x(x+\Delta x)}$.</li>
-<li>(a) $x^2+2x\Delta x+(\Delta x)^2-2x-2\Delta x+3$; quotient $=2x+\Delta x-2$. (b) $f(-5)=25+10+7=42$; $f(x+4)=x^2+6x+15$; $f(-x)=x^2+2x+7$. (c) $x^3-x$: $3x^2+3x\Delta x+(\Delta x)^2-1$ (reading $x+\Delta x$; see Errata); $\sqrt{x+3}$: $\dfrac1{\sqrt{x+\Delta x+3}+\sqrt{x+3}}$; $\dfrac1{x-2}$: $\dfrac{-1}{(x+\Delta x-2)(x-2)}$.</li>
-<li>(i) not a function; (ii) not; (iii) function; (iv) not; (v) not. $x^2+y^2=9\Rightarrow y=\pm\sqrt{9-x^2}$: <strong>not</strong> a function. $x^2=xy-1\Rightarrow y=\dfrac{x^2+1}x=x+\frac1x$ for $x\ne0$ (at $x=0$ there is no solution): <strong>is</strong> a function, domain $x\ne0$.</li>
-<li>$f=2x-5,g=5$: $2x$; $10x-25$; $\frac{2x-5}5$; $f(g(x))=5$; $g(f(x))=5$. $f=x^2+1,g=x-1$: $x^2+x$; $x^3-x^2+x-1$; $\dfrac{x^2+1}{x-1}$ ($x\ne1$); $x^2-2x+2$; $x^2$.</li>
-<li>(a) $f(g(x))=2(x^2+2)+1=2x^2+5$; $g(f(x))=(2x+1)^2+2=4x^2+4x+3$. (b) $0,\ 0,\ -1,\ \sqrt{15}$; $f(g(x))=\sqrt{x^2-1}$ on $(-\infty,-1]\cup[1,\infty)$; $g(f(x))=x-1$ on $x\ge0$.</li>
-<li>(a) $f(g(x))=5\cdot\frac{x-1}5+1=x$; $g(f(x))=\frac{(5x+1)-1}5=x$; both domain and range $\mathbb R$. (b) $f(g(x))=9-(9-x)=x$ ($x\le9$); $g(f(x))=\sqrt{x^2}=x$ ($x\ge0$). $f$: domain $[0,\infty)$, range $(-\infty,9]$; $g$: domain $(-\infty,9]$, range $[0,\infty)$.</li>
-<li>(a) $5x$ (domain $\mathbb R$). (b) $\dfrac{x-2}3$ (domain $\mathbb R$). (c) $\sqrt{x-2}$, domain $x\ge2$. (d) $f^{-1}(x)=\sqrt{9-x^2}$, domain $[0,3]$ (so $f^{-1}=f$).</li>
-<li>$f(1)=f(-1)=5$ (also the horizontal line $y=5$ meets the graph twice), so $f$ is not one-to-one, no inverse on $\mathbb R$. Restrict to $x\ge0$: $f^{-1}(x)=\sqrt{x-4}$, domain $x\ge4$. (Or $x\le0$: $-\sqrt{x-4}$.)</li>
-<li>$f(x)=(x-2)^2+3$. If $a,b\ge2$ and $f(a)=f(b)$ then $(a-2)^2=(b-2)^2$, and since $a-2,b-2\ge0$, $a=b$: one-to-one. Range $[3,\infty)$. Swap: $x=(y-2)^2+3\Rightarrow y=2+\sqrt{x-3}$ (positive root since $y\ge2$): $f^{-1}(x)=2+\sqrt{x-3}$, domain $x\ge3$.</li>
-<li>Domain $x\ne1$. Swap $x=\dfrac{y+2}{y-1}\Rightarrow xy-x=y+2\Rightarrow y=\dfrac{x+2}{x-1}$. So $h^{-1}=h$: yes, $h$ is its own inverse. Range $\mathbb R\setminus\{1\}$ = domain of $h^{-1}$. (Verified: $h(h(x))=x$.)</li>
+<li>
+<p>(a) $y=x-1$ yes.</p>
+<p>(b) $y=\pm\sqrt{4-x^2}$ no.</p>
+<p>(c) $y=\pm\sqrt{2-x}$ no.</p>
+<p>(d) $y=x^2$ yes.</p>
+<p>(e) $y=6-2x$ yes.</p>
+<p>(f) $y=\pm\sqrt{1-x^2}$ no.</p>
+<p>(g) $y=\frac{x}{12}+\frac12$ yes.</p>
+<p>(h) $y=4-x^2$ yes.</p>
+<p>(i) $y=\pm\sqrt{x^2-1}$ no (two values when $|x|&gt;1$).</p>
+</li>
+<li>
+<p>(a) domain $\mathbb R$, range $\mathbb R$.</p>
+<p>(b) domain $\mathbb R$, range $(-\infty,4]$.</p>
+<p>(c) domain $[-2,2]$, range $[0,2]$.</p>
+<p>(d) domain $(-\infty,2)\cup(2,\infty)$, range $(-\infty,0)\cup(0,\infty)$.</p>
+<p>(e) domain $\mathbb R$, range $[-1,\infty)$ (vertex at $x=-1$).</p>
+</li>
+<li>
+<p>(a) $1,\ -3,\ -3$.</p>
+<p>(b) $-3,\ -9,\ 2(x-1)-3=2x-5,\ 2(1+\Delta x)-3=2\Delta x-1$.</p>
+<p>(c) $\frac12,\ 4,\ \dfrac1{x+\Delta x},\ -\dfrac{\Delta x}{x(x+\Delta x)}$.</p>
+</li>
+<li>
+<p>(a) $x^2+2x\Delta x+(\Delta x)^2-2x-2\Delta x+3$; quotient $=2x+\Delta x-2$.</p>
+<p>(b) $f(-5)=25+10+7=42$; $f(x+4)=x^2+6x+15$; $f(-x)=x^2+2x+7$.</p>
+<p>(c) $x^3-x$: $3x^2+3x\Delta x+(\Delta x)^2-1$ (reading $x+\Delta x$; see Errata); $\sqrt{x+3}$: $\dfrac1{\sqrt{x+\Delta x+3}+\sqrt{x+3}}$; $\dfrac1{x-2}$: $\dfrac{-1}{(x+\Delta x-2)(x-2)}$.</p>
+</li>
+<li>
+<p>(i) not a function; (ii) not; (iii) function; (iv) not; (v) not.</p>
+<p>$x^2+y^2=9\Rightarrow y=\pm\sqrt{9-x^2}$: <strong>not</strong> a function.</p>
+<p>$x^2=xy-1\Rightarrow y=\dfrac{x^2+1}x=x+\frac1x$ for $x\ne0$ (at $x=0$ there is no solution): <strong>is</strong> a function, domain $x\ne0$.</p>
+</li>
+<li>
+<p>$f=2x-5,g=5$: $2x$; $10x-25$; $\frac{2x-5}5$; $f(g(x))=5$; $g(f(x))=5$.</p>
+<p>$f=x^2+1,g=x-1$: $x^2+x$; $x^3-x^2+x-1$; $\dfrac{x^2+1}{x-1}$ ($x\ne1$); $x^2-2x+2$; $x^2$.</p>
+</li>
+<li>
+<p>(a) $f(g(x))=2(x^2+2)+1=2x^2+5$; $g(f(x))=(2x+1)^2+2=4x^2+4x+3$.</p>
+<p>(b) $0,\ 0,\ -1,\ \sqrt{15}$; $f(g(x))=\sqrt{x^2-1}$ on $(-\infty,-1]\cup[1,\infty)$; $g(f(x))=x-1$ on $x\ge0$.</p>
+</li>
+<li>
+<p>(a) $f(g(x))=5\cdot\frac{x-1}5+1=x$; $g(f(x))=\frac{(5x+1)-1}5=x$; both domain and range $\mathbb R$.</p>
+<p>(b) $f(g(x))=9-(9-x)=x$ ($x\le9$); $g(f(x))=\sqrt{x^2}=x$ ($x\ge0$). $f$: domain $[0,\infty)$, range $(-\infty,9]$; $g$: domain $(-\infty,9]$, range $[0,\infty)$.</p>
+</li>
+<li>
+<p>(a) $5x$ (domain $\mathbb R$).</p>
+<p>(b) $\dfrac{x-2}3$ (domain $\mathbb R$).</p>
+<p>(c) $\sqrt{x-2}$, domain $x\ge2$.</p>
+<p>(d) $f^{-1}(x)=\sqrt{9-x^2}$, domain $[0,3]$ (so $f^{-1}=f$).</p>
+</li>
+<li>
+<p>$f(1)=f(-1)=5$ (also the horizontal line $y=5$ meets the graph twice), so $f$ is not one-to-one, no inverse on $\mathbb R$. Restrict to $x\ge0$:</p>
+<p>$f^{-1}(x)=\sqrt{x-4}$, domain $x\ge4$. (Or $x\le0$: $-\sqrt{x-4}$.)</p>
+</li>
+<li>
+<p>$f(x)=(x-2)^2+3$. If $a,b\ge2$ and $f(a)=f(b)$ then $(a-2)^2=(b-2)^2$, and since $a-2,b-2\ge0$, $a=b$: one-to-one. Range $[3,\infty)$. Swap:</p>
+<div class="math-display">$$x=(y-2)^2+3\Rightarrow y=2+\sqrt{x-3}$$</div>
+<p>(positive root since $y\ge2$): $f^{-1}(x)=2+\sqrt{x-3}$, domain $x\ge3$.</p>
+</li>
+<li>
+<p>Domain $x\ne1$. Swap:</p>
+<div class="math-display">$$x=\dfrac{y+2}{y-1}\Rightarrow xy-x=y+2\Rightarrow y=\dfrac{x+2}{x-1}$$</div>
+<p>So $h^{-1}=h$: yes, $h$ is its own inverse. Range $\mathbb R\setminus\{1\}$ = domain of $h^{-1}$. (Verified: $h(h(x))=x$.)</p>
+</li>
 </ol>
 <p><em>All numerical and symbolic results in the examples and problems were checked with sympy 1.14.0 (inverses, composites, domains, ranges, difference quotients).</em></p></div></details>
 <h3 id="u1-extra" data-md-heading="Extra practice (from outside sources)">Extra practice (from outside sources)</h3>
@@ -1161,40 +1329,60 @@ Tool: the factor theorem. For a polynomial $p$, $p(c)=0\iff(x-c)$ is a factor of
 <div class="math-display">$$\lim_{h\to0}\frac{\tfrac1{x+h}-\tfrac1x}{h}=-\frac1{x^2}.$$</div>
 <h3 id="u2-examples" data-md-heading="Worked examples">Worked examples</h3>
 <h4 id="u2-examples-h1" data-md-heading="Example 1 — Direct substitution (Course Examples 1 and 3, pp.42–43; Checkpoint 2, p.43)">Example 1 — Direct substitution (Course Examples 1 and 3, pp.42–43; Checkpoint 2, p.43)</h4>
-<p><strong>Solution.</strong> A polynomial has $\lim_{x\to c}p(x)=p(c)$, so substitute.
-- Course Example 1: $\lim_{x\to1}(x^2+1)=1^2+1=\mathbf2$.
-- Course Example 3: by the sum/difference law, $\lim_{x\to2}(x^2+2x-3)=\lim x^2+\lim2x-\lim3=4+4-3=\mathbf5$. (Directly: $p(2)=4+4-3=5$.)
-- Checkpoint 2 (p.43): $\lim_{x\to2}(2x^2-x+4)=2\cdot4-2+4=\mathbf{10}$.</p>
+<p><strong>Solution.</strong> A polynomial has $\lim_{x\to c}p(x)=p(c)$, so substitute.</p>
+<ul>
+<li>Course Example 1: $\lim_{x\to1}(x^2+1)=1^2+1=\mathbf2$.</li>
+<li>Course Example 3: by the sum/difference law, $\lim_{x\to2}(x^2+2x-3)=\lim x^2+\lim2x-\lim3=4+4-3=\mathbf5$. (Directly: $p(2)=4+4-3=5$.)</li>
+<li>Checkpoint 2 (p.43): $\lim_{x\to2}(2x^2-x+4)=2\cdot4-2+4=\mathbf{10}$.</li>
+</ul>
 <h4 id="u2-examples-h2" data-md-heading="Example 2 — Three limits at $x=1$ (Course Example 2, pp.42–43, redone; Checkpoint 1, p.43)">Example 2 — Three limits at $x=1$ (Course Example 2, pp.42–43, redone; Checkpoint 1, p.43)</h4>
 <p>Find $\lim_{x\to1}f(x)$ for (a) $f=\dfrac{x^2-1}{x-1}$, (b) $f=\dfrac{|x-1|}{x-1}$, (c) $f=\begin{cases}x,&amp;x\ne1\\0,&amp;x=1.\end{cases}$</p>
-<p><strong>Solution.</strong>
-(a) Substituting gives $\tfrac00$, so factor: for $x\ne1$, $\dfrac{(x-1)(x+1)}{x-1}=x+1$. By the Replacement Theorem the limit is $\lim_{x\to1}(x+1)=\mathbf2$.
-(b) Do <strong>not</strong> substitute: $\frac{|1-1|}{1-1}=\frac00$ is <em>undefined</em>, not $0$ (the course writes "$=0$", which is wrong; see Errata). For $x&gt;1$, $|x-1|=x-1$, so $f=1$; for $x&lt;1$, $|x-1|=-(x-1)$, so $f=-1$. Left limit $-1$, right limit $+1$: they differ, so <strong>the limit does not exist.</strong>
-(c) For $x\ne1$, $f(x)=x\to1$. The value $f(1)=0$ is ignored: the limit is $\mathbf1$ (and it is <em>not</em> $f(1)$).</p>
-<p><em>Checkpoint 1 (p.43), same method at $x=2$:</em> (a) $\frac{x^2-4}{x-2}=x+2\to\mathbf4$; (b) $\frac{|x-2|}{x-2}$: left $-1$, right $+1$, <strong>does not exist</strong>; (c) $f(x)=x^2$ near $2$ (the printed "$0,\ x=2$" does not change the limit): $\mathbf4$. (sympy: 4, one-sided $-1$ and $+1$, 4.)</p>
+<p><strong>Solution.</strong></p>
+<p><strong>(a)</strong> Substituting gives $\tfrac00$, so factor: for $x\ne1$, $\dfrac{(x-1)(x+1)}{x-1}=x+1$. By the Replacement Theorem the limit is $\lim_{x\to1}(x+1)=\mathbf2$.</p>
+<p><strong>(b)</strong> Do <strong>not</strong> substitute: $\frac{|1-1|}{1-1}=\frac00$ is <em>undefined</em>, not $0$ (the course writes "$=0$", which is wrong; see Errata). For $x&gt;1$, $|x-1|=x-1$, so $f=1$; for $x&lt;1$, $|x-1|=-(x-1)$, so $f=-1$. Left limit $-1$, right limit $+1$: they differ, so <strong>the limit does not exist.</strong></p>
+<p><strong>(c)</strong> For $x\ne1$, $f(x)=x\to1$. The value $f(1)=0$ is ignored: the limit is $\mathbf1$ (and it is <em>not</em> $f(1)$).</p>
+<p><em>Checkpoint 1 (p.43), same method at $x=2$:</em></p>
+<ul>
+<li>(a) $\frac{x^2-4}{x-2}=x+2\to\mathbf4$</li>
+<li>(b) $\frac{|x-2|}{x-2}$: left $-1$, right $+1$, <strong>does not exist</strong></li>
+<li>(c) $f(x)=x^2$ near $2$ (the printed "$0,\ x=2$" does not change the limit): $\mathbf4$</li>
+</ul>
+<p>(sympy: 4, one-sided $-1$ and $+1$, 4.)</p>
 <h4 id="u2-examples-h3" data-md-heading="Example 3 — Factor and cancel (Course Example 4, p.44; Checkpoint p.45)">Example 3 — Factor and cancel (Course Example 4, p.44; Checkpoint p.45)</h4>
 <p>Find $\lim_{x\to1}\dfrac{x^3-1}{x-1}$ and $\lim_{x\to2}\dfrac{x^3-8}{x-2}$.</p>
-<p><strong>Solution.</strong> Numerator and denominator are both $0$ at $x=1$ ($1-1=0$), so $(x-1)$ is a factor of both. The correct factorisation is $x^3-1=(x-1)(x^2+x+1)$ (the course's line "$\frac{x^3-1}{x-1}=(x^2+x+1)(x-1)$" has dropped the division; see Errata). For $x\ne1$:</p>
+<p><strong>Solution.</strong> Numerator and denominator are both $0$ at $x=1$ ($1-1=0$), so $(x-1)$ is a factor of both. The correct factorisation is $x^3-1=(x-1)(x^2+x+1)$.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course's line "$\frac{x^3-1}{x-1}=(x^2+x+1)(x-1)$" has dropped the division; see Errata.</p>
+</blockquote>
+<p>For $x\ne1$:</p>
 <div class="math-display">$$\frac{x^3-1}{x-1}=\frac{(x-1)(x^2+x+1)}{x-1}=x^2+x+1.$$</div>
-<p>The two functions agree for all $x\ne1$, so by the Replacement Theorem $\lim_{x\to1}\dfrac{x^3-1}{x-1}=1+1+1=\mathbf3$. The graph of $f$ is the parabola $x^2+x+1$ with a <strong>hole</strong> at $(1,3)$.
-<em>Checkpoint:</em> $x^3-8=(x-2)(x^2+2x+4)$, so $\lim_{x\to2}\dfrac{x^3-8}{x-2}=4+4+4=\mathbf{12}$. (sympy: 3 and 12.)</p>
+<p>The two functions agree for all $x\ne1$, so by the Replacement Theorem $\lim_{x\to1}\dfrac{x^3-1}{x-1}=1+1+1=\mathbf3$. The graph of $f$ is the parabola $x^2+x+1$ with a <strong>hole</strong> at $(1,3)$.</p>
+<p><em>Checkpoint:</em> $x^3-8=(x-2)(x^2+2x+4)$, so $\lim_{x\to2}\dfrac{x^3-8}{x-2}=4+4+4=\mathbf{12}$. (sympy: 3 and 12.)</p>
 <h4 id="u2-examples-h4" data-md-heading="Example 4 — &quot;Dividing out&quot; (Course Example 5, p.45, corrected; Checkpoint p.46)">Example 4 — "Dividing out" (Course Example 5, p.45, corrected; Checkpoint p.46)</h4>
 <p>Find $\displaystyle\lim_{x\to-3}\frac{x^2+x-6}{x+3}$.</p>
-<p><strong>Solution.</strong> The course prints the numerator as $x^2+x+\mathbf{6}$ in the question and in the check, but then factors $x^2+x-6$. With $+6$ the numerator at $-3$ is $9-3+6=12\ne0$, there is no cancellation, and the limit does not exist (left $-\infty$, right $+\infty$). The exercise only makes sense with $-6$, as in the course's later lines and graph (Fig 2.2).
-Check: $(-3)^2+(-3)-6=0$ and $-3+3=0$ (note: write $(-3)^2$; "$-3^2$" means $-9$). So $(x+3)$ divides the numerator: $x^2+x-6=(x-2)(x+3)$. For $x\ne-3$ (the course writes "$x\ne3$": misprint),</p>
-<div class="math-display">$$\frac{(x-2)(x+3)}{x+3}=x-2\ \Longrightarrow\ \lim_{x\to-3}=-3-2=\mathbf{-5}.$$</div>
-<p>The graph is the line $y=x-2$ with a hole at $(-3,-5)$.
-<em>Checkpoint (p.46):</em> $\dfrac{x^2+x-12}{x-3}=\dfrac{(x-3)(x+4)}{x-3}=x+4\to\mathbf7$. (sympy: $-5$ and $7$.)</p>
+<p><strong>Solution.</strong></p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course prints the numerator as $x^2+x+\mathbf{6}$ in the question and in the check, but then factors $x^2+x-6$. With $+6$ the numerator at $-3$ is $9-3+6=12\ne0$, there is no cancellation, and the limit does not exist (left $-\infty$, right $+\infty$). The exercise only makes sense with $-6$, as in the course's later lines and graph (Fig 2.2).</p>
+</blockquote>
+<p>Check: $(-3)^2+(-3)-6=0$ and $-3+3=0$ (note: write $(-3)^2$; "$-3^2$" means $-9$). So $(x+3)$ divides the numerator: $x^2+x-6=(x-2)(x+3)$. For $x\ne-3$ (the course writes "$x\ne3$": misprint),</p>
+<div class="math-display">$$\begin{aligned}&amp;\frac{(x-2)(x+3)}{x+3}=x-2\ \\
+&amp;\Longrightarrow\ \lim_{x\to-3}=-3-2=\mathbf{-5}.\end{aligned}$$</div>
+<p>The graph is the line $y=x-2$ with a hole at $(-3,-5)$.</p>
+<p><em>Checkpoint (p.46):</em> $\dfrac{x^2+x-12}{x-3}=\dfrac{(x-3)(x+4)}{x-3}=x+4\to\mathbf7$. (sympy: $-5$ and $7$.)</p>
 <h4 id="u2-examples-h5" data-md-heading="Example 5 — Rationalising the numerator (Course Example 6, p.46–47; Checkpoint p.47)">Example 5 — Rationalising the numerator (Course Example 6, p.46–47; Checkpoint p.47)</h4>
 <p>Find $\displaystyle\lim_{x\to0}\frac{\sqrt{x+1}-1}{x}$ and $\displaystyle\lim_{x\to0}\frac{\sqrt{x+4}-2}{x}$.</p>
 <p><strong>Solution.</strong> At $x=0$ both give $\frac00$, and factoring does not help. Multiply by the conjugate over itself:</p>
 <div class="math-display">$$\frac{\sqrt{x+1}-1}{x}\cdot\frac{\sqrt{x+1}+1}{\sqrt{x+1}+1}=\frac{(x+1)-1}{x(\sqrt{x+1}+1)}=\frac{x}{x(\sqrt{x+1}+1)}=\frac1{\sqrt{x+1}+1}\quad(x\ne0).$$</div>
-<p>The right side is continuous at $0$ with value $\frac1{1+1}$, so the limit is $\mathbf{\tfrac12}$.
-<em>Checkpoint:</em> $\dfrac{\sqrt{x+4}-2}{x}\cdot\dfrac{\sqrt{x+4}+2}{\sqrt{x+4}+2}=\dfrac{x}{x(\sqrt{x+4}+2)}=\dfrac1{\sqrt{x+4}+2}\to\mathbf{\tfrac14}$. (sympy: $\tfrac12$, $\tfrac14$.)</p>
+<p>The right side is continuous at $0$ with value $\frac1{1+1}$, so the limit is $\mathbf{\tfrac12}$.</p>
+<p><em>Checkpoint:</em> $\dfrac{\sqrt{x+4}-2}{x}\cdot\dfrac{\sqrt{x+4}+2}{\sqrt{x+4}+2}=\dfrac{x}{x(\sqrt{x+4}+2)}=\dfrac1{\sqrt{x+4}+2}\to\mathbf{\tfrac14}$. (sympy: $\tfrac12$, $\tfrac14$.)</p>
 <h4 id="u2-examples-h6" data-md-heading="Example 6 — One-sided limits and unbounded behaviour (Course Examples 7 and 8, pp.47–48; Checkpoint p.48)">Example 6 — One-sided limits and unbounded behaviour (Course Examples 7 and 8, pp.47–48; Checkpoint p.48)</h4>
-<p><strong>(a) $f(x)=\dfrac{|2x|}{x}$ as $x\to0$.</strong> For $x&gt;0$, $|2x|=2x$ so $f=2$; for $x&lt;0$, $|2x|=-2x$ so $f=-2$. Hence $\lim_{x\to0^-}f=-2$ and $\lim_{x\to0^+}f=2$. They differ, so $\lim_{x\to0}f$ <strong>does not exist</strong> (the course states both one-sided values correctly).
-<strong>(b) $\dfrac3{x-2}$ as $x\to2$.</strong> Numerator $\to3$, denominator $\to0$: unbounded. Sign: for $x&lt;2$ the denominator is negative, so $\lim_{x\to2^-}\frac3{x-2}=\mathbf{-\infty}$; for $x&gt;2$, $\lim_{x\to2^+}=+\infty$. (The course writes $+\infty$ for <em>both</em>: wrong on the left; see Errata.) Because $f$ is unbounded, the limit does not exist.
-<strong>(c) Checkpoint $\dfrac5{x+2}$ as $x\to-2$.</strong> Left: $-\infty$; right: $+\infty$. The limit <strong>does not exist.</strong> The course's "$\frac5{-2+2}=\frac50=\infty$" is not a valid computation: $\frac50$ is not a number, and the answer is not $+\infty$ from both sides. (sympy confirms all one-sided values.)</p>
+<p><strong>(a) $f(x)=\dfrac{|2x|}{x}$ as $x\to0$.</strong> For $x&gt;0$, $|2x|=2x$ so $f=2$; for $x&lt;0$, $|2x|=-2x$ so $f=-2$. Hence $\lim_{x\to0^-}f=-2$ and $\lim_{x\to0^+}f=2$. They differ, so $\lim_{x\to0}f$ <strong>does not exist</strong> (the course states both one-sided values correctly).</p>
+<p><strong>(b) $\dfrac3{x-2}$ as $x\to2$.</strong> Numerator $\to3$, denominator $\to0$: unbounded. Sign: for $x&lt;2$ the denominator is negative, so $\lim_{x\to2^-}\frac3{x-2}=\mathbf{-\infty}$; for $x&gt;2$, $\lim_{x\to2^+}=+\infty$.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course writes $+\infty$ for <em>both</em>: wrong on the left; see Errata.</p>
+</blockquote>
+<p>Because $f$ is unbounded, the limit does not exist.</p>
+<p><strong>(c) Checkpoint $\dfrac5{x+2}$ as $x\to-2$.</strong> Left: $-\infty$; right: $+\infty$. The limit <strong>does not exist.</strong></p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course's "$\frac5{-2+2}=\frac50=\infty$" is not a valid computation: $\frac50$ is not a number, and the answer is not $+\infty$ from both sides.</p>
+</blockquote>
+<p>(sympy confirms all one-sided values.)</p>
 <h4 id="u2-examples-h7" data-md-heading="Example 7 — Course Exercises 2.7, A and B (pp.48–49), answer key">Example 7 — Course Exercises 2.7, A and B (pp.48–49), answer key</h4>
 <p><strong>A.</strong> <em>(The printed layout puts "$\lim g=9$" under I and "$\lim g=\frac12$" under II; that is the only sensible reading.)</em> Use the sum, product and quotient laws:</p>
 <div class="table-frame"><div class="table-scroll"><table>
@@ -1405,11 +1593,11 @@ Check: $(-3)^2+(-3)-6=0$ and $-3+3=0$ (note: write $(-3)^2$; "$-3^2$" means $-9$
 </table></div><span class="table-fade table-fade-l" aria-hidden="true"></span><span class="table-fade table-fade-r" aria-hidden="true"></span></div>
 <p>Notes: XXIII and XXIV, as printed, are <strong>not</strong> of the form $\tfrac00$ (the points $x\to-2$ for XXIII and $x\to2$ for XXIV give a non-zero denominator). They were very probably meant to be $x\to1$ (answer $3$) and $x\to-2$ (answer $12$); I give the answers to the printed questions. In XXX the "$\to0$" under the limit is missing; $\Delta t\to0$ is the only sensible reading. In XXVII the stray "$f(x)=f(x)=f(x)$" is a copy error. (sympy verified every row, including the alternative readings.)</p>
 <h4 id="u2-examples-h9" data-md-heading="Example 9 — Exam-style: harder limits and parameters">Example 9 — Exam-style: harder limits and parameters</h4>
-<p><strong>(a)</strong> $\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}$. Conjugate: $\dfrac{(1+x)-(1-x)}{x(\sqrt{1+x}+\sqrt{1-x})}=\dfrac{2}{\sqrt{1+x}+\sqrt{1-x}}\to\dfrac22=\mathbf1$.
-<strong>(b)</strong> $\displaystyle\lim_{x\to4}\frac{\sqrt x-2}{x-4}$. Write $x-4=(\sqrt x-2)(\sqrt x+2)$: $\dfrac1{\sqrt x+2}\to\mathbf{\tfrac14}$.
-<strong>(c)</strong> $\displaystyle\lim_{h\to0}\frac{\frac1{2+h}-\frac12}h$. Common denominator: $\dfrac{2-(2+h)}{2(2+h)h}=\dfrac{-1}{2(2+h)}\to\mathbf{-\tfrac14}$.
-<strong>(d)</strong> Find $b$ in terms of $a$ so that $\displaystyle\lim_{x\to1}\frac{x^2+ax+b}{x-1}$ exists, and the limit. The denominator $\to0$, so the numerator must $\to0$ (otherwise the quotient is unbounded): $1+a+b=0$, $b=-1-a$. Then $x^2+ax-1-a=(x-1)(x+1+a)$, so the limit is $1+1+a=\mathbf{a+2}$.
-<strong>(e)</strong> Find $k$ so that $\lim_{x\to1}f(x)$ exists for $f=kx+2\ (x&lt;1)$, $f=5-kx\ (x&gt;1)$. Left limit $k+2$, right limit $5-k$. Equal iff $k+2=5-k$, i.e. $k=\tfrac32$; then the limit is $\tfrac72$. (sympy: all five.)</p>
+<p><strong>(a)</strong> $\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}$. Conjugate: $\dfrac{(1+x)-(1-x)}{x(\sqrt{1+x}+\sqrt{1-x})}=\dfrac{2}{\sqrt{1+x}+\sqrt{1-x}}\to\dfrac22=\mathbf1$.</p>
+<p><strong>(b)</strong> $\displaystyle\lim_{x\to4}\frac{\sqrt x-2}{x-4}$. Write $x-4=(\sqrt x-2)(\sqrt x+2)$: $\dfrac1{\sqrt x+2}\to\mathbf{\tfrac14}$.</p>
+<p><strong>(c)</strong> $\displaystyle\lim_{h\to0}\frac{\frac1{2+h}-\frac12}h$. Common denominator: $\dfrac{2-(2+h)}{2(2+h)h}=\dfrac{-1}{2(2+h)}\to\mathbf{-\tfrac14}$.</p>
+<p><strong>(d)</strong> Find $b$ in terms of $a$ so that $\displaystyle\lim_{x\to1}\frac{x^2+ax+b}{x-1}$ exists, and the limit. The denominator $\to0$, so the numerator must $\to0$ (otherwise the quotient is unbounded): $1+a+b=0$, $b=-1-a$. Then $x^2+ax-1-a=(x-1)(x+1+a)$, so the limit is $1+1+a=\mathbf{a+2}$.</p>
+<p><strong>(e)</strong> Find $k$ so that $\lim_{x\to1}f(x)$ exists for $f=kx+2\ (x&lt;1)$, $f=5-kx\ (x&gt;1)$. Left limit $k+2$, right limit $5-k$. Equal iff $k+2=5-k$, i.e. $k=\tfrac32$; then the limit is $\tfrac72$. (sympy: all five.)</p>
 <h3 id="u2-mistakes" data-md-heading="Common mistakes">Common mistakes</h3>
 <ul>
 <li><strong>Writing $\tfrac00=0$</strong> (or $=1$). $\tfrac00$ is <em>undefined</em>, a signal to simplify first, not an answer (course Ex 2b, p.42).</li>
@@ -1440,18 +1628,47 @@ Check: $(-3)^2+(-3)-6=0$ and $-3+3=0$ (note: write $(-3)^2$; "$-3^2$" means $-9$
 <li>Let $f(x)=\dfrac{x^2-5x+6}{x^2-4}$. Find $\lim_{x\to2}f(x)$ and $\lim_{x\to-2}f(x)$ (give one-sided information if the limit does not exist).</li>
 </ol>
 <details class="answers"><summary>Show answers</summary><div class="answers-body"><h4 class="answers-title" data-md-heading="Answers">Answers</h4><ol>
-<li>(a) $4$ ($=x+2$); (b) does not exist (left $-1$, right $+1$); (c) $8-2+4=10$.</li>
-<li>(a) $12$; (b) $7$.</li>
-<li>(a) $\tfrac14$ (conjugate); (b) does not exist (left $-\infty$, right $+\infty$).</li>
-<li>$\dfrac{(x-3)(x+3)}{(x-3)(x-2)}=\dfrac{x+3}{x-2}\to\dfrac61=\mathbf6$.</li>
-<li>$x^3-27=(x-3)(x^2+3x+9)$, so $9+9+9=\mathbf{27}$.</li>
-<li>$x-1=(\sqrt x-1)(\sqrt x+1)$, so the quotient is $\sqrt x+1\to\mathbf2$.</li>
-<li>Left $-1$, right $+1$; the two-sided limit <strong>does not exist</strong>.</li>
-<li>$\dfrac{(x+9)-9}{x(\sqrt{x+9}+3)}=\dfrac1{\sqrt{x+9}+3}\to\dfrac16$.</li>
-<li>$\dfrac{x-(x+h)}{x(x+h)h}=\dfrac{-1}{x(x+h)}\to-\dfrac1{x^2}$.</li>
-<li>$\frac1{(x-1)^2}&gt;0$ on both sides and grows without bound, so it tends to $+\infty$ from both sides. <strong>The limit does not exist</strong> (as a finite number); one may write "$=+\infty$" to describe the behaviour.</li>
-<li>The numerator must vanish at $x=2$: $4+2a+b=0$, so $b=-4-2a$. Then $x^2+ax-4-2a=(x-2)(x+2+a)$ and the limit is $4+a$. Setting $4+a=5$ gives $a=1$, $b=-6$. Check: $x^2+x-6=(x-2)(x+3)$, limit $5$.</li>
-<li>$f=\dfrac{(x-2)(x-3)}{(x-2)(x+2)}=\dfrac{x-3}{x+2}$ for $x\ne\pm2$. At $2$: $\frac{-1}4=\mathbf{-\tfrac14}$. At $-2$: numerator $\to-5$, denominator $\to0$: left side $+\infty$, right side $-\infty$, <strong>does not exist</strong>.</li>
+<li>
+<p>(a) $4$ ($=x+2$).</p>
+<p>(b) does not exist (left $-1$, right $+1$).</p>
+<p>(c) $8-2+4=10$.</p>
+</li>
+<li>
+<p>(a) $12$.</p>
+<p>(b) $7$.</p>
+</li>
+<li>
+<p>(a) $\tfrac14$ (conjugate).</p>
+<p>(b) does not exist (left $-\infty$, right $+\infty$).</p>
+</li>
+<li>
+<p>$\dfrac{(x-3)(x+3)}{(x-3)(x-2)}=\dfrac{x+3}{x-2}\to\dfrac61=\mathbf6$.</p>
+</li>
+<li>
+<p>$x^3-27=(x-3)(x^2+3x+9)$, so $9+9+9=\mathbf{27}$.</p>
+</li>
+<li>
+<p>$x-1=(\sqrt x-1)(\sqrt x+1)$, so the quotient is $\sqrt x+1\to\mathbf2$.</p>
+</li>
+<li>
+<p>Left $-1$, right $+1$; the two-sided limit <strong>does not exist</strong>.</p>
+</li>
+<li>
+<p>$\dfrac{(x+9)-9}{x(\sqrt{x+9}+3)}=\dfrac1{\sqrt{x+9}+3}\to\dfrac16$.</p>
+</li>
+<li>
+<p>$\dfrac{x-(x+h)}{x(x+h)h}=\dfrac{-1}{x(x+h)}\to-\dfrac1{x^2}$.</p>
+</li>
+<li>
+<p>$\frac1{(x-1)^2}&gt;0$ on both sides and grows without bound, so it tends to $+\infty$ from both sides. <strong>The limit does not exist</strong> (as a finite number); one may write "$=+\infty$" to describe the behaviour.</p>
+</li>
+<li>
+<p>The numerator must vanish at $x=2$: $4+2a+b=0$, so $b=-4-2a$. Then $x^2+ax-4-2a=(x-2)(x+2+a)$ and the limit is $4+a$. Setting $4+a=5$ gives $a=1$, $b=-6$. Check: $x^2+x-6=(x-2)(x+3)$, limit $5$.</p>
+</li>
+<li>
+<p>$f=\dfrac{(x-2)(x-3)}{(x-2)(x+2)}=\dfrac{x-3}{x+2}$ for $x\ne\pm2$. At $2$: $\frac{-1}4=\mathbf{-\tfrac14}$.</p>
+<p>At $-2$: numerator $\to-5$, denominator $\to0$: left side $+\infty$, right side $-\infty$, <strong>does not exist</strong>.</p>
+</li>
 </ol>
 <p><em>All numerical and symbolic results in the examples and problems were checked with sympy 1.14 (script at <code>/tmp/mth102_scratch/unit2/verify2.py</code>).</em></p></div></details>
 <h3 id="u2-extra" data-md-heading="Extra practice (from outside sources)">Extra practice (from outside sources)</h3>
@@ -1555,35 +1772,51 @@ Check: $(-3)^2+(-3)-6=0$ and $-3+3=0$ (note: write $(-3)^2$; "$-3^2$" means $-9$
 <h3 id="u3-examples" data-md-heading="Worked examples">Worked examples</h3>
 <h4 id="u3-examples-h1" data-md-heading="Example 1 — Polynomials (Course Example 1, pp.61–62)">Example 1 — Polynomials (Course Example 1, pp.61–62)</h4>
 <p>Discuss the continuity of (a) $f(x)=x^2-2x+3$, (b) $f(x)=x^3-x$.</p>
-<p><strong>Solution.</strong> Both are polynomials, so both are continuous at every real number, i.e. on $(-\infty,\infty)$. Justification: for any $c$, $\lim_{x\to c}p(x)=p(c)$ by Unit 2's rule, which is exactly condition 3 (conditions 1 and 2 are built in: $p(c)$ is defined and the limit exists).
-<em>Graph check.</em> The graph the course draws on p.62 is labelled "$x^2-2x$" but it passes through $(0,3)$ and has its lowest point $(1,2)$: that is the graph of $x^2-2x+3$ (indeed $x^2-2x+3=(x-1)^2+2$; $x^2-2x$ would have minimum $-1$ at $(1,-1)$). See Errata. (sympy: min of $x^2-2x+3$ is $2$ at $x=1$; min of $x^2-2x$ is $-1$.)</p>
+<p><strong>Solution.</strong> Both are polynomials, so both are continuous at every real number, i.e. on $(-\infty,\infty)$. Justification: for any $c$, $\lim_{x\to c}p(x)=p(c)$ by Unit 2's rule, which is exactly condition 3 (conditions 1 and 2 are built in: $p(c)$ is defined and the limit exists).</p>
+<p><em>Graph check.</em> The graph the course draws on p.62 is labelled "$x^2-2x$" but it passes through $(0,3)$ and has its lowest point $(1,2)$: that is the graph of $x^2-2x+3$ (indeed $x^2-2x+3=(x-1)^2+2$; $x^2-2x$ would have minimum $-1$ at $(1,-1)$). See Errata. (sympy: min of $x^2-2x+3$ is $2$ at $x=1$; min of $x^2-2x$ is $-1$.)</p>
 <h4 id="u3-examples-h2" data-md-heading="Example 2 — Rational functions (Course Example 2, pp.62–63; Class exercise p.63)">Example 2 — Rational functions (Course Example 2, pp.62–63; Class exercise p.63)</h4>
 <p>Discuss the continuity of (a) $\dfrac1x$, (b) $\dfrac{x^2-1}{x-1}$, (c) $\dfrac1{x^2+1}$.</p>
-<p><strong>Solution.</strong> Each is a rational function, so it is continuous at every number in its domain.
-(a) Domain: $x\ne0$. Continuous on $(-\infty,0)$ and $(0,\infty)$; discontinuous at $0$ (not defined there).
-(b) Domain: $x\ne1$. Continuous on $(-\infty,1)$ and $(1,\infty)$. (For $x\ne1$ it equals $x+1$.)
-(c) $x^2+1&gt;0$ always, so the domain is all real numbers: continuous on $(-\infty,\infty)$.</p>
-<p><em>Class exercise (p.63).</em> (a) $\frac1{x-1}$: continuous on $(-\infty,1)$ and $(1,\infty)$. (b) $\frac{x^2-4}{x-2}$: continuous on $(-\infty,2)$ and $(2,\infty)$ (the course prints the second interval as "$(2,-\infty)$": misprint). (c) $\frac1{x^2+2}$: continuous on $(-\infty,\infty)$. (sympy: continuous domains agree.)</p>
+<p><strong>Solution.</strong> Each is a rational function, so it is continuous at every number in its domain.</p>
+<p><strong>(a)</strong> Domain: $x\ne0$. Continuous on $(-\infty,0)$ and $(0,\infty)$; discontinuous at $0$ (not defined there).</p>
+<p><strong>(b)</strong> Domain: $x\ne1$. Continuous on $(-\infty,1)$ and $(1,\infty)$. (For $x\ne1$ it equals $x+1$.)</p>
+<p><strong>(c)</strong> $x^2+1&gt;0$ always, so the domain is all real numbers: continuous on $(-\infty,\infty)$.</p>
+<p><em>Class exercise (p.63).</em></p>
+<ul>
+<li>(a) $\frac1{x-1}$: continuous on $(-\infty,1)$ and $(1,\infty)$.</li>
+<li>(b) $\frac{x^2-4}{x-2}$: continuous on $(-\infty,2)$ and $(2,\infty)$ (the course prints the second interval as "$(2,-\infty)$": misprint).</li>
+<li>(c) $\frac1{x^2+2}$: continuous on $(-\infty,\infty)$.</li>
+</ul>
+<p>(sympy: continuous domains agree.)</p>
 <h4 id="u3-examples-h3" data-md-heading="Example 3 — Removable and non-removable (Course p.63, redone)">Example 3 — Removable and non-removable (Course p.63, redone)</h4>
-<p><strong>(a) $f(x)=\dfrac{x^2-1}{x-1}$ at $x=1$.</strong> $f(1)$ is undefined, so condition 1 fails. But $\lim_{x\to1}\frac{(x-1)(x+1)}{x-1}=\lim(x+1)=2$ exists. <strong>Removable.</strong> Define $f(1)=2$: then $f(x)=x+1$ everywhere and is continuous.
-<strong>(b) $f(x)=\dfrac1x$ at $x=0$.</strong> $\lim_{x\to0^-}\frac1x=-\infty$, $\lim_{x\to0^+}\frac1x=+\infty$. The limit does not exist, so no choice of $f(0)$ helps: <strong>non-removable (infinite).</strong>
-<strong>(c) A jump.</strong> $f(x)=\begin{cases}x+1,&amp;x&lt;0\\3-x,&amp;x\ge0.\end{cases}$ At $0$: left limit $1$, right limit $3$, $f(0)=3$. The one-sided limits differ, so $\lim_{x\to0}f$ does not exist: <strong>non-removable (jump of size $2$)</strong>. $f$ is continuous from the right at $0$ but not from the left.
-<strong>(d) Both kinds in one function.</strong> $f(x)=\dfrac{x^2-1}{x^2-3x+2}=\dfrac{(x-1)(x+1)}{(x-1)(x-2)}$. Domain: $x\ne1,2$. At $x=1$ the factor cancels: limit $\frac{1+1}{1-2}=-2$, <strong>removable</strong> (define $f(1)=-2$). At $x=2$ the denominator $\to0$ but the numerator $\to3$: <strong>infinite, non-removable.</strong> (sympy: limit at $1$ is $-2$.)</p>
+<p><strong>(a) $f(x)=\dfrac{x^2-1}{x-1}$ at $x=1$.</strong> $f(1)$ is undefined, so condition 1 fails. But $\lim_{x\to1}\frac{(x-1)(x+1)}{x-1}=\lim(x+1)=2$ exists. <strong>Removable.</strong> Define $f(1)=2$: then $f(x)=x+1$ everywhere and is continuous.</p>
+<p><strong>(b) $f(x)=\dfrac1x$ at $x=0$.</strong> $\lim_{x\to0^-}\frac1x=-\infty$, $\lim_{x\to0^+}\frac1x=+\infty$. The limit does not exist, so no choice of $f(0)$ helps: <strong>non-removable (infinite).</strong></p>
+<p><strong>(c) A jump.</strong> $f(x)=\begin{cases}x+1,&amp;x&lt;0\\3-x,&amp;x\ge0.\end{cases}$ At $0$: left limit $1$, right limit $3$, $f(0)=3$. The one-sided limits differ, so $\lim_{x\to0}f$ does not exist: <strong>non-removable (jump of size $2$)</strong>. $f$ is continuous from the right at $0$ but not from the left.</p>
+<p><strong>(d) Both kinds in one function.</strong> $f(x)=\dfrac{x^2-1}{x^2-3x+2}=\dfrac{(x-1)(x+1)}{(x-1)(x-2)}$. Domain: $x\ne1,2$.</p>
+<p>At $x=1$ the factor cancels: limit $\frac{1+1}{1-2}=-2$, <strong>removable</strong> (define $f(1)=-2$). At $x=2$ the denominator $\to0$ but the numerator $\to3$: <strong>infinite, non-removable.</strong> (sympy: limit at $1$ is $-2$.)</p>
 <h4 id="u3-examples-h4" data-md-heading="Example 4 — A radical on an unbounded interval (Course Example 3, p.64)">Example 4 — A radical on an unbounded interval (Course Example 3, p.64)</h4>
 <p>Discuss the continuity of $f(x)=\sqrt{3-x}$.</p>
-<p><strong>Solution.</strong> Domain: $3-x\ge0\iff x\le3$, so $(-\infty,3]$. For every $x&lt;3$ the three conditions hold ($\sqrt{3-x}$ is a composition of continuous functions). At the right end point $x=3$ only the <strong>left</strong> limit makes sense: $\lim_{x\to3^-}\sqrt{3-x}=0=f(3)$, so $f$ is continuous from the left at $3$. Hence $f$ is <strong>continuous on $(-\infty,3]$.</strong>
-<em>Working tip variants (sympy-checked):</em> $\sqrt{x^2-4}$ is continuous on $(-\infty,-2]\cup[2,\infty)$; $\dfrac1{\sqrt{4-x^2}}$ needs $4-x^2&gt;0$ (the square root is in the denominator), so it is continuous on $(-2,2)$; $\dfrac{\sqrt{x-2}}{x-5}$ is continuous on $[2,5)\cup(5,\infty)$ (domain $x\ge2$, minus the zero of the denominator).</p>
+<p><strong>Solution.</strong> Domain: $3-x\ge0\iff x\le3$, so $(-\infty,3]$. For every $x&lt;3$ the three conditions hold ($\sqrt{3-x}$ is a composition of continuous functions). At the right end point $x=3$ only the <strong>left</strong> limit makes sense: $\lim_{x\to3^-}\sqrt{3-x}=0=f(3)$, so $f$ is continuous from the left at $3$. Hence $f$ is <strong>continuous on $(-\infty,3]$.</strong></p>
+<p><em>Working tip variants (sympy-checked):</em></p>
+<ul>
+<li>$\sqrt{x^2-4}$ is continuous on $(-\infty,-2]\cup[2,\infty)$;</li>
+<li>$\dfrac1{\sqrt{4-x^2}}$ needs $4-x^2&gt;0$ (the square root is in the denominator), so it is continuous on $(-2,2)$;</li>
+<li>$\dfrac{\sqrt{x-2}}{x-5}$ is continuous on $[2,5)\cup(5,\infty)$ (domain $x\ge2$, minus the zero of the denominator).</li>
+</ul>
 <h4 id="u3-examples-h5" data-md-heading="Example 5 — A piecewise function on $[-1,3]$ (Course Example 4, pp.64–65)">Example 5 — A piecewise function on $[-1,3]$ (Course Example 4, pp.64–65)</h4>
 <p>Discuss the continuity of $g(x)=\begin{cases}5-x,&amp;-1\le x\le2\\x^2-1,&amp;2&lt;x\le3.\end{cases}$</p>
-<p><strong>Solution.</strong> $5-x$ is a polynomial, so $g$ is continuous on $[-1,2)$; $x^2-1$ is a polynomial, so $g$ is continuous on $(2,3]$. Only $x=2$ needs checking:
-- $g(2)=5-2=3$ (the first formula covers $x=2$).
-- Left limit: $\lim_{x\to2^-}(5-x)=3$.
-- Right limit: $\lim_{x\to2^+}(x^2-1)=4-1=3$. (The course prints the right-hand sign as "$2^{\mp}$": misprint for $2^+$.)</p>
+<p><strong>Solution.</strong> $5-x$ is a polynomial, so $g$ is continuous on $[-1,2)$; $x^2-1$ is a polynomial, so $g$ is continuous on $(2,3]$. Only $x=2$ needs checking:</p>
+<ul>
+<li>$g(2)=5-2=3$ (the first formula covers $x=2$).</li>
+<li>Left limit: $\lim_{x\to2^-}(5-x)=3$.</li>
+<li>Right limit: $\lim_{x\to2^+}(x^2-1)=4-1=3$. (The course prints the right-hand sign as "$2^{\mp}$": misprint for $2^+$.)</li>
+</ul>
 <p>Left limit = right limit = $g(2)=3$, so $g$ is continuous at $2$, and therefore <strong>continuous on $[-1,3]$</strong> (right-continuous at $-1$, left-continuous at $3$ automatically since each formula is a polynomial). (sympy: both limits $3$.)</p>
 <h4 id="u3-examples-h6" data-md-heading="Example 6 — Course Exercises 3.6 A, i–ii (p.65), answer key">Example 6 — Course Exercises 3.6 A, i–ii (p.65), answer key</h4>
-<p><em>(The course says "In exercise i to iii"; only i and ii are in part A. See Errata.)</em>
-- <strong>i. $f(x)=5x^3-x^2+2$.</strong> A polynomial: continuous on the whole real line. <strong>Yes.</strong>
-- <strong>ii. $f(x)=\dfrac1{x^2-4}$.</strong> Denominator $(x-2)(x+2)=0$ at $x=\pm2$, where $f$ is not defined. <strong>No</strong>: not continuous on the whole real line. It is continuous on $(-\infty,-2)$, $(-2,2)$, $(2,\infty)$ (infinite discontinuities at $\pm2$: numerator is $1$, denominator $\to0$).</p>
+<p><em>(The course says "In exercise i to iii"; only i and ii are in part A. See Errata.)</em></p>
+<ul>
+<li><strong>i. $f(x)=5x^3-x^2+2$.</strong> A polynomial: continuous on the whole real line. <strong>Yes.</strong></li>
+<li><strong>ii. $f(x)=\dfrac1{x^2-4}$.</strong> Denominator $(x-2)(x+2)=0$ at $x=\pm2$, where $f$ is not defined. <strong>No</strong>: not continuous on the whole real line. It is continuous on $(-\infty,-2)$, $(-2,2)$, $(2,\infty)$ (infinite discontinuities at $\pm2$: numerator is $1$, denominator $\to0$).</li>
+</ul>
 <p><em>The two graphs printed on p.65 under i and ii do not belong to them: the left one (zeros at $\pm1$, asymptote at $x=0$) is the graph of $\frac{x^2-1}x=x-\frac1x$ (exercise iv), the right one (the line $y=x-1$) is $\frac{x^2-1}{x+1}$ with a hole at $(-1,-2)$ (exercise v). Inferred from the shapes.</em></p>
 <h4 id="u3-examples-h7" data-md-heading="Example 7 — Course Exercises 3.6 B, iii–xvi (pp.65–66), answer key">Example 7 — Course Exercises 3.6 B, iii–xvi (pp.65–66), answer key</h4>
 <p>(Exercises xiv and xv are missing from the PDF: the list goes xiii, then xvi.)</p>
@@ -1673,13 +1906,15 @@ Check: $(-3)^2+(-3)-6=0$ and $-3+3=0$ (note: write $(-3)^2$; "$-3^2$" means $-9$
 </table></div><span class="table-fade table-fade-l" aria-hidden="true"></span><span class="table-fade table-fade-r" aria-hidden="true"></span></div>
 <p>(The statement for x: the formula leaves $x=1$ unassigned, so "discontinuous at $1$" is because $f(1)$ is undefined. Notation $[[\cdot]]$ is read as greatest-integer, the usual meaning in this notation; the course does not define it. sympy verified every row.)</p>
 <h4 id="u3-examples-h8" data-md-heading="Example 8 — Exam-style: constants and removing discontinuities">Example 8 — Exam-style: constants and removing discontinuities</h4>
-<p><strong>(a)</strong> $f(x)=\dfrac{x^2-9}{x-3}$ for $x\ne3$. Choose $f(3)$ so that $f$ is continuous at $3$. For $x\ne3$, $f(x)=x+3\to6$. By condition 3, $f(3)=\mathbf6$.
-<strong>(b)</strong> Find $a,b$ so that $f(x)=\begin{cases}-2,&amp;x\le-1\\ax+b,&amp;-1&lt;x&lt;1\\3,&amp;x\ge1\end{cases}$ is continuous everywhere. Each piece is a polynomial; check the two break points.
-- At $-1$: left $-2$, right $-a+b$. Need $-a+b=-2$.
-- At $1$: left $a+b$, right $3$. Need $a+b=3$.
-Add: $2b=1$, $b=\tfrac12$; then $a=\tfrac52$. So $f=\tfrac52x+\tfrac12$ in the middle. (Check: $-\frac52+\frac12=-2$ <span class="tick">✓</span>, $\frac52+\frac12=3$ <span class="tick">✓</span>.)
-<strong>(c)</strong> Find $a$ so that $f(x)=\begin{cases}ax+1,&amp;x\le2\\x^2-a,&amp;x&gt;2\end{cases}$ is continuous at $2$. Left $=f(2)=2a+1$; right $=4-a$. Equal iff $3a=3$, $a=\mathbf1$ (then both are $3$).
-<strong>(d)</strong> Where is $\dfrac{\sqrt{x-2}}{x-5}$ continuous? Numerator needs $x\ge2$; denominator is $0$ at $5$. So continuous on $[2,5)\cup(5,\infty)$ (at $2$ only from the right). (sympy: all four.)</p>
+<p><strong>(a)</strong> $f(x)=\dfrac{x^2-9}{x-3}$ for $x\ne3$. Choose $f(3)$ so that $f$ is continuous at $3$. For $x\ne3$, $f(x)=x+3\to6$. By condition 3, $f(3)=\mathbf6$.</p>
+<p><strong>(b)</strong> Find $a,b$ so that $f(x)=\begin{cases}-2,&amp;x\le-1\\ax+b,&amp;-1&lt;x&lt;1\\3,&amp;x\ge1\end{cases}$ is continuous everywhere. Each piece is a polynomial; check the two break points.</p>
+<ul>
+<li>At $-1$: left $-2$, right $-a+b$. Need $-a+b=-2$.</li>
+<li>At $1$: left $a+b$, right $3$. Need $a+b=3$.</li>
+</ul>
+<p>Add: $2b=1$, $b=\tfrac12$; then $a=\tfrac52$. So $f=\tfrac52x+\tfrac12$ in the middle. (Check: $-\frac52+\frac12=-2$ <span class="tick">✓</span>, $\frac52+\frac12=3$ <span class="tick">✓</span>.)</p>
+<p><strong>(c)</strong> Find $a$ so that $f(x)=\begin{cases}ax+1,&amp;x\le2\\x^2-a,&amp;x&gt;2\end{cases}$ is continuous at $2$. Left $=f(2)=2a+1$; right $=4-a$. Equal iff $3a=3$, $a=\mathbf1$ (then both are $3$).</p>
+<p><strong>(d)</strong> Where is $\dfrac{\sqrt{x-2}}{x-5}$ continuous? Numerator needs $x\ge2$; denominator is $0$ at $5$. So continuous on $[2,5)\cup(5,\infty)$ (at $2$ only from the right). (sympy: all four.)</p>
 <h3 id="u3-mistakes" data-md-heading="Common mistakes">Common mistakes</h3>
 <ul>
 <li><strong>Checking only one or two of the three conditions.</strong> For a removable discontinuity (limit exists, $f(c)$ missing or different) the limit part is fine and the <em>value</em> part fails.</li>
@@ -1709,18 +1944,45 @@ Add: $2b=1$, $b=\tfrac12$; then $a=\tfrac52$. So $f=\tfrac52x+\tfrac12$ in the m
 <li>Let $h(x)=\dfrac{\sqrt{x-2}}{x-5}$. Give the largest set on which $h$ is continuous.</li>
 </ol>
 <details class="answers"><summary>Show answers</summary><div class="answers-body"><h4 class="answers-title" data-md-heading="Answers">Answers</h4><ol>
-<li>(a) $(-\infty,1)$ and $(1,\infty)$; (b) $(-\infty,2)$ and $(2,\infty)$; (c) $(-\infty,\infty)$.</li>
-<li>$x^2-x-6=(x-3)(x+2)$: discontinuous at $x=-2$ and $x=3$; continuous on $(-\infty,-2)$, $(-2,3)$, $(3,\infty)$.</li>
-<li>For $x\ne4$, $f=x+4\to8$; so $f(4)=\mathbf8$.</li>
-<li>At $x=1$: removable (limit $-2$; set $f(1)=-2$). At $x=2$: infinite, non-removable.</li>
-<li>Left limit $1$, right limit $3$; $f(0)=3$. The limits differ, so $f$ is not continuous at $0$ (jump of $2$). It is <strong>continuous from the right</strong> (right limit $=f(0)$) and not from the left.</li>
-<li>$x&lt;1$ piece tends to $1$ at $x=1$, so $a+b=1$; at $x=3$: $3a+b=6$. Subtract: $2a=5$, $a=\tfrac52$, $b=-\tfrac32$. Check: $\tfrac52-\tfrac32=1$ <span class="tick">✓</span>; $\tfrac{15}2-\tfrac32=6$ <span class="tick">✓</span>.</li>
-<li>Domain $x^2\ge4$: $(-\infty,-2]\cup[2,\infty)$. At $x=2$ only the right-hand side belongs to the domain; $\lim_{x\to2^+}\sqrt{x^2-4}=0=f(2)$, so it is continuous from the right at $2$ (and from the left at $-2$).</li>
-<li>For $x&gt;-5$ it is a composition of continuous functions. At $-5$: $\lim_{x\to-5^+}\sqrt{x+5}=0=f(-5)$. So continuous on $[-5,\infty)$.</li>
-<li>$2a+1=4-a\Rightarrow a=1$.</li>
-<li>Left limit $1$, right limit $2$, $\lfloor2\rfloor=2$: continuous from the right, not from the left. Discontinuous at every integer.</li>
-<li>Domain $x\ne0$, so it is continuous on $(-\infty,0)$ and $(0,\infty)$. At $0$ the one-sided limits are $-1$ and $+1$ (a jump), so the discontinuity is <strong>not</strong> removable.</li>
-<li>$[2,5)\cup(5,\infty)$.</li>
+<li>
+<p>(a) $(-\infty,1)$ and $(1,\infty)$.</p>
+<p>(b) $(-\infty,2)$ and $(2,\infty)$.</p>
+<p>(c) $(-\infty,\infty)$.</p>
+</li>
+<li>
+<p>$x^2-x-6=(x-3)(x+2)$: discontinuous at $x=-2$ and $x=3$; continuous on $(-\infty,-2)$, $(-2,3)$, $(3,\infty)$.</p>
+</li>
+<li>
+<p>For $x\ne4$, $f=x+4\to8$; so $f(4)=\mathbf8$.</p>
+</li>
+<li>
+<p>At $x=1$: removable (limit $-2$; set $f(1)=-2$).</p>
+<p>At $x=2$: infinite, non-removable.</p>
+</li>
+<li>
+<p>Left limit $1$, right limit $3$; $f(0)=3$. The limits differ, so $f$ is not continuous at $0$ (jump of $2$). It is <strong>continuous from the right</strong> (right limit $=f(0)$) and not from the left.</p>
+</li>
+<li>
+<p>$x&lt;1$ piece tends to $1$ at $x=1$, so $a+b=1$; at $x=3$: $3a+b=6$. Subtract: $2a=5$, $a=\tfrac52$, $b=-\tfrac32$. Check: $\tfrac52-\tfrac32=1$ <span class="tick">✓</span>; $\tfrac{15}2-\tfrac32=6$ <span class="tick">✓</span>.</p>
+</li>
+<li>
+<p>Domain $x^2\ge4$: $(-\infty,-2]\cup[2,\infty)$. At $x=2$ only the right-hand side belongs to the domain; $\lim_{x\to2^+}\sqrt{x^2-4}=0=f(2)$, so it is continuous from the right at $2$ (and from the left at $-2$).</p>
+</li>
+<li>
+<p>For $x&gt;-5$ it is a composition of continuous functions. At $-5$: $\lim_{x\to-5^+}\sqrt{x+5}=0=f(-5)$. So continuous on $[-5,\infty)$.</p>
+</li>
+<li>
+<p>$2a+1=4-a\Rightarrow a=1$.</p>
+</li>
+<li>
+<p>Left limit $1$, right limit $2$, $\lfloor2\rfloor=2$: continuous from the right, not from the left. Discontinuous at every integer.</p>
+</li>
+<li>
+<p>Domain $x\ne0$, so it is continuous on $(-\infty,0)$ and $(0,\infty)$. At $0$ the one-sided limits are $-1$ and $+1$ (a jump), so the discontinuity is <strong>not</strong> removable.</p>
+</li>
+<li>
+<p>$[2,5)\cup(5,\infty)$.</p>
+</li>
 </ol>
 <p><em>All results in the examples and problems were checked with sympy 1.14 (script at <code>/tmp/mth102_scratch/unit3/verify3.py</code>).</em></p></div></details>
 <h3 id="u3-extra" data-md-heading="Extra practice (from outside sources)">Extra practice (from outside sources)</h3>
@@ -1945,62 +2207,87 @@ Add: $2b=1$, $b=\tfrac12$; then $a=\tfrac52$. So $f=\tfrac52x+\tfrac12$ in the m
 </table></div><span class="table-fade table-fade-l" aria-hidden="true"></span><span class="table-fade table-fade-r" aria-hidden="true"></span></div>
 <p>The values close in on $12$; as $h\to0$ the limit is $\mathbf{12}$. So the tangent at $P$ has gradient $12$, i.e. $\frac{dy}{dx}=6x=12$ at $x=2$ (Example 2 gets $6x$ for every $x$).</p>
 <h4 id="u4-examples-h2" data-md-heading="Example 2 — First principle for $y=3x^2+6$ (Course p.69–70, redone correctly)">Example 2 — First principle for $y=3x^2+6$ (Course p.69–70, redone correctly)</h4>
-<p><strong>Solution.</strong>
-1. At $Q$: $y+\delta y=3(x+\delta x)^2+6=3x^2+6x\,\delta x+3(\delta x)^2+6$. (The course prints "$2x-\delta x$" for "$2x\,\delta x$" here.)
-2. Subtract $y=3x^2+6$ (the course subtracts $3x^2+6x$ by mistake and silently repairs it later):</p>
+<p><strong>Solution.</strong></p>
+<ol>
+<li>
+<p>At $Q$: $y+\delta y=3(x+\delta x)^2+6=3x^2+6x\,\delta x+3(\delta x)^2+6$. (The course prints "$2x-\delta x$" for "$2x\,\delta x$" here.)</p>
+</li>
+<li>
+<p>Subtract $y=3x^2+6$ (the course subtracts $3x^2+6x$ by mistake and silently repairs it later):</p>
 <div class="math-display">$$\delta y=6x\,\delta x+3(\delta x)^2 .$$</div>
-<ol start="3">
-<li>Divide by $\delta x\ne0$: $\dfrac{\delta y}{\delta x}=6x+3\,\delta x$. (The course writes $3|\delta x|$; $(\delta x)^2/\delta x$ is $\delta x$, not $|\delta x|$.)</li>
-<li>Let $\delta x\to0$: $\dfrac{dy}{dx}=\mathbf{6x}$.</li>
+</li>
+<li>
+<p>Divide by $\delta x\ne0$: $\dfrac{\delta y}{\delta x}=6x+3\,\delta x$. (The course writes $3|\delta x|$; $(\delta x)^2/\delta x$ is $\delta x$, not $|\delta x|$.)</p>
+</li>
+<li>
+<p>Let $\delta x\to0$: $\dfrac{dy}{dx}=\mathbf{6x}$.</p>
+</li>
 </ol>
 <p><em>Tangent at $x=1$:</em> $y=9$, gradient $6$, so $y-9=6(x-1)$, i.e. $y=6x+3$.</p>
 <h4 id="u4-examples-h3" data-md-heading="Example 3 — Course Example 2, $y=x^2+3x$ (p.70–71, redone)">Example 3 — Course Example 2, $y=x^2+3x$ (p.70–71, redone)</h4>
-<p><strong>Solution.</strong> $y+\delta y=(x+\delta x)^2+3(x+\delta x)=x^2+2x\,\delta x+(\delta x)^2+3x+3\,\delta x$ (the course has a stray extra "$+\delta x$" in this line).
-Subtract $y=x^2+3x$: $\delta y=2x\,\delta x+(\delta x)^2+3\,\delta x$ (the course prints "$8y$" for $\delta y$).
-Divide by $\delta x$: $\dfrac{\delta y}{\delta x}=2x+\delta x+3$ (course: $2x+|\delta x|+3$).
-Let $\delta x\to0$: $\dfrac{dy}{dx}=\mathbf{2x+3}$. At $x=2$ the gradient is $7$.</p>
+<p><strong>Solution.</strong> $y+\delta y=(x+\delta x)^2+3(x+\delta x)=x^2+2x\,\delta x+(\delta x)^2+3x+3\,\delta x$ (the course has a stray extra "$+\delta x$" in this line).</p>
+<p>Subtract $y=x^2+3x$: $\delta y=2x\,\delta x+(\delta x)^2+3\,\delta x$ (the course prints "$8y$" for $\delta y$).</p>
+<p>Divide by $\delta x$: $\dfrac{\delta y}{\delta x}=2x+\delta x+3$ (course: $2x+|\delta x|+3$).</p>
+<p>Let $\delta x\to0$: $\dfrac{dy}{dx}=\mathbf{2x+3}$. At $x=2$ the gradient is $7$.</p>
 <h4 id="u4-examples-h4" data-md-heading="Example 4 — Course Exercises 4.7 A, first principle (p.77)">Example 4 — Course Exercises 4.7 A, first principle (p.77)</h4>
 <p>For each, $\delta y=f(x+\delta x)-f(x)$, divide by $\delta x$, then let $\delta x\to0$.</p>
-<p>(i) $y=x^3$: $(x+\delta x)^3-x^3=3x^2\delta x+3x(\delta x)^2+(\delta x)^3$. Divide: $3x^2+3x\,\delta x+(\delta x)^2\to\mathbf{3x^2}$.
-(ii) $y=5x^2+2$: $\delta y=5(2x\,\delta x+(\delta x)^2)$ (the constant cancels). Divide: $10x+5\delta x\to\mathbf{10x}$.
-(iii) $y=6x^2-1$: $\delta y=6(2x\,\delta x+(\delta x)^2)$. Divide: $12x+6\delta x\to\mathbf{12x}$.
-(iv) $y=4x^3$: $\delta y=4(3x^2\delta x+3x(\delta x)^2+(\delta x)^3)$. Divide: $12x^2+12x\,\delta x+4(\delta x)^2\to\mathbf{12x^2}$.
-Each agrees with $\frac d{dx}(ax^n)=anx^{n-1}$. The constants $+2$ and $-1$ disappear because a constant has $\delta y=0$.</p>
+<ul>
+<li>(i) $y=x^3$: $(x+\delta x)^3-x^3=3x^2\delta x+3x(\delta x)^2+(\delta x)^3$. Divide: $3x^2+3x\,\delta x+(\delta x)^2\to\mathbf{3x^2}$.</li>
+<li>(ii) $y=5x^2+2$: $\delta y=5(2x\,\delta x+(\delta x)^2)$ (the constant cancels). Divide: $10x+5\delta x\to\mathbf{10x}$.</li>
+<li>(iii) $y=6x^2-1$: $\delta y=6(2x\,\delta x+(\delta x)^2)$. Divide: $12x+6\delta x\to\mathbf{12x}$.</li>
+<li>(iv) $y=4x^3$: $\delta y=4(3x^2\delta x+3x(\delta x)^2+(\delta x)^3)$. Divide: $12x^2+12x\,\delta x+4(\delta x)^2\to\mathbf{12x^2}$.</li>
+</ul>
+<p>Each agrees with $\frac d{dx}(ax^n)=anx^{n-1}$. The constants $+2$ and $-1$ disappear because a constant has $\delta y=0$.</p>
 <h4 id="u4-examples-h5" data-md-heading="Example 5 — The power rule (Course p.71–72)">Example 5 — The power rule (Course p.71–72)</h4>
 <p><strong>(a) $y=x^n$, $n$ a positive integer (course proof).</strong> By the binomial theorem,</p>
-<div class="math-display">$$\delta y=(x+\delta x)^n-x^n=nx^{n-1}\delta x+\frac{n(n-1)}{2!}x^{n-2}(\delta x)^2+\cdots+(\delta x)^n .$$</div>
-<p>Divide by $\delta x$: $\dfrac{\delta y}{\delta x}=nx^{n-1}+\dfrac{n(n-1)}{2!}x^{n-2}\delta x+\cdots+(\delta x)^{n-1}$. Every term after the first has a factor $\delta x$, so it $\to0$. Hence $\dfrac{dy}{dx}=\mathbf{nx^{n-1}}$. <em>Check, $n=4$:</em> sympy gives $\dfrac{(x+h)^4-x^4}{h}=4x^3+6x^2h+4xh^2+h^3\to4x^3$.</p>
+<div class="math-display">$$\begin{aligned}&amp;\delta y=(x+\delta x)^n-x^n\\
+&amp;=nx^{n-1}\delta x+\frac{n(n-1)}{2!}x^{n-2}(\delta x)^2+\cdots+(\delta x)^n .\end{aligned}$$</div>
+<p>Divide by $\delta x$: $\dfrac{\delta y}{\delta x}=nx^{n-1}+\dfrac{n(n-1)}{2!}x^{n-2}\delta x+\cdots+(\delta x)^{n-1}$. Every term after the first has a factor $\delta x$, so it $\to0$. Hence $\dfrac{dy}{dx}=\mathbf{nx^{n-1}}$.</p>
+<p><em>Check, $n=4$:</em> sympy gives $\dfrac{(x+h)^4-x^4}{h}=4x^3+6x^2h+4xh^2+h^3\to4x^3$.</p>
 <p><strong>(b) $y=\dfrac1x$ ($x\ne0$), beyond the course.</strong> $\dfrac{\frac1{x+h}-\frac1x}{h}=\dfrac{-h}{x(x+h)h}=-\dfrac1{x(x+h)}\to-\dfrac1{x^2}=\mathbf{-x^{-2}}$, which is $nx^{n-1}$ with $n=-1$.</p>
-<p><strong>(c) $y=\sqrt x$ ($x&gt;0$), beyond the course.</strong> Rationalise: $\dfrac{\sqrt{x+h}-\sqrt x}h=\dfrac{1}{\sqrt{x+h}+\sqrt x}\to\dfrac1{2\sqrt x}=\mathbf{\tfrac12x^{-1/2}}$, which is $nx^{n-1}$ with $n=\frac12$.
-So the table's "$x^n$ for every $n$" is correct, but the binomial argument on p.72 does not prove it for $n=-1$ or $\frac12$.</p>
+<p><strong>(c) $y=\sqrt x$ ($x&gt;0$), beyond the course.</strong> Rationalise: $\dfrac{\sqrt{x+h}-\sqrt x}h=\dfrac{1}{\sqrt{x+h}+\sqrt x}\to\dfrac1{2\sqrt x}=\mathbf{\tfrac12x^{-1/2}}$, which is $nx^{n-1}$ with $n=\frac12$.</p>
+<p>So the table's "$x^n$ for every $n$" is correct, but the binomial argument on p.72 does not prove it for $n=-1$ or $\frac12$.</p>
 <h4 id="u4-examples-h6" data-md-heading="Example 6 — Polynomials and values (Course p.72–73; Exercises 4.7 B, p.77–78)">Example 6 — Polynomials and values (Course p.72–73; Exercises 4.7 B, p.77–78)</h4>
 <p>Differentiate term by term; $\frac d{dx}(ax^n)=anx^{n-1}$.</p>
 <p><strong>Course Example 1 (p.72–73).</strong> $y=x^3+5x^2-4x+2$: $\dfrac{dy}{dx}=3x^2+10x-4$. (The course writes the middle terms as "$2.5x^{2-1}$" and "$1.4x^{1-1}$": the dots mean $2\times5$ and $1\times4$, not decimals.)</p>
 <p><strong>Course Example 2 (p.73).</strong> $y=x^4+6x^3-4x^2+7x-2$: $\dfrac{dy}{dx}=4x^3+18x^2-8x+7$. At $x=2$: $4(8)+18(4)-8(2)+7=32+72-16+7=\mathbf{95}$.</p>
-<p><strong>Exercises 4.7 B (p.77–78).</strong>
-(i) $6x^3+4x^2-7x+2\ \Rightarrow\ 18x^2+8x-7$.
-(ii) $15x^3-6x^2+10\ \Rightarrow\ 45x^2-12x$.
-(iii) $10x^5+7x^3+2x\ \Rightarrow\ 50x^4+21x^2+2$.</p>
+<p><strong>Exercises 4.7 B (p.77–78).</strong></p>
+<ul>
+<li>(i) $6x^3+4x^2-7x+2\ \Rightarrow\ 18x^2+8x-7$.</li>
+<li>(ii) $15x^3-6x^2+10\ \Rightarrow\ 45x^2-12x$.</li>
+<li>(iii) $10x^5+7x^3+2x\ \Rightarrow\ 50x^4+21x^2+2$.</li>
+</ul>
 <h4 id="u4-examples-h7" data-md-heading="Example 7 — $\sin x$ and $\cos x$ from first principles (Course p.73–76, redone)">Example 7 — $\sin x$ and $\cos x$ from first principles (Course p.73–76, redone)</h4>
 <p><strong>(a) $y=\sin x$.</strong> $\delta y=\sin(x+\delta x)-\sin x$. By $\sin A-\sin B=2\cos\frac{A+B}2\sin\frac{A-B}2$ with $A=x+\delta x$, $B=x$:</p>
-<div class="math-display">$$\delta y=2\cos\!\Big(x+\frac{\delta x}2\Big)\sin\frac{\delta x}2 .$$</div>
+<div class="math-display">$$\begin{aligned}&amp;\delta y\\
+&amp;=2\cos\!\Big(x+\frac{\delta x}2\Big)\sin\frac{\delta x}2 .\end{aligned}$$</div>
 <p>Divide by $\delta x$ and write $\delta x=2\cdot\frac{\delta x}2$ (a <strong>product</strong>, not the "$+$" the course prints):</p>
-<div class="math-display">$$\frac{\delta y}{\delta x}=\cos\!\Big(x+\frac{\delta x}2\Big)\cdot\frac{\sin(\delta x/2)}{\delta x/2}.$$</div>
+<div class="math-display">$$\begin{aligned}&amp;\frac{\delta y}{\delta x}\\
+&amp;=\cos\!\Big(x+\frac{\delta x}2\Big)\cdot\frac{\sin(\delta x/2)}{\delta x/2}.\end{aligned}$$</div>
 <p>As $\delta x\to0$, put $\theta=\delta x/2\to0$: $\frac{\sin\theta}\theta\to1$ (Key ideas §5) and $\cos(x+\theta)\to\cos x$ because $\cos$ is continuous. So $\dfrac{d}{dx}\sin x=\mathbf{\cos x}$.</p>
 <p><strong>(b) $y=\cos x$.</strong> $\delta y=\cos(x+\delta x)-\cos x=-2\sin\!\big(x+\tfrac{\delta x}2\big)\sin\tfrac{\delta x}2$ (by $\cos A-\cos B=-2\sin\frac{A+B}2\sin\frac{A-B}2$). Divide by $\delta x$:</p>
-<div class="math-display">$$\frac{\delta y}{\delta x}=-\sin\!\Big(x+\frac{\delta x}2\Big)\frac{\sin(\delta x/2)}{\delta x/2}\to-\sin x\cdot1 .$$</div>
-<p>So $\dfrac d{dx}\cos x=\mathbf{-\sin x}$. (The course's line "$-2\cos(\ldots)\sin(\ldots)/\delta x$" has $\cos$ where $\sin$ belongs; its next line is right.)</p>
+<div class="math-display">$$\begin{aligned}&amp;\frac{\delta y}{\delta x}\\
+&amp;=-\sin\!\Big(x+\frac{\delta x}2\Big)\frac{\sin(\delta x/2)}{\delta x/2}\to-\sin x\cdot1 .\end{aligned}$$</div>
+<p>So $\dfrac d{dx}\cos x=\mathbf{-\sin x}$.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course's line "$-2\cos(\ldots)\sin(\ldots)/\delta x$" has $\cos$ where $\sin$ belongs; its next line is right.</p>
+</blockquote>
 <h4 id="u4-examples-h8" data-md-heading="Example 8 — $\tan x$ (Course p.76)">Example 8 — $\tan x$ (Course p.76)</h4>
 <p>$\tan x=\dfrac{\sin x}{\cos x}$, valid where $\cos x\ne0$. Quotient rule $\Big(\frac uv\Big)'=\frac{vu'-uv'}{v^2}$ with $u=\sin x$, $v=\cos x$, $u'=\cos x$, $v'=-\sin x$:</p>
-<div class="math-display">$$\frac{dy}{dx}=\frac{\cos x\cos x-\sin x(-\sin x)}{\cos^2x}=\frac{\cos^2x+\sin^2x}{\cos^2x}=\frac1{\cos^2x}=\mathbf{\sec^2x}.$$</div>
-<p>(The course writes $\partial u/\partial x$ and $\cos^2B$ here; ordinary $d/dx$ and $\sin^2A+\cos^2A=1$ are meant.) Sympy confirms $\frac{d}{dx}\tan x-\frac1{\cos^2x}=0$.</p>
+<div class="math-display">$$\begin{aligned}&amp;\frac{dy}{dx}=\frac{\cos x\cos x-\sin x(-\sin x)}{\cos^2x}\\
+&amp;=\frac{\cos^2x+\sin^2x}{\cos^2x}\\
+&amp;=\frac1{\cos^2x}\\
+&amp;=\mathbf{\sec^2x}.\end{aligned}$$</div>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course writes $\partial u/\partial x$ and $\cos^2B$ here; ordinary $d/dx$ and $\sin^2A+\cos^2A=1$ are meant.</p>
+</blockquote>
+<p>Sympy confirms $\frac{d}{dx}\tan x-\frac1{\cos^2x}=0$.</p>
 <h4 id="u4-examples-h9" data-md-heading="Example 9 — Tangent and normal (supplementary)">Example 9 — Tangent and normal (supplementary)</h4>
 <p>Find the tangent and normal to $y=x^2+3x$ at $x=1$, and the points where $y=x^3-3x+1$ has a horizontal tangent.</p>
-<p><strong>Solution.</strong> $y'=2x+3$; at $x=1$: $y=4$, gradient $5$. Tangent: $y-4=5(x-1)\Rightarrow\mathbf{y=5x-1}$. Normal gradient $-\frac15$: $y-4=-\frac15(x-1)\Rightarrow\mathbf{y=-\frac x5+\frac{21}5}$.
-For $y=x^3-3x+1$: $y'=3x^2-3=0\Rightarrow x=\pm1$, giving the points $\mathbf{(1,-1)}$ and $\mathbf{(-1,3)}$.</p>
+<p><strong>Solution.</strong> $y'=2x+3$; at $x=1$: $y=4$, gradient $5$. Tangent: $y-4=5(x-1)\Rightarrow\mathbf{y=5x-1}$. Normal gradient $-\frac15$: $y-4=-\frac15(x-1)\Rightarrow\mathbf{y=-\frac x5+\frac{21}5}$.</p>
+<p>For $y=x^3-3x+1$: $y'=3x^2-3=0\Rightarrow x=\pm1$, giving the points $\mathbf{(1,-1)}$ and $\mathbf{(-1,3)}$.</p>
 <h4 id="u4-examples-h10" data-md-heading="Example 10 — Rates of change (supplementary)">Example 10 — Rates of change (supplementary)</h4>
-<p><strong>(a) Velocity.</strong> A particle has distance $s=t^3-6t^2+9t$ (m, $t$ in s). Velocity $v=\dfrac{ds}{dt}=3t^2-12t+9=3(t-1)(t-3)$. It is momentarily at rest when $v=0$: $t=1$ ($s=4$) and $t=3$ ($s=0$). Acceleration $\dfrac{dv}{dt}=6t-12$. <em>Average</em> velocity on $[1,4]$ is $\dfrac{s(4)-s(1)}{3}=\dfrac{4-4}3=0$, even though the instantaneous velocity at $t=4$ is $v(4)=9$ m/s: average and instantaneous rates differ.
-<strong>(b) Area of a circle.</strong> $A=\pi r^2$; $\dfrac{dA}{dr}=2\pi r$. At $r=5$ the instantaneous rate is $10\pi$ per unit of radius. The actual increase from $r=5$ to $r=6$ is $11\pi$, the average rate over that interval; they differ because the rate keeps growing.</p>
+<p><strong>(a) Velocity.</strong> A particle has distance $s=t^3-6t^2+9t$ (m, $t$ in s). Velocity $v=\dfrac{ds}{dt}=3t^2-12t+9=3(t-1)(t-3)$. It is momentarily at rest when $v=0$: $t=1$ ($s=4$) and $t=3$ ($s=0$). Acceleration $\dfrac{dv}{dt}=6t-12$.</p>
+<p><em>Average</em> velocity on $[1,4]$ is $\dfrac{s(4)-s(1)}{3}=\dfrac{4-4}3=0$, even though the instantaneous velocity at $t=4$ is $v(4)=9$ m/s: average and instantaneous rates differ.</p>
+<p><strong>(b) Area of a circle.</strong> $A=\pi r^2$; $\dfrac{dA}{dr}=2\pi r$. At $r=5$ the instantaneous rate is $10\pi$ per unit of radius. The actual increase from $r=5$ to $r=6$ is $11\pi$, the average rate over that interval; they differ because the rate keeps growing.</p>
 <h3 id="u4-mistakes" data-md-heading="Common mistakes">Common mistakes</h3>
 <ul>
 <li><strong>Writing the derivative as $\delta y/\delta x$.</strong> $\delta y/\delta x$ is a chord gradient; the derivative is $dy/dx=\lim\delta y/\delta x$. Do not write "$\delta y/\delta x=6x$" as a final answer.</li>
@@ -2033,18 +2320,52 @@ For $y=x^3-3x+1$: $y'=3x^2-3=0\Rightarrow x=\pm1$, giving the points $\mathbf{(1
 <li>Show that the course's step "$\delta y/\delta x=6x+3|\delta x|$" (p.70) should read $6x+3\,\delta x$, and say why $\lim=6x$ either way.</li>
 </ol>
 <details class="answers"><summary>Show answers</summary><div class="answers-body"><h4 class="answers-title" data-md-heading="Answers">Answers</h4><ol>
-<li>(i) $3x^2$: $\frac{(x+h)^3-x^3}h=3x^2+3xh+h^2\to3x^2$. (ii) $10x$: $\frac{5(2xh+h^2)}h=10x+5h$. (iii) $12x$: $12x+6h$. (iv) $12x^2$: $12x^2+12xh+4h^2$. Same as Example 4. (sympy-verified)</li>
-<li>(i) $18x^2+8x-7$. (ii) $45x^2-12x$. (iii) $50x^4+21x^2+2$.</li>
-<li>(a) $\dfrac{2(x+h)^2-(x+h)+4-(2x^2-x+4)}h=4x+2h-1\to\mathbf{4x-1}$. (b) $\dfrac{(x+h)^3-2(x+h)-x^3+2x}h=3x^2+3xh+h^2-2\to\mathbf{3x^2-2}$.</li>
-<li>$\dfrac{\sqrt{x+3+h}-\sqrt{x+3}}h=\dfrac1{\sqrt{x+3+h}+\sqrt{x+3}}\to\mathbf{\dfrac1{2\sqrt{x+3}}}$, valid for $x&gt;-3$.</li>
-<li>$\dfrac{dy}{dx}=3x^2-4x+5$; at $x=-1$: $3+4+5=\mathbf{12}$.</li>
-<li>(a) $3\cos x-2\sin x$. (b) $4\sec^2x-5e^x$ (sympy gives the equal form $4\tan^2x+4-5e^x$), $x\ne\frac\pi2+k\pi$. (c) $14e^{2x}+\dfrac1x$, $x&gt;0$.</li>
-<li>$y'=6x=12$ at $x=2$, $y=18$. Tangent: $y-18=12(x-2)$, i.e. $\mathbf{y=12x-6}$. Normal gradient $-\frac1{12}$: $y-18=-\frac1{12}(x-2)$, i.e. $\mathbf{y=-\frac{x}{12}+\frac{109}6}$.</li>
-<li>$y'=3x^2-3$; at $x=2$: $\mathbf9$. $y'=0\Rightarrow x=\mathbf{\pm1}$.</li>
-<li>$v=\dfrac{ds}{dt}=10t+2$; at $t=3$: $\mathbf{32}$ m/s. Average over $[1,3]$: $\dfrac{s(3)-s(1)}2=\dfrac{51-7}2=\mathbf{22}$ m/s.</li>
-<li>$y'=2x+3=7\Rightarrow x=2$, $y=10$: the point $\mathbf{(2,10)}$.</li>
-<li>$\cos(x+h)-\cos x=-2\sin\!\big(x+\frac h2\big)\sin\frac h2$. So $\frac{\delta y}h=-\sin\!\big(x+\frac h2\big)\cdot\frac{\sin(h/2)}{h/2}$. As $h\to0$: $\sin(x+\frac h2)\to\sin x$ (continuity) and $\frac{\sin\theta}\theta\to1$ ($\theta=\frac h2$, radians). Limit $=-\sin x$. ∎</li>
-<li>$\delta y=6x\,\delta x+3(\delta x)^2$; dividing by $\delta x$ gives $6x+3(\delta x)^2/\delta x=6x+3\,\delta x$ (for $\delta x&lt;0$, $3|\delta x|=-3\delta x\ne3\delta x$). Both $3\delta x$ and $3|\delta x|$ tend to $0$ as $\delta x\to0$ (from either side), so the limit is $6x$ in either case; but the correct line is $6x+3\delta x$.</li>
+<li>
+<p>(i) $3x^2$: $\frac{(x+h)^3-x^3}h=3x^2+3xh+h^2\to3x^2$.</p>
+<p>(ii) $10x$: $\frac{5(2xh+h^2)}h=10x+5h$.</p>
+<p>(iii) $12x$: $12x+6h$.</p>
+<p>(iv) $12x^2$: $12x^2+12xh+4h^2$.</p>
+<p>Same as Example 4. (sympy-verified)</p>
+</li>
+<li>
+<p>(i) $18x^2+8x-7$.</p>
+<p>(ii) $45x^2-12x$.</p>
+<p>(iii) $50x^4+21x^2+2$.</p>
+</li>
+<li>
+<p>(a)</p>
+<div class="math-display">$$\begin{aligned}&amp;\dfrac{2(x+h)^2-(x+h)+4-(2x^2-x+4)}h\\&amp;=4x+2h-1\to\mathbf{4x-1}\end{aligned}$$</div>
+<p>(b) $\dfrac{(x+h)^3-2(x+h)-x^3+2x}h=3x^2+3xh+h^2-2\to\mathbf{3x^2-2}$.</p>
+</li>
+<li>
+<p>$\dfrac{\sqrt{x+3+h}-\sqrt{x+3}}h=\dfrac1{\sqrt{x+3+h}+\sqrt{x+3}}\to\mathbf{\dfrac1{2\sqrt{x+3}}}$, valid for $x&gt;-3$.</p>
+</li>
+<li>
+<p>$\dfrac{dy}{dx}=3x^2-4x+5$; at $x=-1$: $3+4+5=\mathbf{12}$.</p>
+</li>
+<li>
+<p>(a) $3\cos x-2\sin x$.</p>
+<p>(b) $4\sec^2x-5e^x$ (sympy gives the equal form $4\tan^2x+4-5e^x$), $x\ne\frac\pi2+k\pi$.</p>
+<p>(c) $14e^{2x}+\dfrac1x$, $x&gt;0$.</p>
+</li>
+<li>
+<p>$y'=6x=12$ at $x=2$, $y=18$. Tangent: $y-18=12(x-2)$, i.e. $\mathbf{y=12x-6}$. Normal gradient $-\frac1{12}$: $y-18=-\frac1{12}(x-2)$, i.e. $\mathbf{y=-\frac{x}{12}+\frac{109}6}$.</p>
+</li>
+<li>
+<p>$y'=3x^2-3$; at $x=2$: $\mathbf9$. $y'=0\Rightarrow x=\mathbf{\pm1}$.</p>
+</li>
+<li>
+<p>$v=\dfrac{ds}{dt}=10t+2$; at $t=3$: $\mathbf{32}$ m/s. Average over $[1,3]$: $\dfrac{s(3)-s(1)}2=\dfrac{51-7}2=\mathbf{22}$ m/s.</p>
+</li>
+<li>
+<p>$y'=2x+3=7\Rightarrow x=2$, $y=10$: the point $\mathbf{(2,10)}$.</p>
+</li>
+<li>
+<p>$\cos(x+h)-\cos x=-2\sin\!\big(x+\frac h2\big)\sin\frac h2$. So $\frac{\delta y}h=-\sin\!\big(x+\frac h2\big)\cdot\frac{\sin(h/2)}{h/2}$. As $h\to0$: $\sin(x+\frac h2)\to\sin x$ (continuity) and $\frac{\sin\theta}\theta\to1$ ($\theta=\frac h2$, radians). Limit $=-\sin x$. ∎</p>
+</li>
+<li>
+<p>$\delta y=6x\,\delta x+3(\delta x)^2$; dividing by $\delta x$ gives $6x+3(\delta x)^2/\delta x=6x+3\,\delta x$ (for $\delta x&lt;0$, $3|\delta x|=-3\delta x\ne3\delta x$). Both $3\delta x$ and $3|\delta x|$ tend to $0$ as $\delta x\to0$ (from either side), so the limit is $6x$ in either case; but the correct line is $6x+3\delta x$.</p>
+</li>
 </ol>
 <p><em>All numerical and symbolic results in the examples and problems were checked with sympy.</em></p></div></details>
 <h3 id="u4-extra" data-md-heading="Extra practice (from outside sources)">Extra practice (from outside sources)</h3>
@@ -2160,15 +2481,22 @@ For $y=x^3-3x+1$: $y'=3x^2-3=0\Rightarrow x=\pm1$, giving the points $\mathbf{(1
 <h4 id="u5-examples-h1" data-md-heading="Example 1 — Product rule (Course Examples 1–2, p.80–81)">Example 1 — Product rule (Course Examples 1–2, p.80–81)</h4>
 <p><strong>(a) $y=x^3\sin x$.</strong> $u=x^3$, $v=\sin x$; $u'=3x^2$, $v'=\cos x$.</p>
 <div class="math-display">$$y'=u v'+v u'=x^3\cos x+3x^2\sin x=x^2\,(x\cos x+3\sin x).$$</div>
-<p>The course (p.80) writes $\sin x\cdot3x$ instead of $\sin x\cdot3x^2$ and so gets $x(x^2\cos x+3\sin x)$: <strong>wrong</strong>. Check at $x=\pi/2$: the correct value is $y'(\pi/2)=3\pi^2/4\approx7.40$, the course's expression gives $3\pi/2\approx4.71$.</p>
-<p><strong>(b) $y=(3x-2)(x^2+3)$.</strong> $u=3x-2$, $v=x^2+3$: $y'=(3x-2)(2x)+(x^2+3)(3)=6x^2-4x+3x^2+9=\mathbf{9x^2-4x+9}$ (course p.81 <span class="tick">✓</span>). <em>Check by expanding first:</em> $y=3x^3-2x^2+9x-6$, $y'=9x^2-4x+9$ <span class="tick">✓</span>.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course (p.80) writes $\sin x\cdot3x$ instead of $\sin x\cdot3x^2$ and so gets $x(x^2\cos x+3\sin x)$: <strong>wrong</strong>.</p>
+</blockquote>
+<p>Check at $x=\pi/2$: the correct value is $y'(\pi/2)=3\pi^2/4\approx7.40$, the course's expression gives $3\pi/2\approx4.71$.</p>
+<p><strong>(b) $y=(3x-2)(x^2+3)$.</strong> $u=3x-2$, $v=x^2+3$: $y'=(3x-2)(2x)+(x^2+3)(3)=6x^2-4x+3x^2+9=\mathbf{9x^2-4x+9}$ (course p.81 <span class="tick">✓</span>).</p>
+<p><em>Check by expanding first:</em> $y=3x^3-2x^2+9x-6$, $y'=9x^2-4x+9$ <span class="tick">✓</span>.</p>
 <h4 id="u5-examples-h2" data-md-heading="Example 2 — Product rule with powers and chain (Course Examples 3–5, p.81–82)">Example 2 — Product rule with powers and chain (Course Examples 3–5, p.81–82)</h4>
 <p><strong>(a) $y=x^5e^x$:</strong> $y'=x^5e^x+e^x\cdot5x^4=x^4e^x(x+5)$ <span class="tick">✓</span>.</p>
 <p><strong>(b) $y=x^2(2x-5)^4$.</strong> $u=x^2$, $u'=2x$. For $v=(2x-5)^4$ use the chain rule with $w=2x-5$: $v'=4w^3\cdot2=8(2x-5)^3$.</p>
-<div class="math-display">$$y'=x^2\cdot8(2x-5)^3+(2x-5)^4\cdot2x=2x(2x-5)^3\,[4x+(2x-5)]=\mathbf{2x(2x-5)^3(6x-5)}.$$</div>
+<div class="math-display">$$\begin{aligned}&amp;y'=x^2\cdot8(2x-5)^3+(2x-5)^4\cdot2x\\
+&amp;=2x(2x-5)^3\,[4x+(2x-5)]\\
+&amp;=\mathbf{2x(2x-5)^3(6x-5)}.\end{aligned}$$</div>
 <p>(The course reuses the letters $u,v,y$ for two different things on p.81, which is confusing; the result is right.)</p>
 <p><strong>(c) $y=(3x-1)^3(x^2+5)$.</strong> $u'=9(3x-1)^2$ (chain), $v'=2x$:</p>
-<div class="math-display">$$y'=(3x-1)^3\,2x+(x^2+5)\,9(3x-1)^2=(3x-1)^2\,[2x(3x-1)+9(x^2+5)]=(3x-1)^2(15x^2-2x+45).$$</div>
+<div class="math-display">$$\begin{aligned}&amp;y'=(3x-1)^3\,2x+(x^2+5)\,9(3x-1)^2\\
+&amp;=(3x-1)^2\,[2x(3x-1)+9(x^2+5)]\\
+&amp;=(3x-1)^2(15x^2-2x+45).\end{aligned}$$</div>
 <p><span class="tick">✓</span> (course p.82).</p>
 <h4 id="u5-examples-h3" data-md-heading="Example 3 — Product checkpoints (Course p.82, solutions p.83–84)">Example 3 — Product checkpoints (Course p.82, solutions p.83–84)</h4>
 <div class="table-frame"><div class="table-scroll"><table>
@@ -2201,10 +2529,12 @@ For $y=x^3-3x+1$: $y'=3x^2-3=0\Rightarrow x=\pm1$, giving the points $\mathbf{(1
 </tr>
 </tbody>
 </table></div><span class="table-fade table-fade-l" aria-hidden="true"></span><span class="table-fade table-fade-r" aria-hidden="true"></span></div>
-<p>The course's printed problem 5 reads "$3x^3e^3$", but its solution uses $e^x$; see Errata. Course solution 1 has the slip "$du/dx=ex$" for $2x$; the answer is right. Course solution 4 labels $dv/dx$ as $dy/dx$.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course's printed problem 5 reads "$3x^3e^3$", but its solution uses $e^x$; see Errata. Course solution 1 has the slip "$du/dx=ex$" for $2x$; the answer is right. Course solution 4 labels $dv/dx$ as $dy/dx$.</p>
+</blockquote>
 <h4 id="u5-examples-h4" data-md-heading="Example 4 — Quotient rule (Course Examples 1–2, p.85–87)">Example 4 — Quotient rule (Course Examples 1–2, p.85–87)</h4>
 <p><strong>(a) $y=\dfrac{x^2}{\sqrt{x+1}}$.</strong> $u=x^2$, $v=(x+1)^{1/2}$, $u'=2x$, $v'=\dfrac1{2\sqrt{x+1}}$.</p>
-<div class="math-display">$$y'=\frac{\sqrt{x+1}\,(2x)-\dfrac{x^2}{2\sqrt{x+1}}}{x+1}.$$</div>
+<div class="math-display">$$\begin{aligned}&amp;y'\\
+&amp;=\frac{\sqrt{x+1}\,(2x)-\dfrac{x^2}{2\sqrt{x+1}}}{x+1}.\end{aligned}$$</div>
 <p>Multiply top and bottom by $2\sqrt{x+1}$: numerator $4x(x+1)-x^2=3x^2+4x$, denominator $2(x+1)^{3/2}$:</p>
 <div class="math-display">$$y'=\frac{x(3x+4)}{2(x+1)^{3/2}}\quad(x&gt;-1)\qquad\text{✔ course p.86.}$$</div>
 <p><em>Check by product form:</em> $y=x^2(x+1)^{-1/2}$, $y'=2x(x+1)^{-1/2}-\tfrac12x^2(x+1)^{-3/2}=\dfrac{4x(x+1)-x^2}{2(x+1)^{3/2}}$ <span class="tick">✓</span>.</p>
@@ -2214,57 +2544,77 @@ For $y=x^3-3x+1$: $y'=3x^2-3=0\Rightarrow x=\pm1$, giving the points $\mathbf{(1
 <div class="math-display">$$y'=\frac{\cos x\cdot5e^x-5e^x(-\sin x)}{\cos^2x}=\frac{5e^x(\cos x+\sin x)}{\cos^2x},$$</div>
 <p>and the course's $\dfrac{4e^x(\cos x+\sin x)}{\cos^2x}$ is the correct answer for $4e^x/\cos x$.</p>
 <p><strong>(b) Course Example 4.</strong> $\dfrac d{dx}\tan x=\dfrac{\cos x\cos x-\sin x(-\sin x)}{\cos^2x}=\dfrac{\cos^2x+\sin^2x}{\cos^2x}=\dfrac1{\cos^2x}=\sec^2x$ <span class="tick">✓</span>.</p>
-<p><strong>(c) Course checkpoint (p.88), corrected.</strong>
-- $y=\dfrac{4x+1}{7x-4}$: $y'=\dfrac{4(7x-4)-7(4x+1)}{(7x-4)^2}=\dfrac{-23}{(7x-4)^2}$. The course gives "$-a/(7x-4)$" (garbled and the square is missing).
-- $y=\dfrac{x^2-1}{x^3}$: $y'=\dfrac{x^3\cdot2x-3x^2(x^2-1)}{x^6}=\dfrac{-x^4+3x^2}{x^6}=\dfrac{3-x^2}{x^4}$. The course answer "$x(-x^2+3x+2)/(x^2)^2$" simplifies to $\dfrac{-x^2+3x+2}{x^3}$, which is <strong>not</strong> equal to $\dfrac{3-x^2}{x^4}$.
-- $y=\dfrac{\cos x}{\sin x}$: $y'=\dfrac{-\sin^2x-\cos^2x}{\sin^2x}=-\operatorname{cosec}^2x$ <span class="tick">✓</span>.</p>
+<p><strong>(c) Course checkpoint (p.88), corrected.</strong></p>
+<ul>
+<li>$y=\dfrac{4x+1}{7x-4}$: $y'=\dfrac{4(7x-4)-7(4x+1)}{(7x-4)^2}=\dfrac{-23}{(7x-4)^2}$. The course gives "$-a/(7x-4)$" (garbled and the square is missing).</li>
+<li>$y=\dfrac{x^2-1}{x^3}$: $y'=\dfrac{x^3\cdot2x-3x^2(x^2-1)}{x^6}=\dfrac{-x^4+3x^2}{x^6}=\dfrac{3-x^2}{x^4}$. The course answer "$x(-x^2+3x+2)/(x^2)^2$" simplifies to $\dfrac{-x^2+3x+2}{x^3}$, which is <strong>not</strong> equal to $\dfrac{3-x^2}{x^4}$.</li>
+<li>$y=\dfrac{\cos x}{\sin x}$: $y'=\dfrac{-\sin^2x-\cos^2x}{\sin^2x}=-\operatorname{cosec}^2x$ <span class="tick">✓</span>.</li>
+</ul>
 <h4 id="u5-examples-h6" data-md-heading="Example 6 — Chain rule (Course Examples 1–4, p.89–90, corrected)">Example 6 — Chain rule (Course Examples 1–4, p.89–90, corrected)</h4>
 <p><strong>(a) $y=\dfrac1{(6x-5)^2}=(6x-5)^{-2}$.</strong> Put $u=6x-5$, so $y=u^{-2}$ (the course writes "$y=u^2$"; its next line $dy/du=-2u^{-3}$ is for $u^{-2}$). $\dfrac{du}{dx}=6$, $\dfrac{dy}{du}=-2u^{-3}$. $\dfrac{dy}{dx}=-12u^{-3}=\mathbf{-\dfrac{12}{(6x-5)^3}}$ <span class="tick">✓</span>.</p>
-<p><strong>(b) $y=(2x+8)^2$.</strong> $u=2x+8$, so $y=u^2$ (the course writes $y=u^3$: wrong). $\dfrac{du}{dx}=2$, $\dfrac{dy}{du}=2u$, so $\dfrac{dy}{dx}=4u=\mathbf{4(2x+8)=8x+32}$.
-The course's answer $6(2x+8)^2$ is <strong>wrong</strong>. <em>Check by expanding:</em> $y=4x^2+32x+64$, $y'=8x+32$ <span class="tick">✓</span>.</p>
-<p><strong>(c) $y=\sin(5x-6)$:</strong> $u=5x-6$; $y'=\cos u\cdot5=5\cos(5x-6)$ <span class="tick">✓</span>.
-<strong>(d) $y=\tan(3x+2)$:</strong> $y'=3\sec^2(3x+2)$ <span class="tick">✓</span> (course prints "$u=3x=2$" and "$3x=2$": typos for $3x+2$).
-<strong>(e) Course checkpoint ii (p.90):</strong> $y=\sqrt{4x-3}=(4x-3)^{1/2}$, $y'=\tfrac12(4x-3)^{-1/2}\cdot4=\dfrac2{\sqrt{4x-3}}$ for $x&gt;\tfrac34$. The course prints $\dfrac{2}{(4x-3)^{3/2}}$: <strong>wrong</strong> (the exponent is $\tfrac12$, not $\tfrac32$). Checkpoints i, iii are right: $6(2x+5)^2$, $4\cos(4x+3)$.</p>
+<p><strong>(b) $y=(2x+8)^2$.</strong> $u=2x+8$, so $y=u^2$ (the course writes $y=u^3$: wrong). $\dfrac{du}{dx}=2$, $\dfrac{dy}{du}=2u$, so $\dfrac{dy}{dx}=4u=\mathbf{4(2x+8)=8x+32}$.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course's answer $6(2x+8)^2$ is <strong>wrong</strong>.</p>
+</blockquote>
+<p><em>Check by expanding:</em> $y=4x^2+32x+64$, $y'=8x+32$ <span class="tick">✓</span>.</p>
+<p><strong>(c) $y=\sin(5x-6)$:</strong> $u=5x-6$; $y'=\cos u\cdot5=5\cos(5x-6)$ <span class="tick">✓</span>.</p>
+<p><strong>(d) $y=\tan(3x+2)$:</strong> $y'=3\sec^2(3x+2)$ <span class="tick">✓</span> (course prints "$u=3x=2$" and "$3x=2$": typos for $3x+2$).</p>
+<p><strong>(e) Course checkpoint ii (p.90):</strong> $y=\sqrt{4x-3}=(4x-3)^{1/2}$, $y'=\tfrac12(4x-3)^{-1/2}\cdot4=\dfrac2{\sqrt{4x-3}}$ for $x&gt;\tfrac34$.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course prints $\dfrac{2}{(4x-3)^{3/2}}$: <strong>wrong</strong> (the exponent is $\tfrac12$, not $\tfrac32$).</p>
+</blockquote>
+<p>Checkpoints i, iii are right: $6(2x+5)^2$, $4\cos(4x+3)$.</p>
 <p><strong>(f) Two layers (new).</strong> $y=\sin^2(3x+1)$: outside $w^2$, middle $\sin$, inside $3x+1$. $y'=2\sin(3x+1)\cdot\cos(3x+1)\cdot3=3\sin(6x+2)$.</p>
 <h4 id="u5-examples-h7" data-md-heading="Example 7 — Mixed rules (new, exam level)">Example 7 — Mixed rules (new, exam level)</h4>
 <p><strong>(a) $y=\dfrac{(3x-1)^3}{x^2+5}$.</strong> Quotient with chain inside: $u'=9(3x-1)^2$, $v'=2x$.</p>
-<div class="math-display">$$y'=\frac{(x^2+5)\cdot9(3x-1)^2-(3x-1)^3\cdot2x}{(x^2+5)^2}=\frac{(3x-1)^2\,[9x^2+45-6x^2+2x]}{(x^2+5)^2}=\frac{(3x-1)^2(3x^2+2x+45)}{(x^2+5)^2}.$$</div>
+<div class="math-display">$$\begin{aligned}&amp;y'=\frac{(x^2+5)\cdot9(3x-1)^2-(3x-1)^3\cdot2x}{(x^2+5)^2}\\
+&amp;=\frac{(3x-1)^2\,[9x^2+45-6x^2+2x]}{(x^2+5)^2}\\
+&amp;=\frac{(3x-1)^2(3x^2+2x+45)}{(x^2+5)^2}.\end{aligned}$$</div>
 <p><strong>(b) $y=e^{2x-3}\cos(7x+3)$.</strong> Product; $u'=2e^{2x-3}$, $v'=-7\sin(7x+3)$:</p>
 <div class="math-display">$$y'=e^{2x-3}\big[2\cos(7x+3)-7\sin(7x+3)\big].$$</div>
 <p><strong>(c) $y=\dfrac{\sqrt{x^2+1}}{x+2}$.</strong> $u'=\dfrac x{\sqrt{x^2+1}}$:</p>
-<div class="math-display">$$y'=\frac{\dfrac{x(x+2)}{\sqrt{x^2+1}}-\sqrt{x^2+1}}{(x+2)^2}=\frac{x(x+2)-(x^2+1)}{(x+2)^2\sqrt{x^2+1}}=\frac{2x-1}{(x+2)^2\sqrt{x^2+1}}.$$</div>
+<div class="math-display">$$\begin{aligned}&amp;y'=\frac{\dfrac{x(x+2)}{\sqrt{x^2+1}}-\sqrt{x^2+1}}{(x+2)^2}\\
+&amp;=\frac{x(x+2)-(x^2+1)}{(x+2)^2\sqrt{x^2+1}}\\
+&amp;=\frac{2x-1}{(x+2)^2\sqrt{x^2+1}}.\end{aligned}$$</div>
 <h4 id="u5-examples-h8" data-md-heading="Example 8 — Implicit differentiation (Course Examples 1 and 3, p.91 and p.93; Checkpoint p.94)">Example 8 — Implicit differentiation (Course Examples 1 and 3, p.91 and p.93; Checkpoint p.94)</h4>
 <p><strong>(a) $2x^2+3y^2=16$.</strong> Differentiate: $4x+6y\,y'=0$, so $y'=-\dfrac{4x}{6y}=-\dfrac{2x}{3y}$ ($y\ne0$) <span class="tick">✓</span> (course leaves it as $-4x/6y$).</p>
-<p><strong>(b) $x^3+y^3=2xy$.</strong> (The course says "differentiating with respect to $y$"; it means $x$.) Differentiate with respect to $x$, product rule on $2xy$:</p>
+<p><strong>(b) $x^3+y^3=2xy$.</strong></p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course says "differentiating with respect to $y$"; it means $x$.</p>
+</blockquote>
+<p>Differentiate with respect to $x$, product rule on $2xy$:</p>
 <div class="math-display">$$3x^2+3y^2y'=2y+2xy'\ \Longrightarrow\ y'(3y^2-2x)=2y-3x^2\ \Longrightarrow\ y'=\frac{2y-3x^2}{3y^2-2x}\quad\text{✔ course p.93.}$$</div>
-<p><strong>(c) Checkpoint I, $x^2+2xy+3y^2=4$:</strong> $2x+2y+2xy'+6yy'=0$, so $y'=-\dfrac{x+y}{x+3y}$ <span class="tick">✓</span>.
-<strong>(d) Checkpoint II, $x^3+y^3+3xy^2=8$:</strong> $3x^2+3y^2y'+3y^2+6xy\,y'=0$, so $y'(3y^2+6xy)=-(3x^2+3y^2)$:</p>
+<p><strong>(c) Checkpoint I, $x^2+2xy+3y^2=4$:</strong> $2x+2y+2xy'+6yy'=0$, so $y'=-\dfrac{x+y}{x+3y}$ <span class="tick">✓</span>.</p>
+<p><strong>(d) Checkpoint II, $x^3+y^3+3xy^2=8$:</strong> $3x^2+3y^2y'+3y^2+6xy\,y'=0$, so $y'(3y^2+6xy)=-(3x^2+3y^2)$:</p>
 <div class="math-display">$$y'=-\frac{x^2+y^2}{y^2+2xy}.$$</div>
-<p>The course prints the denominator as $y^2+2y$: the $x$ is missing (<strong>wrong</strong>).</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course prints the denominator as $y^2+2y$: the $x$ is missing (<strong>wrong</strong>).</p>
+</blockquote>
 <h4 id="u5-examples-h9" data-md-heading="Example 9 — Second derivative of an implicit function (Course Example 2 p.91–93, Exercise D I p.95)">Example 9 — Second derivative of an implicit function (Course Example 2 p.91–93, Exercise D I p.95)</h4>
 <p><strong>(a) The course's Example 2 has a defect.</strong> "Find $dy/dx$ and $d^2y/dx^2$ for $2x^2+3y^2-4x-3y+6=0$ at $x=3$, $y=2$." The point $(3,2)$ is <strong>not on the curve</strong>: $2(9)+3(4)-12-6+6=18\ne0$. In fact the curve has no real points at all: $2(x-1)^2+3(y-\tfrac12)^2+\tfrac{13}4=0$ has no real solution (the left side is $\ge\frac{13}4$). The course's <em>method</em> is fine, so redo it with the constant changed so that $(3,2)$ lies on the curve: $2x^2+3y^2-4x-3y-12=0$ (check: $18+12-12-6-12=0$ <span class="tick">✓</span>).</p>
-<p>Differentiate: $4x+6yy'-4-3y'=0\Rightarrow y'=\dfrac{4-4x}{6y-3}=\dfrac{4(1-x)}{3(2y-1)}$. (The course p.92 prints "$(-4-4x)/(6y-3)$" once: typo, the line before has the correct $4-4x$.)
-At $(3,2)$: $y'=\dfrac{4-12}{12-3}=-\dfrac89$.</p>
+<p>Differentiate: $4x+6yy'-4-3y'=0\Rightarrow y'=\dfrac{4-4x}{6y-3}=\dfrac{4(1-x)}{3(2y-1)}$. (The course p.92 prints "$(-4-4x)/(6y-3)$" once: typo, the line before has the correct $4-4x$.)</p>
+<p>At $(3,2)$: $y'=\dfrac{4-12}{12-3}=-\dfrac89$.</p>
 <p>Second derivative, quotient rule on $y'=\dfrac{4-4x}{6y-3}$ ($u=4-4x$, $u'=-4$; $v=6y-3$, $v'=6y'$):</p>
 <div class="math-display">$$y''=\frac{(6y-3)(-4)-(4-4x)(6y')}{(6y-3)^2}.$$</div>
 <p>At $(3,2)$, $y'=-\frac89$: numerator $=9(-4)-(-8)\cdot6\cdot(-\tfrac89)=-36-\tfrac{128}3=-\tfrac{236}3$, denominator $81$, so</p>
 <div class="math-display">$$y''=-\frac{236}{243}\approx-0.971.$$</div>
 <p>The course's arithmetic (p.92–93) gives the same $-236/243$; the value does not depend on the constant in the equation, but the problem as printed has no point to evaluate at.</p>
-<p><strong>(b) Exercise D I: $x^2+y^2-2x+2y=23$ at $(-2,3)$.</strong> On the curve: $4+9+4+6=23$ <span class="tick">✓</span>. $2x+2yy'-2+2y'=0\Rightarrow y'=\dfrac{1-x}{y+1}$; at $(-2,3)$: $y'=\dfrac34$.
-$y''=\dfrac{-(y+1)-(1-x)y'}{(y+1)^2}$, which (using the curve, $(x-1)^2+(y+1)^2=25$) equals $-\dfrac{25}{(y+1)^3}$. At $(-2,3)$: $-\dfrac{25}{64}$. (Direct: $\dfrac{-4-3\cdot\frac34}{16}=\dfrac{-25/4}{16}=-\dfrac{25}{64}$ <span class="tick">✓</span>.)</p>
+<p><strong>(b) Exercise D I: $x^2+y^2-2x+2y=23$ at $(-2,3)$.</strong> On the curve: $4+9+4+6=23$ <span class="tick">✓</span>. $2x+2yy'-2+2y'=0\Rightarrow y'=\dfrac{1-x}{y+1}$; at $(-2,3)$: $y'=\dfrac34$.</p>
+<p>$y''=\dfrac{-(y+1)-(1-x)y'}{(y+1)^2}$, which (using the curve, $(x-1)^2+(y+1)^2=25$) equals $-\dfrac{25}{(y+1)^3}$. At $(-2,3)$: $-\dfrac{25}{64}$. (Direct: $\dfrac{-4-3\cdot\frac34}{16}=\dfrac{-25/4}{16}=-\dfrac{25}{64}$ <span class="tick">✓</span>.)</p>
 <h4 id="u5-examples-h10" data-md-heading="Example 10 — Tangent to an implicit curve (Course Example 4, p.93–94, redone)">Example 10 — Tangent to an implicit curve (Course Example 4, p.93–94, redone)</h4>
 <p>Find the tangents where $x=2$ on $x^2+y^2-2x+y=6$ (the course prints it as "$x^2+y^2=2x+y=6$"; its solution uses $x^2+y^2-2x+y=6$).</p>
-<p><strong>Slope.</strong> $2x+2yy'-2+y'=0\Rightarrow y'=\dfrac{2-2x}{2y+1}$.
-<strong>Points with $x=2$.</strong> $4+y^2-4+y=6\Rightarrow y^2+y-6=0\Rightarrow(y+3)(y-2)=0$, so $y=-3$ or $y=2$. The points are $(2,-3)$ and $(2,2)$ (the course prints "$(2,-2)$" for the second point: typo).
-- At $(2,-3)$: $m=\dfrac{2-4}{-6+1}=\dfrac25$. Tangent: $y+3=\tfrac25(x-2)\Rightarrow5y+15=2x-4\Rightarrow\mathbf{2x-5y-19=0}$ (course: $5y-2x+19=0$, same line).
-- At $(2,2)$: $m=\dfrac{2-4}{4+1}=-\dfrac25$. Tangent: $y-2=-\tfrac25(x-2)\Rightarrow5y-10=-2x+4\Rightarrow\mathbf{2x+5y-14=0}$ <span class="tick">✓</span> (the course's arithmetic is right; it labels the point $(2,-2)$ in the heading by mistake, and $(2,-2)$ is not on the curve).</p>
+<p><strong>Slope.</strong> $2x+2yy'-2+y'=0\Rightarrow y'=\dfrac{2-2x}{2y+1}$.</p>
+<p><strong>Points with $x=2$.</strong> $4+y^2-4+y=6\Rightarrow y^2+y-6=0\Rightarrow(y+3)(y-2)=0$, so $y=-3$ or $y=2$. The points are $(2,-3)$ and $(2,2)$ (the course prints "$(2,-2)$" for the second point: typo).</p>
+<ul>
+<li>At $(2,-3)$: $m=\dfrac{2-4}{-6+1}=\dfrac25$. Tangent: $y+3=\tfrac25(x-2)\Rightarrow5y+15=2x-4\Rightarrow\mathbf{2x-5y-19=0}$ (course: $5y-2x+19=0$, same line).</li>
+<li>At $(2,2)$: $m=\dfrac{2-4}{4+1}=-\dfrac25$. Tangent: $y-2=-\tfrac25(x-2)\Rightarrow5y-10=-2x+4\Rightarrow\mathbf{2x+5y-14=0}$ <span class="tick">✓</span> (the course's arithmetic is right; it labels the point $(2,-2)$ in the heading by mistake, and $(2,-2)$ is not on the curve).</li>
+</ul>
 <p><em>Extra (new):</em> the normal at $(2,2)$ has slope $\tfrac52$: $y-2=\tfrac52(x-2)$, i.e. $5x-2y-6=0$.</p>
 <h4 id="u5-examples-h11" data-md-heading="Example 11 — Proving the quotient rule (exam proof, corrected course p.84–85)">Example 11 — Proving the quotient rule (exam proof, corrected course p.84–85)</h4>
 <p>Let $y=u/v$ with $u,v$ differentiable and $v(x)\ne0$. Then</p>
-<div class="math-display">$$\frac{\delta y}{\delta x}=\frac1{\delta x}\left[\frac{u+\delta u}{v+\delta v}-\frac uv\right]=\frac{v\,\delta u-u\,\delta v}{v(v+\delta v)\,\delta x}=\frac{v\dfrac{\delta u}{\delta x}-u\dfrac{\delta v}{\delta x}}{v(v+\delta v)}.$$</div>
+<div class="math-display">$$\begin{aligned}&amp;\frac{\delta y}{\delta x}=\frac1{\delta x}\left[\frac{u+\delta u}{v+\delta v}-\frac uv\right]\\
+&amp;=\frac{v\,\delta u-u\,\delta v}{v(v+\delta v)\,\delta x}\\
+&amp;=\frac{v\dfrac{\delta u}{\delta x}-u\dfrac{\delta v}{\delta x}}{v(v+\delta v)}.\end{aligned}$$</div>
 <p>Let $\delta x\to0$. Then $\delta v\to0$ (differentiable implies continuous), so $v(v+\delta v)\to v^2\ne0$ and</p>
 <div class="math-display">$$\frac{dy}{dx}=\frac{v\,u'-u\,v'}{v^2}.\ \blacksquare$$</div>
-<p>The course (p.84–85) writes $v\delta u-v\delta u$, then $v\delta u+u\delta v$, then "$-u\delta v$" again, and says "$\delta u\to0$ and $\delta x\to0$" when it means $\delta v\to0$; only its last line (4) has the right sign.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course (p.84–85) writes $v\delta u-v\delta u$, then $v\delta u+u\delta v$, then "$-u\delta v$" again, and says "$\delta u\to0$ and $\delta x\to0$" when it means $\delta v\to0$; only its last line (4) has the right sign.</p>
+</blockquote>
 <h3 id="u5-mistakes" data-md-heading="Common mistakes">Common mistakes</h3>
 <ul>
 <li><strong>Treating the derivative of a product as the product of derivatives:</strong> $(uv)'\ne u'v'$. Same for quotients: $(u/v)'\ne u'/v'$.</li>
@@ -2297,18 +2647,64 @@ $y''=\dfrac{-(y+1)-(1-x)y'}{(y+1)^2}$, which (using the curve, $(x-1)^2+(y+1)^2=
 <li>Prove the quotient rule from first principles (state the hypotheses).</li>
 </ol>
 <details class="answers"><summary>Show answers</summary><div class="answers-body"><h4 class="answers-title" data-md-heading="Answers">Answers</h4><ol>
-<li>(I) $6(x+1)(x+4)$ [product: $2(x+4)^2+(2x-1)2(x+4)=2(x+4)(x+4+2x-1)=2(x+4)(3x+3)$]. (II) $3x^2(x^2+4)(7x^2+12)$. (III) $\dfrac{(x+3)(5x+3)}{2\sqrt x}$ for $x&gt;0$. (IV) $5x^2(x\cos x+3\sin x)$. (V) $\cos^2x-\sin^2x=\cos2x$. (VI) $e^x(\cos x-\sin x)$. (VII) $2x^4(5\cos x-x\sin x)$.</li>
-<li>(I) $\dfrac{10x\cos x+5x^2\sin x}{\cos^2x}=\dfrac{5x(2\cos x+x\sin x)}{\cos^2x}$. (II) $\dfrac{6e^x(\sin x-\cos x)}{\sin^2x}$. (III) $-\dfrac{x\sin x+5\cos x}{x^6}$. (IV) $\dfrac{2x^3-3x^2-1}{(x-1)^2}$. (V) $\dfrac{4x^2-20x-1}{(2x-5)^2}$.</li>
-<li>(I) $49(7x-2)^6$. (II) $15x^2$. (III) $-\dfrac{2(x+1)}{(x^2+2x-3)^2}$ (i.e. $-\dfrac{2x+2}{(x-1)^2(x+3)^2}$). (IV) $-7\sin(7x+3)$. (V) $2e^{2x-3}$.</li>
-<li>The point is on the curve. $y'=\dfrac{1-x}{y+1}=\dfrac34$ at $(-2,3)$; $y''=-\dfrac{25}{(y+1)^3}=-\dfrac{25}{64}$. Tangent: $y-3=\tfrac34(x+2)$, i.e. $3x-4y+18=0$.</li>
-<li>(a) $y'=\dfrac{3x^2-y}{x}$. (b) $y'=-\dfrac xy$. (c) $y'=-\dfrac{x+3y}{3x-2}$. (d) $y'=\dfrac{1-3x^2}{3y^2-1}$.</li>
-<li>(p.82) $5x^4-3x^2+2x$; $(x^2-1)^2(7x^2-1)$; $e^x(\sin x+\cos x)$; $4x^2(x\cos x+3\sin x)$; $3x^2e^x(x+3)$. (p.88) $\dfrac{-23}{(7x-4)^2}$; $\dfrac{3-x^2}{x^4}$; $-\operatorname{cosec}^2x$. (p.90) $6(2x+5)^2$; $\dfrac2{\sqrt{4x-3}}$; $4\cos(4x+3)$. (p.94) I: $-\dfrac{x+y}{x+3y}$; II: $-\dfrac{x^2+y^2}{y^2+2xy}$.</li>
-<li>$\dfrac{(3x-1)^2(3x^2+2x+45)}{(x^2+5)^2}$.</li>
-<li>$e^{2x-3}\big[2\cos(7x+3)-7\sin(7x+3)\big]$.</li>
-<li>$y'=-x/y=-1$ at $(2,2)$ (on the curve: $4+4=8$ <span class="tick">✓</span>). Tangent: $y-2=-(x-2)$, i.e. $x+y=4$. Normal: slope $1$, $y=x$.</li>
-<li>$y'=\dfrac{2y-3x^2}{3y^2-2x}$; at $(1,1)$ (on the curve: $1+1=2$ <span class="tick">✓</span>): $y'=\dfrac{2-3}{3-2}=-1$. $y''=\dfrac{(2y'-6x)(3y^2-2x)-(2y-3x^2)(6yy'-2)}{(3y^2-2x)^2}$; at $(1,1)$: $\dfrac{(-2-6)(1)-(-1)(-6-2)}{1}=-8-8=-16$.</li>
-<li>$y'=0\iff x=1$. Then $(1-1)^2+(y+1)^2=25$ (the curve is the circle $(x-1)^2+(y+1)^2=25$), so $y=4$ or $y=-6$. Points $(1,4)$ and $(1,-6)$.</li>
-<li>See Example 11: needs $u,v$ differentiable at $x$ and $v(x)\ne0$; uses $\delta v\to0$ because differentiable implies continuous.</li>
+<li>
+<p>(I) $6(x+1)(x+4)$ [product: $2(x+4)^2+(2x-1)2(x+4)=2(x+4)(x+4+2x-1)=2(x+4)(3x+3)$].</p>
+<p>(II) $3x^2(x^2+4)(7x^2+12)$.</p>
+<p>(III) $\dfrac{(x+3)(5x+3)}{2\sqrt x}$ for $x&gt;0$.</p>
+<p>(IV) $5x^2(x\cos x+3\sin x)$.</p>
+<p>(V) $\cos^2x-\sin^2x=\cos2x$.</p>
+<p>(VI) $e^x(\cos x-\sin x)$.</p>
+<p>(VII) $2x^4(5\cos x-x\sin x)$.</p>
+</li>
+<li>
+<p>(I) $\dfrac{10x\cos x+5x^2\sin x}{\cos^2x}=\dfrac{5x(2\cos x+x\sin x)}{\cos^2x}$.</p>
+<p>(II) $\dfrac{6e^x(\sin x-\cos x)}{\sin^2x}$.</p>
+<p>(III) $-\dfrac{x\sin x+5\cos x}{x^6}$.</p>
+<p>(IV) $\dfrac{2x^3-3x^2-1}{(x-1)^2}$.</p>
+<p>(V) $\dfrac{4x^2-20x-1}{(2x-5)^2}$.</p>
+</li>
+<li>
+<p>(I) $49(7x-2)^6$.</p>
+<p>(II) $15x^2$.</p>
+<p>(III) $-\dfrac{2(x+1)}{(x^2+2x-3)^2}$ (i.e. $-\dfrac{2x+2}{(x-1)^2(x+3)^2}$).</p>
+<p>(IV) $-7\sin(7x+3)$.</p>
+<p>(V) $2e^{2x-3}$.</p>
+</li>
+<li>
+<p>The point is on the curve. $y'=\dfrac{1-x}{y+1}=\dfrac34$ at $(-2,3)$; $y''=-\dfrac{25}{(y+1)^3}=-\dfrac{25}{64}$. Tangent: $y-3=\tfrac34(x+2)$, i.e. $3x-4y+18=0$.</p>
+</li>
+<li>
+<p>(a) $y'=\dfrac{3x^2-y}{x}$.</p>
+<p>(b) $y'=-\dfrac xy$.</p>
+<p>(c) $y'=-\dfrac{x+3y}{3x-2}$.</p>
+<p>(d) $y'=\dfrac{1-3x^2}{3y^2-1}$.</p>
+</li>
+<li>
+<p>(p.82) $5x^4-3x^2+2x$; $(x^2-1)^2(7x^2-1)$; $e^x(\sin x+\cos x)$; $4x^2(x\cos x+3\sin x)$; $3x^2e^x(x+3)$.</p>
+<p>(p.88) $\dfrac{-23}{(7x-4)^2}$; $\dfrac{3-x^2}{x^4}$; $-\operatorname{cosec}^2x$.</p>
+<p>(p.90) $6(2x+5)^2$; $\dfrac2{\sqrt{4x-3}}$; $4\cos(4x+3)$.</p>
+<p>(p.94) I: $-\dfrac{x+y}{x+3y}$; II: $-\dfrac{x^2+y^2}{y^2+2xy}$.</p>
+</li>
+<li>
+<p>$\dfrac{(3x-1)^2(3x^2+2x+45)}{(x^2+5)^2}$.</p>
+</li>
+<li>
+<p>$e^{2x-3}\big[2\cos(7x+3)-7\sin(7x+3)\big]$.</p>
+</li>
+<li>
+<p>$y'=-x/y=-1$ at $(2,2)$ (on the curve: $4+4=8$ <span class="tick">✓</span>). Tangent: $y-2=-(x-2)$, i.e. $x+y=4$. Normal: slope $1$, $y=x$.</p>
+</li>
+<li>
+<p>$y'=\dfrac{2y-3x^2}{3y^2-2x}$; at $(1,1)$ (on the curve: $1+1=2$ <span class="tick">✓</span>): $y'=\dfrac{2-3}{3-2}=-1$.</p>
+<div class="math-display">$$y''=\dfrac{(2y'-6x)(3y^2-2x)-(2y-3x^2)(6yy'-2)}{(3y^2-2x)^2}$$</div>
+<p>At $(1,1)$: $\dfrac{(-2-6)(1)-(-1)(-6-2)}{1}=-8-8=-16$.</p>
+</li>
+<li>
+<p>$y'=0\iff x=1$. Then $(1-1)^2+(y+1)^2=25$ (the curve is the circle $(x-1)^2+(y+1)^2=25$), so $y=4$ or $y=-6$. Points $(1,4)$ and $(1,-6)$.</p>
+</li>
+<li>
+<p>See Example 11: needs $u,v$ differentiable at $x$ and $v(x)\ne0$; uses $\delta v\to0$ because differentiable implies continuous.</p>
+</li>
 </ol>
 <p><em>All symbolic and numerical results in the examples and problems were checked with sympy 1.14.</em></p></div></details>
 <h3 id="u5-extra" data-md-heading="Extra practice (from outside sources)">Extra practice (from outside sources)</h3>
@@ -2468,62 +2864,79 @@ $y''=\dfrac{-(y+1)-(1-x)y'}{(y+1)^2}$, which (using the curve, $(x-1)^2+(y+1)^2=
 <p>All results below were checked with sympy (differentiating each answer gives back the integrand).</p>
 <h4 id="u6-examples-h1" data-md-heading="Example 1 — Powers of $x$ (Course Example 1, pp.98–99)">Example 1 — Powers of $x$ (Course Example 1, pp.98–99)</h4>
 <p>Integrate (a) $\int(x^3+3x^2+2x+4)\,dx$, (b) $\int(s^3+4s)\,ds$, (c) $\int(t^3+4t^2-2)\,dt$.</p>
-<p><strong>Solution.</strong> Use $\int x^n\,dx=\frac{x^{n+1}}{n+1}$ term by term, and $4=4x^0$ so $\int4\,dx=4x$.
-(a) $\dfrac{x^4}{4}+\dfrac{3x^3}{3}+\dfrac{2x^2}{2}+4x+c=\dfrac{x^4}4+x^3+x^2+4x+c$.
-(b) $\dfrac{s^4}{4}+\dfrac{4s^2}{2}+c=\dfrac{s^4}4+2s^2+c$.
-(c) $\dfrac{t^4}{4}+\dfrac{4t^3}{3}-2t+c$.
-<em>Check (b):</em> $\frac{d}{ds}\big(\frac{s^4}4+2s^2\big)=s^3+4s$ <span class="tick">✓</span>. The letter of the variable does not matter, only that $ds$ matches it.</p>
+<p><strong>Solution.</strong> Use $\int x^n\,dx=\frac{x^{n+1}}{n+1}$ term by term, and $4=4x^0$ so $\int4\,dx=4x$.</p>
+<p><strong>(a)</strong> $\dfrac{x^4}{4}+\dfrac{3x^3}{3}+\dfrac{2x^2}{2}+4x+c=\dfrac{x^4}4+x^3+x^2+4x+c$.</p>
+<p><strong>(b)</strong> $\dfrac{s^4}{4}+\dfrac{4s^2}{2}+c=\dfrac{s^4}4+2s^2+c$.</p>
+<p><strong>(c)</strong> $\dfrac{t^4}{4}+\dfrac{4t^3}{3}-2t+c$.</p>
+<p><em>Check (b):</em> $\frac{d}{ds}\big(\frac{s^4}4+2s^2\big)=s^3+4s$ <span class="tick">✓</span>. The letter of the variable does not matter, only that $ds$ matches it.</p>
 <h4 id="u6-examples-h2" data-md-heading="Example 2 — Linear substitution (Course Examples 1–3, pp.100–102)">Example 2 — Linear substitution (Course Examples 1–3, pp.100–102)</h4>
 <p>Integrate (a) $\int(3x-2)^6\,dx$, (b) $\int\cos(6x+4)\,dx$, (c) $\int\sec^28x\,dx$.</p>
-<p><strong>Solution.</strong>
-(a) Let $z=3x-2$; $\frac{dz}{dx}=3$, so $dx=\frac13dz$. $\displaystyle\int z^6\cdot\frac13\,dz=\frac13\cdot\frac{z^7}7=\frac{(3x-2)^7}{21}+c$.
-(b) $z=6x+4$, $dx=\frac16dz$: $\frac16\int\cos z\,dz=\frac16\sin z=\dfrac{\sin(6x+4)}6+c$.
-(c) $z=8x$, $dx=\frac18dz$: $\frac18\int\sec^2z\,dz=\dfrac{\tan8x}8+c$.
-<em>Shortcut:</em> integrate as if the inside were $x$, then divide by the coefficient of $x$. The same rule gives Exercise B: $\int\frac{dx}{5x+4}=\frac15\ln|5x+4|+c$ and $\int4^{3x}dx=\dfrac{4^{3x}}{3\ln4}+c$.</p>
+<p><strong>Solution.</strong></p>
+<p><strong>(a)</strong> Let $z=3x-2$; $\frac{dz}{dx}=3$, so $dx=\frac13dz$. $\displaystyle\int z^6\cdot\frac13\,dz=\frac13\cdot\frac{z^7}7=\frac{(3x-2)^7}{21}+c$.</p>
+<p><strong>(b)</strong> $z=6x+4$, $dx=\frac16dz$: $\frac16\int\cos z\,dz=\frac16\sin z=\dfrac{\sin(6x+4)}6+c$.</p>
+<p><strong>(c)</strong> $z=8x$, $dx=\frac18dz$: $\frac18\int\sec^2z\,dz=\dfrac{\tan8x}8+c$.</p>
+<p><em>Shortcut:</em> integrate as if the inside were $x$, then divide by the coefficient of $x$. The same rule gives Exercise B: $\int\frac{dx}{5x+4}=\frac15\ln|5x+4|+c$ and $\int4^{3x}dx=\dfrac{4^{3x}}{3\ln4}+c$.</p>
 <h4 id="u6-examples-h3" data-md-heading="Example 3 — The form $f&#x27;/f$ (Course pp.102–104, redone with absolute values)">Example 3 — The form $f'/f$ (Course pp.102–104, redone with absolute values)</h4>
 <p>Integrate (a) $\int\dfrac{2x-5}{x^2-5x+6}dx$, (b) $\int\dfrac{3x^2}{x^3-6}dx$, (c) $\int\dfrac{4x-8}{x^2-4x+5}dx$, (d) $\int\cot x\,dx$, (e) $\int\tan x\,dx$.</p>
-<p><strong>Solution.</strong>
-(a) The numerator is exactly the derivative of the denominator. $\ln|x^2-5x+6|+c$. (Note $x^2-5x+6=(x-2)(x-3)&lt;0$ on $(2,3)$: the course's $\ln(x^2-5x+6)$ is undefined there.)
-(b) $\frac{d}{dx}(x^3-6)=3x^2$. $\ln|x^3-6|+c$.
-(c) $4x-8=2(2x-4)$ and $\frac{d}{dx}(x^2-4x+5)=2x-4$. So the integral is $2\ln(x^2-4x+5)+c$. Here no absolute value is needed: $x^2-4x+5=(x-2)^2+1&gt;0$.
-(d) $\cot x=\frac{\cos x}{\sin x}$, $z=\sin x$, $dz=\cos x\,dx$: $\ln|\sin x|+c$.
-(e) $\tan x=\frac{\sin x}{\cos x}=-\frac{(\cos x)'}{\cos x}$: $-\ln|\cos x|+c$ (also $=\ln|\sec x|+c$).</p>
+<p><strong>Solution.</strong></p>
+<p><strong>(a)</strong> The numerator is exactly the derivative of the denominator. $\ln|x^2-5x+6|+c$. (Note $x^2-5x+6=(x-2)(x-3)&lt;0$ on $(2,3)$: the course's $\ln(x^2-5x+6)$ is undefined there.)</p>
+<p><strong>(b)</strong> $\frac{d}{dx}(x^3-6)=3x^2$. $\ln|x^3-6|+c$.</p>
+<p><strong>(c)</strong> $4x-8=2(2x-4)$ and $\frac{d}{dx}(x^2-4x+5)=2x-4$. So the integral is $2\ln(x^2-4x+5)+c$. Here no absolute value is needed: $x^2-4x+5=(x-2)^2+1&gt;0$.</p>
+<p><strong>(d)</strong> $\cot x=\frac{\cos x}{\sin x}$, $z=\sin x$, $dz=\cos x\,dx$: $\ln|\sin x|+c$.</p>
+<p><strong>(e)</strong> $\tan x=\frac{\sin x}{\cos x}=-\frac{(\cos x)'}{\cos x}$: $-\ln|\cos x|+c$ (also $=\ln|\sec x|+c$).</p>
 <h4 id="u6-examples-h4" data-md-heading="Example 4 — Integration by parts, one round (Course Example 1, pp.104–105)">Example 4 — Integration by parts, one round (Course Example 1, pp.104–105)</h4>
 <p>Find $\int x^2\ln x\,dx$ and $\int\ln x\,dx$.</p>
 <p><strong>Solution.</strong> $\ln x$ is not in the table, so take $u=\ln x$ (it simplifies on differentiating), $dv=x^2dx$. Then $du=\frac1x\,dx$ and $v=\frac{x^3}3$ (no constant).</p>
-<div class="math-display">$$\int x^2\ln x\,dx=\frac{x^3}3\ln x-\int\frac{x^3}3\cdot\frac1x\,dx=\frac{x^3}3\ln x-\frac13\int x^2dx=\frac{x^3}3\ln x-\frac{x^3}9+c=\frac{x^3}3\Big(\ln x-\frac13\Big)+c .$$</div>
-<p>For $\int\ln x\,dx$ write the integrand as $\ln x\cdot1$: $u=\ln x$, $dv=dx$, $v=x$: $x\ln x-\int x\cdot\frac1x\,dx=x\ln x-x+c$.
-(Exercise D(ii) $\int x\ln x\,dx$ is the same pattern: $\frac{x^2}2\ln x-\frac{x^2}4+c$.)</p>
+<div class="math-display">$$\begin{aligned}&amp;\int x^2\ln x\,dx=\frac{x^3}3\ln x-\int\frac{x^3}3\cdot\frac1x\,dx\\
+&amp;=\frac{x^3}3\ln x-\frac13\int x^2dx\\
+&amp;=\frac{x^3}3\ln x-\frac{x^3}9+c\\
+&amp;=\frac{x^3}3\Big(\ln x-\frac13\Big)+c .\end{aligned}$$</div>
+<p>For $\int\ln x\,dx$ write the integrand as $\ln x\cdot1$: $u=\ln x$, $dv=dx$, $v=x$: $x\ln x-\int x\cdot\frac1x\,dx=x\ln x-x+c$.</p>
+<p>(Exercise D(ii) $\int x\ln x\,dx$ is the same pattern: $\frac{x^2}2\ln x-\frac{x^2}4+c$.)</p>
 <h4 id="u6-examples-h5" data-md-heading="Example 5 — Parts repeated (Course Example 2, pp.105–106; Exercise D iv)">Example 5 — Parts repeated (Course Example 2, pp.105–106; Exercise D iv)</h4>
 <p>Find $\int x^2e^{3x}\,dx$ and $\int x^3e^{2x}\,dx$.</p>
 <p><strong>Solution.</strong> Take $u$ = the power, $dv=e^{kx}dx$, $v=\frac{e^{kx}}k$.</p>
-<div class="math-display">$$\int x^2e^{3x}dx=\frac{x^2e^{3x}}3-\frac23\int xe^{3x}dx .$$</div>
+<div class="math-display">$$\begin{aligned}&amp;\int x^2e^{3x}dx\\
+&amp;=\frac{x^2e^{3x}}3-\frac23\int xe^{3x}dx .\end{aligned}$$</div>
 <p>Again with $u=x$, $dv=e^{3x}dx$: $\int xe^{3x}dx=\frac{xe^{3x}}3-\frac13\int e^{3x}dx=\frac{xe^{3x}}3-\frac{e^{3x}}9$. Therefore</p>
 <div class="math-display">$$\int x^2e^{3x}dx=\frac{x^2e^{3x}}3-\frac{2xe^{3x}}9+\frac{2e^{3x}}{27}+c=\frac{e^{3x}}3\Big(x^2-\frac{2x}3+\frac29\Big)+c ,$$</div>
-<p>which agrees with the course's final line.
-For $x^3e^{2x}$ use the same steps three times (or "tabular": differentiate $x^3$ down to $0$, integrate $e^{2x}$ down, alternate signs $+,-,+,-$):</p>
-<div class="math-display">$$\int x^3e^{2x}dx=e^{2x}\Big(\frac{x^3}2-\frac{3x^2}4+\frac{3x}4-\frac38\Big)+c .$$</div>
+<p>which agrees with the course's final line.</p>
+<p>For $x^3e^{2x}$ use the same steps three times (or "tabular": differentiate $x^3$ down to $0$, integrate $e^{2x}$ down, alternate signs $+,-,+,-$):</p>
+<div class="math-display">$$\begin{aligned}&amp;\int x^3e^{2x}dx\\
+&amp;=e^{2x}\Big(\frac{x^3}2-\frac{3x^2}4+\frac{3x}4-\frac38\Big)+c .\end{aligned}$$</div>
 <h4 id="u6-examples-h6" data-md-heading="Example 6 — The cyclic case (Exercise D i and iii)">Example 6 — The cyclic case (Exercise D i and iii)</h4>
 <p>Find $I=\int e^{3x}\sin x\,dx$ and $J=\int e^{5x}\sin3x\,dx$.</p>
 <p><strong>Solution.</strong> Take $u=\sin x$, $dv=e^{3x}dx$, $v=\frac{e^{3x}}3$:</p>
 <div class="math-display">$$I=\frac{e^{3x}\sin x}3-\frac13\int e^{3x}\cos x\,dx .$$</div>
 <p>Parts again, $u=\cos x$, $dv=e^{3x}dx$: $\int e^{3x}\cos x\,dx=\frac{e^{3x}\cos x}3+\frac13\int e^{3x}\sin x\,dx=\frac{e^{3x}\cos x}3+\frac I3$. So</p>
-<div class="math-display">$$I=\frac{e^{3x}\sin x}3-\frac{e^{3x}\cos x}9-\frac I9\ \Longrightarrow\ \frac{10}9I=\frac{e^{3x}(3\sin x-\cos x)}9\ \Longrightarrow\ I=\frac{e^{3x}(3\sin x-\cos x)}{10}+c .$$</div>
+<div class="math-display">$$\begin{aligned}&amp;I=\frac{e^{3x}\sin x}3-\frac{e^{3x}\cos x}9-\frac I9\ \\
+&amp;\Longrightarrow\ \frac{10}9I=\frac{e^{3x}(3\sin x-\cos x)}9\ \\
+&amp;\Longrightarrow\ I=\frac{e^{3x}(3\sin x-\cos x)}{10}+c .\end{aligned}$$</div>
 <p>Same method (or the formula sheet with $a=5$, $b=3$): $J=\dfrac{e^{5x}(5\sin3x-3\cos3x)}{34}+c$.</p>
 <h4 id="u6-examples-h7" data-md-heading="Example 7 — Partial fractions, distinct linear factors (Course Example 1, pp.107–108)">Example 7 — Partial fractions, distinct linear factors (Course Example 1, pp.107–108)</h4>
 <p>Find $\int\dfrac{x+1}{x^2-3x+2}dx$.</p>
-<p><strong>Solution.</strong> $x^2-3x+2=(x-2)(x-1)$ (the course calls this denominator "irreducible"; it is not, it factors). Write $\frac{x+1}{(x-2)(x-1)}=\frac A{x-2}+\frac B{x-1}$, so $x+1=A(x-1)+B(x-2)$. Put $x=2$: $3=A$. Put $x=1$: $2=-B$, $B=-2$. Hence</p>
-<div class="math-display">$$\int\Big(\frac3{x-2}-\frac2{x-1}\Big)dx=3\ln|x-2|-2\ln|x-1|+c .$$</div>
+<p><strong>Solution.</strong> $x^2-3x+2=(x-2)(x-1)$.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course calls this denominator "irreducible"; it is not, it factors.</p>
+</blockquote>
+<p>Write $\frac{x+1}{(x-2)(x-1)}=\frac A{x-2}+\frac B{x-1}$, so $x+1=A(x-1)+B(x-2)$. Put $x=2$: $3=A$. Put $x=1$: $2=-B$, $B=-2$. Hence</p>
+<div class="math-display">$$\begin{aligned}&amp;\int\Big(\frac3{x-2}-\frac2{x-1}\Big)dx\\
+&amp;=3\ln|x-2|-2\ln|x-1|+c .\end{aligned}$$</div>
 <p><em>New, same type:</em> $\int\frac{3x+5}{(x-1)(x+3)}dx$: $A=2$ (at $x=1$: $8=4A$), $B=1$ (at $x=-3$: $-4=-4B$), result $2\ln|x-1|+\ln|x+3|+c$.</p>
 <h4 id="u6-examples-h8" data-md-heading="Example 8 — Repeated factors (Course Examples 2 and 3, pp.108–111, corrected)">Example 8 — Repeated factors (Course Examples 2 and 3, pp.108–111, corrected)</h4>
 <p><strong>(a)</strong> $\displaystyle\int\frac{x^2}{(x+1)(x-1)^2}dx$. Write $\frac{x^2}{(x+1)(x-1)^2}=\frac A{x+1}+\frac B{x-1}+\frac C{(x-1)^2}$, so</p>
 <div class="math-display">$$x^2=A(x-1)^2+B(x+1)(x-1)+C(x+1).$$</div>
 <p>$x=1$: $1=2C$, $C=\frac12$. $x=-1$: $1=4A$, $A=\frac14$. Coefficient of $x^2$: $1=A+B$, $B=\frac34$. Then</p>
-<div class="math-display">$$\int\Big(\frac{1/4}{x+1}+\frac{3/4}{x-1}+\frac{1/2}{(x-1)^2}\Big)dx=\frac14\ln|x+1|+\frac34\ln|x-1|-\frac1{2(x-1)}+c .$$</div>
-<p>The last term is <strong>minus</strong>: $\int(x-1)^{-2}dx=-(x-1)^{-1}$. (The course prints $+\frac1{2(x-1)}$ and has $(x+1)^2$ in a line; see Errata.)</p>
+<div class="math-display">$$\begin{aligned}&amp;\int\Big(\frac{1/4}{x+1}+\frac{3/4}{x-1}+\frac{1/2}{(x-1)^2}\Big)dx\\
+&amp;=\frac14\ln|x+1|+\frac34\ln|x-1|-\frac1{2(x-1)}+c .\end{aligned}$$</div>
+<p>The last term is <strong>minus</strong>: $\int(x-1)^{-2}dx=-(x-1)^{-1}$.</p>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course prints $+\frac1{2(x-1)}$ and has $(x+1)^2$ in a line; see Errata.</p>
+</blockquote>
 <p><strong>(b)</strong> $\displaystyle\int\frac{x^2+1}{(x+2)^3}dx$. Write $\frac{x^2+1}{(x+2)^3}=\frac A{x+2}+\frac B{(x+2)^2}+\frac C{(x+2)^3}$, so $x^2+1=A(x+2)^2+B(x+2)+C$. $x=-2$: $C=5$. $x^2$: $A=1$. Constant term: $1=4A+2B+C=4+2B+5$, $B=-4$. Then</p>
-<div class="math-display">$$\int\Big(\frac1{x+2}-\frac4{(x+2)^2}+\frac5{(x+2)^3}\Big)dx=\ln|x+2|+\frac4{x+2}-\frac5{2(x+2)^2}+c .$$</div>
-<p>(Course final line has $(x+3)^2$ in the last term: a misprint. Quick alternative: substitute $z=x+2$, $x^2+1=z^2-4z+5$.)</p>
+<div class="math-display">$$\begin{aligned}&amp;\int\Big(\frac1{x+2}-\frac4{(x+2)^2}+\frac5{(x+2)^3}\Big)dx\\
+&amp;=\ln|x+2|+\frac4{x+2}-\frac5{2(x+2)^2}+c .\end{aligned}$$</div>
+<blockquote class="slip"><p><strong>Course slip:</strong> the course's final line has $(x+3)^2$ in the last term: a misprint.</p>
+</blockquote>
+<p>Quick alternative: substitute $z=x+2$, $x^2+1=z^2-4z+5$.</p>
 <h4 id="u6-examples-h9" data-md-heading="Example 9 — Irreducible quadratic and improper fractions (Course Example 4, pp.111–112; plus two new)">Example 9 — Irreducible quadratic and improper fractions (Course Example 4, pp.111–112; plus two new)</h4>
 <p><strong>(a)</strong> $\displaystyle\int\frac{x^2}{(x-2)(x^2+1)}dx$. $x^2+1$ has no real roots, so the numerator over it is linear:</p>
 <div class="math-display">$$\frac{x^2}{(x-2)(x^2+1)}=\frac A{x-2}+\frac{Bx+C}{x^2+1},\qquad x^2=A(x^2+1)+(Bx+C)(x-2).$$</div>
@@ -2563,16 +2976,61 @@ For $x^3e^{2x}$ use the same steps three times (or "tabular": differentiate $x^3
 <li>Find $f$ if $f'(x)=6x^2-4x+1$ and $f(1)=3$.</li>
 </ol>
 <details class="answers"><summary>Show answers</summary><div class="answers-body"><h4 class="answers-title" data-md-heading="Answers">Answers</h4><ol>
-<li>(i) $\frac{3x^2}2-x$. (ii) $\frac{3t^2}2+\frac{4t^3}3$. (iii) expand to $x^2-x-2$: $\frac{x^3}3-\frac{x^2}2-2x$. (iv) $\frac{2x+6}{x^3}=2x^{-2}+6x^{-3}$: $-\frac2x-\frac3{x^2}$.</li>
-<li>(i) $\frac{(2x-7)^4}8$. (ii) $\frac{\sin(7x+2)}7$. (iii) $\frac{\tan(3x+1)}3$. (iv) $\frac{(5x-4)^7}{35}$. (v) $-\frac{\cos(3x+8)}3$. (vi) $\frac{\tan4x}4$. (vii) $\frac15\ln\lvert5x+4\rvert$. (viii) $\frac{4^{3x}}{3\ln4}$.</li>
-<li>(i) $\ln\lvert x^3-4\rvert$. (ii) $\ln\lvert x^2+3x-5\rvert$. (iii) $\ln\lvert x^2+4x-1\rvert$. (iv) $x-3=\frac12(2x-6)$: $\frac12\ln\lvert x^2-6x+2\rvert$. (v) $z=\tan x$: $\ln\lvert\tan x\rvert$. (vi) $-\ln\lvert\cos x\rvert$. (vii) $\frac{2x-3}{(x-2)(x+2)}=\frac{1/4}{x-2}+\frac{7/4}{x+2}$: $\frac14\ln\lvert x-2\rvert+\frac74\ln\lvert x+2\rvert$. (viii) $3\ln\lvert x^3-7\rvert$.</li>
-<li>(i) $\frac{e^{3x}(3\sin x-\cos x)}{10}$. (ii) $\frac{x^2}2\ln x-\frac{x^2}4$. (iii) $\frac{e^{5x}(5\sin3x-3\cos3x)}{34}$. (iv) $e^{2x}\big(\frac{x^3}2-\frac{3x^2}4+\frac{3x}4-\frac38\big)$.</li>
-<li>(a) $z=x^2$: $\frac12e^{x^2}$. (b) $z=\sin x$: $\frac{\sin^4x}4$. (c) $z=1+x^2$, $dz=2x\,dx$: $\sqrt{1+x^2}$.</li>
-<li>(a) $x\ln x-x$. (b) $u=\tan^{-1}x$, $dv=dx$: $x\tan^{-1}x-\int\frac x{1+x^2}dx=x\tan^{-1}x-\frac12\ln(1+x^2)$.</li>
-<li>(a) $\frac1{x^2(x+1)}=\frac1{x^2}-\frac1x+\frac1{x+1}$: $-\frac1x-\ln\lvert x\rvert+\ln\lvert x+1\rvert$. (b) $\frac{x+3}{(x-1)^2(x+2)}=\frac{4/3}{(x-1)^2}-\frac{1/9}{x-1}+\frac{1/9}{x+2}$: $-\frac4{3(x-1)}-\frac19\ln\lvert x-1\rvert+\frac19\ln\lvert x+2\rvert$.</li>
-<li>$\frac{x^2}2+\frac32\ln\lvert x-1\rvert-\frac12\ln\lvert x+1\rvert$ (Example 9b).</li>
-<li>(a) $\frac13\tan^{-1}\frac{x+2}3$. (b) $\frac12\ln(x^2+1)+\tan^{-1}x$.</li>
-<li>$f=2x^3-2x^2+x+c$; $f(1)=1+c=3$, $c=2$, so $f(x)=2x^3-2x^2+x+2$.</li>
+<li>
+<p>(i) $\frac{3x^2}2-x$.</p>
+<p>(ii) $\frac{3t^2}2+\frac{4t^3}3$.</p>
+<p>(iii) expand to $x^2-x-2$: $\frac{x^3}3-\frac{x^2}2-2x$.</p>
+<p>(iv) $\frac{2x+6}{x^3}=2x^{-2}+6x^{-3}$: $-\frac2x-\frac3{x^2}$.</p>
+</li>
+<li>
+<p>(i) $\frac{(2x-7)^4}8$.</p>
+<p>(ii) $\frac{\sin(7x+2)}7$.</p>
+<p>(iii) $\frac{\tan(3x+1)}3$.</p>
+<p>(iv) $\frac{(5x-4)^7}{35}$.</p>
+<p>(v) $-\frac{\cos(3x+8)}3$.</p>
+<p>(vi) $\frac{\tan4x}4$.</p>
+<p>(vii) $\frac15\ln\lvert5x+4\rvert$.</p>
+<p>(viii) $\frac{4^{3x}}{3\ln4}$.</p>
+</li>
+<li>
+<p>(i) $\ln\lvert x^3-4\rvert$.</p>
+<p>(ii) $\ln\lvert x^2+3x-5\rvert$.</p>
+<p>(iii) $\ln\lvert x^2+4x-1\rvert$.</p>
+<p>(iv) $x-3=\frac12(2x-6)$: $\frac12\ln\lvert x^2-6x+2\rvert$.</p>
+<p>(v) $z=\tan x$: $\ln\lvert\tan x\rvert$.</p>
+<p>(vi) $-\ln\lvert\cos x\rvert$.</p>
+<p>(vii) $\frac{2x-3}{(x-2)(x+2)}=\frac{1/4}{x-2}+\frac{7/4}{x+2}$: $\frac14\ln\lvert x-2\rvert+\frac74\ln\lvert x+2\rvert$.</p>
+<p>(viii) $3\ln\lvert x^3-7\rvert$.</p>
+</li>
+<li>
+<p>(i) $\frac{e^{3x}(3\sin x-\cos x)}{10}$.</p>
+<p>(ii) $\frac{x^2}2\ln x-\frac{x^2}4$.</p>
+<p>(iii) $\frac{e^{5x}(5\sin3x-3\cos3x)}{34}$.</p>
+<p>(iv) $e^{2x}\big(\frac{x^3}2-\frac{3x^2}4+\frac{3x}4-\frac38\big)$.</p>
+</li>
+<li>
+<p>(a) $z=x^2$: $\frac12e^{x^2}$.</p>
+<p>(b) $z=\sin x$: $\frac{\sin^4x}4$.</p>
+<p>(c) $z=1+x^2$, $dz=2x\,dx$: $\sqrt{1+x^2}$.</p>
+</li>
+<li>
+<p>(a) $x\ln x-x$.</p>
+<p>(b) $u=\tan^{-1}x$, $dv=dx$: $x\tan^{-1}x-\int\frac x{1+x^2}dx=x\tan^{-1}x-\frac12\ln(1+x^2)$.</p>
+</li>
+<li>
+<p>(a) $\frac1{x^2(x+1)}=\frac1{x^2}-\frac1x+\frac1{x+1}$: $-\frac1x-\ln\lvert x\rvert+\ln\lvert x+1\rvert$.</p>
+<p>(b) $\frac{x+3}{(x-1)^2(x+2)}=\frac{4/3}{(x-1)^2}-\frac{1/9}{x-1}+\frac{1/9}{x+2}$: $-\frac4{3(x-1)}-\frac19\ln\lvert x-1\rvert+\frac19\ln\lvert x+2\rvert$.</p>
+</li>
+<li>
+<p>$\frac{x^2}2+\frac32\ln\lvert x-1\rvert-\frac12\ln\lvert x+1\rvert$ (Example 9b).</p>
+</li>
+<li>
+<p>(a) $\frac13\tan^{-1}\frac{x+2}3$.</p>
+<p>(b) $\frac12\ln(x^2+1)+\tan^{-1}x$.</p>
+</li>
+<li>
+<p>$f=2x^3-2x^2+x+c$; $f(1)=1+c=3$, $c=2$, so $f(x)=2x^3-2x^2+x+2$.</p>
+</li>
 </ol>
 <p><em>All results above (course examples, exercises and new problems) were checked with sympy 1.14 by differentiating each answer.</em></p></div></details>
 <h3 id="u6-extra" data-md-heading="Extra practice (from outside sources)">Extra practice (from outside sources)</h3>
@@ -2706,46 +3164,58 @@ $\displaystyle\int x^3\sin x\,dx=-x^3\cos x+3\int x^2\cos x\,dx$; $\displaystyle
 <h4 id="u7-examples-h1" data-md-heading="Example 1 — A definite integral as a limit of sums">Example 1 — A definite integral as a limit of sums</h4>
 <p>Find $\int_0^1x^2\,dx$ from the definition (right-hand end points).</p>
 <p><strong>Solution.</strong> $\Delta x=\frac1n$, $x_i=\frac in$, so</p>
-<div class="math-display">$$\sum_{i=1}^n\Big(\frac in\Big)^2\frac1n=\frac1{n^3}\sum_{i=1}^ni^2=\frac1{n^3}\cdot\frac{n(n+1)(2n+1)}6=\frac{(n+1)(2n+1)}{6n^2}\ \xrightarrow[n\to\infty]{}\ \frac26=\frac13 .$$</div>
+<div class="math-display">$$\begin{aligned}&amp;\sum_{i=1}^n\Big(\frac in\Big)^2\frac1n=\frac1{n^3}\sum_{i=1}^ni^2\\
+&amp;=\frac1{n^3}\cdot\frac{n(n+1)(2n+1)}6\\
+&amp;=\frac{(n+1)(2n+1)}{6n^2}\ \xrightarrow[n\to\infty]{}\ \frac26\\
+&amp;=\frac13 .\end{aligned}$$</div>
 <p>Check with FTC: $\big[\frac{x^3}3\big]_0^1=\frac13$ <span class="tick">✓</span>.</p>
 <h4 id="u7-examples-h2" data-md-heading="Example 2 — Evaluating with the FTC">Example 2 — Evaluating with the FTC</h4>
-<p>(a) $\int_1^3(3x^2-2x+1)\,dx$. An antiderivative is $x^3-x^2+x$ (no $+c$). $F(3)=27-9+3=21$, $F(1)=1-1+1=1$, so the value is $21-1=\mathbf{20}$.
-(b) $\int_0^\pi\sin x\,dx=\big[-\cos x\big]_0^\pi=1-(-1)=\mathbf2$. But $\int_0^\pi\cos x\,dx=\big[\sin x\big]_0^\pi=0$ (signed: the positive and negative halves cancel), while $\int_0^\pi|\cos x|\,dx=2$.
-(c) <em>Symmetry.</em> $\int_{-2}^2(x^3+x^2)\,dx$: $x^3$ is odd (contributes $0$), $x^2$ is even: $2\int_0^2x^2dx=2\cdot\frac83=\frac{\mathbf{16}}{\mathbf3}$.</p>
+<p><strong>(a)</strong> $\int_1^3(3x^2-2x+1)\,dx$. An antiderivative is $x^3-x^2+x$ (no $+c$). $F(3)=27-9+3=21$, $F(1)=1-1+1=1$, so the value is $21-1=\mathbf{20}$.</p>
+<p><strong>(b)</strong> $\int_0^\pi\sin x\,dx=\big[-\cos x\big]_0^\pi=1-(-1)=\mathbf2$. But $\int_0^\pi\cos x\,dx=\big[\sin x\big]_0^\pi=0$ (signed: the positive and negative halves cancel), while $\int_0^\pi|\cos x|\,dx=2$.</p>
+<p><strong>(c) Symmetry.</strong> $\int_{-2}^2(x^3+x^2)\,dx$: $x^3$ is odd (contributes $0$), $x^2$ is even: $2\int_0^2x^2dx=2\cdot\frac83=\frac{\mathbf{16}}{\mathbf3}$.</p>
 <h4 id="u7-examples-h3" data-md-heading="Example 3 — The FTC, Part 1 (derivative of an integral)">Example 3 — The FTC, Part 1 (derivative of an integral)</h4>
-<p>(a) $\frac d{dx}\int_0^x\sqrt{1+t^4}\,dt=\sqrt{1+x^4}$ (the integrand is continuous). No need to evaluate the integral.
-(b) $\frac d{dx}\int_1^{x^2}\ln t\,dt$ ($x\ne0$): here $g(x)=x^2$, so the answer is $\ln(x^2)\cdot2x=\mathbf{2x\ln(x^2)}$ ($=4x\ln|x|$).</p>
+<p><strong>(a)</strong> $\frac d{dx}\int_0^x\sqrt{1+t^4}\,dt=\sqrt{1+x^4}$ (the integrand is continuous). No need to evaluate the integral.</p>
+<p><strong>(b)</strong> $\frac d{dx}\int_1^{x^2}\ln t\,dt$ ($x\ne0$): here $g(x)=x^2$, so the answer is $\ln(x^2)\cdot2x=\mathbf{2x\ln(x^2)}$ ($=4x\ln|x|$).</p>
 <h4 id="u7-examples-h4" data-md-heading="Example 4 — Substitution with the limits changed">Example 4 — Substitution with the limits changed</h4>
-<p>(a) $\int_0^1 2x(x^2+1)^3\,dx$. Let $z=x^2+1$, $dz=2x\,dx$. When $x=0$, $z=1$; when $x=1$, $z=2$. So</p>
-<div class="math-display">$$\int_1^2z^3\,dz=\Big[\frac{z^4}4\Big]_1^2=\frac{16-1}4=\frac{\mathbf{15}}{\mathbf4}.$$</div>
-<p>(b) $\int_0^{\pi/2}\sin x\cos^2x\,dx$. $z=\cos x$, $dz=-\sin x\,dx$; $x=0\Rightarrow z=1$, $x=\frac\pi2\Rightarrow z=0$:</p>
-<div class="math-display">$$\int_1^0-z^2\,dz=\int_0^1z^2\,dz=\frac{\mathbf1}{\mathbf3}.$$</div>
-<p>(c) $\int_0^4\dfrac{dx}{1+\sqrt x}$. Let $z=\sqrt x$, $x=z^2$, $dx=2z\,dz$; $x:0\to4$ gives $z:0\to2$:</p>
-<div class="math-display">$$\int_0^2\frac{2z}{1+z}dz=2\int_0^2\Big(1-\frac1{1+z}\Big)dz=2\Big[z-\ln(1+z)\Big]_0^2=\mathbf{4-2\ln3}.$$</div>
+<p><strong>(a)</strong> $\int_0^1 2x(x^2+1)^3\,dx$. Let $z=x^2+1$, $dz=2x\,dx$. When $x=0$, $z=1$; when $x=1$, $z=2$. So</p>
+<div class="math-display">$$\begin{aligned}&amp;\int_1^2z^3\,dz=\Big[\frac{z^4}4\Big]_1^2\\
+&amp;=\frac{16-1}4\\
+&amp;=\frac{\mathbf{15}}{\mathbf4}.\end{aligned}$$</div>
+<p><strong>(b)</strong> $\int_0^{\pi/2}\sin x\cos^2x\,dx$. $z=\cos x$, $dz=-\sin x\,dx$; $x=0\Rightarrow z=1$, $x=\frac\pi2\Rightarrow z=0$:</p>
+<div class="math-display">$$\begin{aligned}&amp;\int_1^0-z^2\,dz=\int_0^1z^2\,dz\\
+&amp;=\frac{\mathbf1}{\mathbf3}.\end{aligned}$$</div>
+<p><strong>(c)</strong> $\int_0^4\dfrac{dx}{1+\sqrt x}$. Let $z=\sqrt x$, $x=z^2$, $dx=2z\,dz$; $x:0\to4$ gives $z:0\to2$:</p>
+<div class="math-display">$$\begin{aligned}&amp;\int_0^2\frac{2z}{1+z}dz=2\int_0^2\Big(1-\frac1{1+z}\Big)dz\\
+&amp;=2\Big[z-\ln(1+z)\Big]_0^2\\
+&amp;=\mathbf{4-2\ln3}.\end{aligned}$$</div>
 <p><em>Mistake to avoid:</em> in (a), writing $\int_0^1z^3\,dz$ (new variable, old limits) gives $\frac14$, wrong.</p>
 <h4 id="u7-examples-h5" data-md-heading="Example 5 — Parts and partial fractions with limits (uses Unit 6)">Example 5 — Parts and partial fractions with limits (uses Unit 6)</h4>
-<p>(a) $\int_0^1xe^x\,dx$: $u=x$, $dv=e^xdx$, $v=e^x$: $\big[xe^x\big]_0^1-\int_0^1e^xdx=e-(e-1)=\mathbf1$.
-(b) $\int_1^e\ln x\,dx=\big[x\ln x-x\big]_1^e=(e-e)-(0-1)=\mathbf1$.
-(c) $\int_1^4\dfrac{dx}{x(x+1)}$: $\frac1{x(x+1)}=\frac1x-\frac1{x+1}$, so $\big[\ln x-\ln(x+1)\big]_1^4=\ln\frac45-\ln\frac12=\ln\frac{8}{5}$. (On $[1,4]$ everything is positive, so no absolute values are needed.)
-(d) $\int_0^2\frac{x}{x^2+1}\,dx=\big[\frac12\ln(x^2+1)\big]_0^2=\frac12\ln5$ (the $f'/f$ form).</p>
+<p><strong>(a)</strong> $\int_0^1xe^x\,dx$: $u=x$, $dv=e^xdx$, $v=e^x$: $\big[xe^x\big]_0^1-\int_0^1e^xdx=e-(e-1)=\mathbf1$.</p>
+<p><strong>(b)</strong> $\int_1^e\ln x\,dx=\big[x\ln x-x\big]_1^e=(e-e)-(0-1)=\mathbf1$.</p>
+<p><strong>(c)</strong> $\int_1^4\dfrac{dx}{x(x+1)}$: $\frac1{x(x+1)}=\frac1x-\frac1{x+1}$, so $\big[\ln x-\ln(x+1)\big]_1^4=\ln\frac45-\ln\frac12=\ln\frac{8}{5}$. (On $[1,4]$ everything is positive, so no absolute values are needed.)</p>
+<p><strong>(d)</strong> $\int_0^2\frac{x}{x^2+1}\,dx=\big[\frac12\ln(x^2+1)\big]_0^2=\frac12\ln5$ (the $f'/f$ form).</p>
 <h4 id="u7-examples-h6" data-md-heading="Example 6 — Area under a curve: signed versus total">Example 6 — Area under a curve: signed versus total</h4>
 <p>Find the area between $y=x^2-4x+3=(x-1)(x-3)$ and the $x$-axis for $0\le x\le3$.</p>
-<p><strong>Solution.</strong> The curve is above the axis on $[0,1)$ and below it on $(1,3)$. $F(x)=\frac{x^3}3-2x^2+3x$.
-Signed: $\int_0^3=F(3)-F(0)=9-18+9=0$. This is <strong>not</strong> the area.
-Total area: $\int_0^1=F(1)-F(0)=\frac13-2+3=\frac43$; $\int_1^3=F(3)-F(1)=0-\frac43=-\frac43$, taken as $\frac43$. Total area $=\frac43+\frac43=\frac{\mathbf8}{\mathbf3}$.</p>
+<p><strong>Solution.</strong> The curve is above the axis on $[0,1)$ and below it on $(1,3)$. $F(x)=\frac{x^3}3-2x^2+3x$.</p>
+<p>Signed: $\int_0^3=F(3)-F(0)=9-18+9=0$. This is <strong>not</strong> the area.</p>
+<p>Total area: $\int_0^1=F(1)-F(0)=\frac13-2+3=\frac43$; $\int_1^3=F(3)-F(1)=0-\frac43=-\frac43$, taken as $\frac43$. Total area $=\frac43+\frac43=\frac{\mathbf8}{\mathbf3}$.</p>
 <h4 id="u7-examples-h7" data-md-heading="Example 7 — Area between two curves">Example 7 — Area between two curves</h4>
-<p>(a) Between $y=x+2$ and $y=x^2$. Intersections: $x+2=x^2\Rightarrow x^2-x-2=0\Rightarrow x=-1,2$. At $x=0$, $x+2=2&gt;0=x^2$, so the line is on top. </p>
-<div class="math-display">$$A=\int_{-1}^2(x+2-x^2)\,dx=\Big[\frac{x^2}2+2x-\frac{x^3}3\Big]_{-1}^2=\Big(2+4-\frac83\Big)-\Big(\frac12-2+\frac13\Big)=\frac{10}3+\frac76=\frac{\mathbf9}{\mathbf2}.$$</div>
-<p>(b) Between $y=x$ and $y=x^2$: intersections $x=0,1$; line on top: $\int_0^1(x-x^2)\,dx=\frac12-\frac13=\frac{\mathbf1}{\mathbf6}$.
-(c) Horizontal strips. Between $y^2=x$ and $y=x-2$: eliminate $x$: $x=y^2$ and $x=y+2$ give $y^2=y+2$, $y=-1,2$. For $-1&lt;y&lt;2$, $y+2&gt;y^2$ (line on the right):</p>
+<p><strong>(a)</strong> Between $y=x+2$ and $y=x^2$. Intersections: $x+2=x^2\Rightarrow x^2-x-2=0\Rightarrow x=-1,2$. At $x=0$, $x+2=2&gt;0=x^2$, so the line is on top.</p>
+<div class="math-display">$$\begin{aligned}&amp;A=\int_{-1}^2(x+2-x^2)\,dx\\
+&amp;=\Big[\frac{x^2}2+2x-\frac{x^3}3\Big]_{-1}^2\\
+&amp;=\Big(2+4-\frac83\Big)-\Big(\frac12-2+\frac13\Big)\\
+&amp;=\frac{10}3+\frac76\\
+&amp;=\frac{\mathbf9}{\mathbf2}.\end{aligned}$$</div>
+<p><strong>(b)</strong> Between $y=x$ and $y=x^2$: intersections $x=0,1$; line on top: $\int_0^1(x-x^2)\,dx=\frac12-\frac13=\frac{\mathbf1}{\mathbf6}$.</p>
+<p><strong>(c) Horizontal strips.</strong> Between $y^2=x$ and $y=x-2$: eliminate $x$: $x=y^2$ and $x=y+2$ give $y^2=y+2$, $y=-1,2$. For $-1&lt;y&lt;2$, $y+2&gt;y^2$ (line on the right):</p>
 <div class="math-display">$$A=\int_{-1}^2(y+2-y^2)\,dy=\frac{\mathbf9}{\mathbf2}\quad(\text{one integral; with }dx\text{ it would need two}).$$</div>
 <h4 id="u7-examples-h8" data-md-heading="Example 8 — Average value">Example 8 — Average value</h4>
 <p>Average value of $f(x)=x^2$ on $[0,3]$: $\frac13\int_0^3x^2dx=\frac13\cdot9=\mathbf3$. (This is the height of the rectangle on $[0,3]$ with the same area as the region under the parabola.)</p>
 <h4 id="u7-examples-h9" data-md-heading="Example 9 — Volumes by discs (link to Unit 8; checks the course&#x27;s own results)">Example 9 — Volumes by discs (link to Unit 8; checks the course's own results)</h4>
-<p>(a) <strong>Cone</strong> (Course Example 1, p.119): the line $y=\frac rhx$, $0\le x\le h$, rotated about the $x$-axis: $V=\pi\int_0^h\frac{r^2}{h^2}x^2dx=\frac{\pi r^2}{h^2}\cdot\frac{h^3}3=\frac13\pi r^2h$ <span class="tick">✓</span>.
-(b) <strong>Sphere</strong> (Course p.117): $y=\sqrt{r^2-x^2}$, $-r\le x\le r$: $V=\pi\int_{-r}^r(r^2-x^2)\,dx=\pi\Big[r^2x-\frac{x^3}3\Big]_{-r}^r=\pi\Big(\frac{2r^3}3+\frac{2r^3}3\Big)=\frac43\pi r^3$ <span class="tick">✓</span>.
-(c) <strong>Course Example 2, p.120:</strong> $y=-x^2+3x$ meets the $x$-axis at $x=0,3$. $V=\pi\int_0^3(x^4-6x^3+9x^2)\,dx=\pi\big[\frac{x^5}5-\frac{3x^4}2+3x^3\big]_0^3=\pi\big(\frac{243}5-\frac{243}2+81\big)=\frac{81\pi}{10}$ <span class="tick">✓</span> (the course's value is right).
-(d) <strong>TMA 1, p.120</strong> ($y=x^2$, $0\le x\le2$, about the $x$-axis): $\pi\int_0^2x^4dx=\pi\frac{32}5=\frac{32\pi}5$. (Unit 8 treats the other TMA questions.)</p>
+<p><strong>(a) Cone</strong> (Course Example 1, p.119): the line $y=\frac rhx$, $0\le x\le h$, rotated about the $x$-axis: $V=\pi\int_0^h\frac{r^2}{h^2}x^2dx=\frac{\pi r^2}{h^2}\cdot\frac{h^3}3=\frac13\pi r^2h$ <span class="tick">✓</span>.</p>
+<p><strong>(b) Sphere</strong> (Course p.117): $y=\sqrt{r^2-x^2}$, $-r\le x\le r$: $V=\pi\int_{-r}^r(r^2-x^2)\,dx=\pi\Big[r^2x-\frac{x^3}3\Big]_{-r}^r=\pi\Big(\frac{2r^3}3+\frac{2r^3}3\Big)=\frac43\pi r^3$ <span class="tick">✓</span>.</p>
+<p><strong>(c) Course Example 2, p.120:</strong> $y=-x^2+3x$ meets the $x$-axis at $x=0,3$. $V=\pi\int_0^3(x^4-6x^3+9x^2)\,dx=\pi\big[\frac{x^5}5-\frac{3x^4}2+3x^3\big]_0^3=\pi\big(\frac{243}5-\frac{243}2+81\big)=\frac{81\pi}{10}$ <span class="tick">✓</span> (the course's value is right).</p>
+<p><strong>(d) TMA 1, p.120</strong> ($y=x^2$, $0\le x\le2$, about the $x$-axis): $\pi\int_0^2x^4dx=\pi\frac{32}5=\frac{32\pi}5$. (Unit 8 treats the other TMA questions.)</p>
 <h3 id="u7-mistakes" data-md-heading="Common mistakes">Common mistakes</h3>
 <ul>
 <li><strong>Keeping $+c$</strong> in a definite integral, or forgetting that it cancels. Write the bracket $\big[F\big]_a^b$ and plug in the limits.</li>
@@ -2775,18 +3245,50 @@ Total area: $\int_0^1=F(1)-F(0)=\frac13-2+3=\frac43$; $\int_1^3=F(3)-F(1)=0-\fra
 <li>Find the average value of $f(x)=x^2$ on $[0,3]$ and the point(s) $c$ in $[0,3]$ where $f(c)$ equals it.</li>
 </ol>
 <details class="answers"><summary>Show answers</summary><div class="answers-body"><h4 class="answers-title" data-md-heading="Answers">Answers</h4><ol>
-<li>$\Delta x=\frac2n$, $x_i=\frac{2i}n$: $\frac2n\sum\big(1+\frac{2i}n\big)=2+\frac4{n^2}\cdot\frac{n(n+1)}2=2+\frac{2(n+1)}n\to4$. FTC: $\big[\frac{x^2}2+x\big]_0^2=2+2=4$ <span class="tick">✓</span>.</li>
-<li>(a) $\big[\frac{x^4}4-x^2+x\big]_0^2=4-4+2=\mathbf2$. (b) $\big[4\sqrt x+\frac{x^2}2\big]_1^4=(8+8)-(4+\frac12)=\frac{\mathbf{23}}{\mathbf2}$.</li>
-<li>FTC 1 with $g(x)=x^2$: $e^{-(x^2)^2}\cdot2x=\mathbf{2x\,e^{-x^4}}$.</li>
-<li>(a) $z=\tan x$: $\int_0^1z\,dz=\frac12$. (b) $z=\ln x$: $\int_0^1z\,dz=\frac12$. (c) $z=x^2+9$, $x\,dx=\frac12dz$: $\frac12\int_9^{25}\sqrt z\,dz=\frac13\big(125-27\big)=\frac{\mathbf{98}}{\mathbf3}$. (d) $z=1+x^3$, $x^2dx=\frac13dz$: $\frac13\int_1^9\sqrt z\,dz=\frac29(27-1)=\frac{\mathbf{52}}{\mathbf9}$.</li>
-<li>(a) $\big[x^2e^x\big]_0^1-2\int_0^1xe^x=e-2\cdot1=\mathbf{e-2}$ (using Example 5a). (b) $\big[\frac{x^2}2\ln x\big]_1^2-\int_1^2\frac x2dx=2\ln2-\frac34=\mathbf{2\ln2-\frac34}$.</li>
-<li>(a) $x^3\cos x$ is odd (odd times even), so $\mathbf0$. (b) $\int_{-1}^1(1-x)\,dx+\int_1^3(x-1)\,dx=2+2=\mathbf4$.</li>
-<li>Intersections: $x^2=8-x^2$, $x=\pm2$; top $8-x^2$: $\int_{-2}^2(8-2x^2)\,dx=2\big(16-\frac{16}3\big)=\frac{\mathbf{64}}{\mathbf3}$.</li>
-<li>They cross at $x=\frac\pi4$. $\int_0^{\pi/4}(\cos x-\sin x)\,dx+\int_{\pi/4}^{\pi/2}(\sin x-\cos x)\,dx=(\sqrt2-1)+(\sqrt2-1)=\mathbf{2\sqrt2-2}$.</li>
-<li>(a) $\big[\tan^{-1}x\big]_0^1=\frac{\boldsymbol\pi}{\mathbf4}$. (b) $f'/f$ form: $\big[\ln(1+e^x)\big]_0^{\ln3}=\ln4-\ln2=\mathbf{\ln2}$.</li>
-<li>(a) $\pi\int_0^4x\,dx=\mathbf{8\pi}$. (b) $\pi\int_0^34x^2dx=36\pi$; it is a right circular cone of height $3$ and base radius $6$, with $V=\frac13\pi\cdot36\cdot3=\mathbf{36\pi}$ <span class="tick">✓</span>.</li>
-<li>The integrand $\frac1{x^2}$ is positive, so the integral cannot be negative; it is undefined at $0$ and unbounded near it, so the continuity hypothesis of the FTC fails on $[-1,1]$. The correct statement: the integral <strong>diverges</strong> (it is $+\infty$; sympy returns $\infty$). The same antiderivative is fine on an interval not containing $0$, e.g. $\int_1^2\frac{dx}{x^2}=\frac12$.</li>
-<li>$\frac13\int_0^3x^2dx=\frac13\cdot9=\mathbf3$. $c^2=3$, $c=\sqrt3\approx1.732\in[0,3]$.</li>
+<li>
+<p>$\Delta x=\frac2n$, $x_i=\frac{2i}n$: $\frac2n\sum\big(1+\frac{2i}n\big)=2+\frac4{n^2}\cdot\frac{n(n+1)}2=2+\frac{2(n+1)}n\to4$. FTC: $\big[\frac{x^2}2+x\big]_0^2=2+2=4$ <span class="tick">✓</span>.</p>
+</li>
+<li>
+<p>(a) $\big[\frac{x^4}4-x^2+x\big]_0^2=4-4+2=\mathbf2$.</p>
+<p>(b) $\big[4\sqrt x+\frac{x^2}2\big]_1^4=(8+8)-(4+\frac12)=\frac{\mathbf{23}}{\mathbf2}$.</p>
+</li>
+<li>
+<p>FTC 1 with $g(x)=x^2$: $e^{-(x^2)^2}\cdot2x=\mathbf{2x\,e^{-x^4}}$.</p>
+</li>
+<li>
+<p>(a) $z=\tan x$: $\int_0^1z\,dz=\frac12$.</p>
+<p>(b) $z=\ln x$: $\int_0^1z\,dz=\frac12$.</p>
+<p>(c) $z=x^2+9$, $x\,dx=\frac12dz$: $\frac12\int_9^{25}\sqrt z\,dz=\frac13\big(125-27\big)=\frac{\mathbf{98}}{\mathbf3}$.</p>
+<p>(d) $z=1+x^3$, $x^2dx=\frac13dz$: $\frac13\int_1^9\sqrt z\,dz=\frac29(27-1)=\frac{\mathbf{52}}{\mathbf9}$.</p>
+</li>
+<li>
+<p>(a) $\big[x^2e^x\big]_0^1-2\int_0^1xe^x=e-2\cdot1=\mathbf{e-2}$ (using Example 5a).</p>
+<p>(b) $\big[\frac{x^2}2\ln x\big]_1^2-\int_1^2\frac x2dx=2\ln2-\frac34=\mathbf{2\ln2-\frac34}$.</p>
+</li>
+<li>
+<p>(a) $x^3\cos x$ is odd (odd times even), so $\mathbf0$.</p>
+<p>(b) $\int_{-1}^1(1-x)\,dx+\int_1^3(x-1)\,dx=2+2=\mathbf4$.</p>
+</li>
+<li>
+<p>Intersections: $x^2=8-x^2$, $x=\pm2$; top $8-x^2$: $\int_{-2}^2(8-2x^2)\,dx=2\big(16-\frac{16}3\big)=\frac{\mathbf{64}}{\mathbf3}$.</p>
+</li>
+<li>
+<p>They cross at $x=\frac\pi4$. $\int_0^{\pi/4}(\cos x-\sin x)\,dx+\int_{\pi/4}^{\pi/2}(\sin x-\cos x)\,dx=(\sqrt2-1)+(\sqrt2-1)=\mathbf{2\sqrt2-2}$.</p>
+</li>
+<li>
+<p>(a) $\big[\tan^{-1}x\big]_0^1=\frac{\boldsymbol\pi}{\mathbf4}$.</p>
+<p>(b) $f'/f$ form: $\big[\ln(1+e^x)\big]_0^{\ln3}=\ln4-\ln2=\mathbf{\ln2}$.</p>
+</li>
+<li>
+<p>(a) $\pi\int_0^4x\,dx=\mathbf{8\pi}$.</p>
+<p>(b) $\pi\int_0^34x^2dx=36\pi$; it is a right circular cone of height $3$ and base radius $6$, with $V=\frac13\pi\cdot36\cdot3=\mathbf{36\pi}$ <span class="tick">✓</span>.</p>
+</li>
+<li>
+<p>The integrand $\frac1{x^2}$ is positive, so the integral cannot be negative; it is undefined at $0$ and unbounded near it, so the continuity hypothesis of the FTC fails on $[-1,1]$. The correct statement: the integral <strong>diverges</strong> (it is $+\infty$; sympy returns $\infty$). The same antiderivative is fine on an interval not containing $0$, e.g. $\int_1^2\frac{dx}{x^2}=\frac12$.</p>
+</li>
+<li>
+<p>$\frac13\int_0^3x^2dx=\frac13\cdot9=\mathbf3$. $c^2=3$, $c=\sqrt3\approx1.732\in[0,3]$.</p>
+</li>
 </ol>
 <p><em>All numerical results in the examples and answers were checked with sympy 1.14.</em></p></div></details>
 <h3 id="u7-extra" data-md-heading="Extra practice (from outside sources)">Extra practice (from outside sources)</h3>
@@ -2901,49 +3403,80 @@ Total area: $\int_0^1=F(1)-F(0)=\frac13-2+3=\frac43$; $\int_1^3=F(3)-F(1)=0-\fra
 <h3 id="u8-examples" data-md-heading="Worked examples">Worked examples</h3>
 <p>All results below were checked with sympy.</p>
 <h4 id="u8-examples-h1" data-md-heading="Example 1 — Easy: $y=\sqrt x$, $0\le x\le4$, about the $x$-axis (new)">Example 1 — Easy: $y=\sqrt x$, $0\le x\le4$, about the $x$-axis (new)</h4>
-<p>$y^2=x$. $V=\pi\int_0^4x\,dx=\pi\Big[\dfrac{x^2}2\Big]_0^4=\pi\cdot8=\mathbf{8\pi}$.
-<em>Check:</em> the solid is a paraboloid of height $4$ and base radius $\sqrt4=2$; a paraboloid is half of its circumscribed cylinder: $\frac12\pi\cdot2^2\cdot4=8\pi$ <span class="tick">✓</span>.</p>
+<p>$y^2=x$. $V=\pi\int_0^4x\,dx=\pi\Big[\dfrac{x^2}2\Big]_0^4=\pi\cdot8=\mathbf{8\pi}$.</p>
+<p><em>Check:</em> the solid is a paraboloid of height $4$ and base radius $\sqrt4=2$; a paraboloid is half of its circumscribed cylinder: $\frac12\pi\cdot2^2\cdot4=8\pi$ <span class="tick">✓</span>.</p>
 <h4 id="u8-examples-h2" data-md-heading="Example 2 — Volume of a sphere (Course §8.4, p.116–117)">Example 2 — Volume of a sphere (Course §8.4, p.116–117)</h4>
 <p>Rotate the semicircle $y=\sqrt{r^2-x^2}$ about the $x$-axis. It meets the axis at $x=\pm r$, so the limits are $-r$ and $r$. Squaring: $y^2=r^2-x^2$ (the course writes this as "$(r^2-x^2)^{1/2\times2}$").</p>
-<div class="math-display">$$V=\pi\int_{-r}^{r}(r^2-x^2)\,dx=\pi\Big[r^2x-\frac{x^3}3\Big]_{-r}^{r}=\pi\Big[\Big(r^3-\frac{r^3}3\Big)-\Big(-r^3+\frac{r^3}3\Big)\Big]=\pi\Big[\frac{2r^3}3+\frac{2r^3}3\Big]=\frac43\pi r^3 .$$</div>
-<p>Shortcut by symmetry: $2\pi\int_0^r(r^2-x^2)dx=2\pi\cdot\frac{2r^3}3$, same. The course's working is correct.</p>
+<div class="math-display">$$\begin{aligned}&amp;V=\pi\int_{-r}^{r}(r^2-x^2)\,dx\\
+&amp;=\pi\Big[r^2x-\frac{x^3}3\Big]_{-r}^{r}\\
+&amp;=\pi\Big[\Big(r^3-\frac{r^3}3\Big)-\Big(-r^3+\frac{r^3}3\Big)\Big]\\
+&amp;=\pi\Big[\frac{2r^3}3+\frac{2r^3}3\Big]\\
+&amp;=\frac43\pi r^3 .\end{aligned}$$</div>
+<p>Shortcut by symmetry: $2\pi\int_0^r(r^2-x^2)dx=2\pi\cdot\frac{2r^3}3$, same.</p>
+<p>The course's working is correct.</p>
 <h4 id="u8-examples-h3" data-md-heading="Example 3 — Cone (Course Example 1, p.118–119, corrected)">Example 3 — Cone (Course Example 1, p.118–119, corrected)</h4>
 <p>A right circular cone: height $h$ along the $x$-axis, base radius $r$. Generating line through the origin and $(h,r)$: $y=mx$ with slope</p>
 <div class="math-display">$$m=\frac{\Delta y}{\Delta x}=\frac rh$$</div>
 <p>(the course writes $\Delta x/\Delta y$, which would be $h/r$; its next line $y=\frac rhx$ is nevertheless correct). Then</p>
-<div class="math-display">$$V=\pi\int_0^h\Big(\frac rhx\Big)^2dx=\frac{\pi r^2}{h^2}\Big[\frac{x^3}3\Big]_0^h=\frac{\pi r^2}{h^2}\cdot\frac{h^3}3=\frac{\pi r^2h}3 .$$</div>
+<div class="math-display">$$\begin{aligned}&amp;V=\pi\int_0^h\Big(\frac rhx\Big)^2dx\\
+&amp;=\frac{\pi r^2}{h^2}\Big[\frac{x^3}3\Big]_0^h\\
+&amp;=\frac{\pi r^2}{h^2}\cdot\frac{h^3}3\\
+&amp;=\frac{\pi r^2h}3 .\end{aligned}$$</div>
 <p><strong>Frustum (extra):</strong> the line from $(0,r_1)$ to $(h,r_2)$ is $y=r_1+\frac{r_2-r_1}hx$; integrating gives $\frac13\pi h(r_1^2+r_1r_2+r_2^2)$ (sympy: difference $0$).</p>
 <h4 id="u8-examples-h4" data-md-heading="Example 4 — Spherical segment (Course §8.5, p.117–118, corrected)">Example 4 — Spherical segment (Course §8.5, p.117–118, corrected)</h4>
 <p>The portion of the <strong>right</strong> semicircle between $y=a$ and $y=a+h$ is rotated about the $y$-axis. Right semicircle: $x=\sqrt{r^2-y^2}$ (the course prints $\sqrt{r^2+y^2}$; see Errata). So $x^2=r^2-y^2$ and</p>
-<div class="math-display">$$V_y=\pi\int_a^{a+h}(r^2-y^2)\,dy=\pi\Big[r^2y-\frac{y^3}3\Big]_a^{a+h}=\pi\Big[r^2h-\frac{(a+h)^3-a^3}3\Big].$$</div>
+<div class="math-display">$$\begin{aligned}&amp;V_y=\pi\int_a^{a+h}(r^2-y^2)\,dy\\
+&amp;=\pi\Big[r^2y-\frac{y^3}3\Big]_a^{a+h}\\
+&amp;=\pi\Big[r^2h-\frac{(a+h)^3-a^3}3\Big].\end{aligned}$$</div>
 <p>Since $(a+h)^3-a^3=3a^2h+3ah^2+h^3$,</p>
-<div class="math-display">$$V_y=\pi\Big[r^2h-a^2h-ah^2-\frac{h^3}3\Big]=\pi h\Big[r^2-a^2-ah-\frac{h^2}3\Big].$$</div>
-<p>This agrees with the course's final line (sympy: difference $0$). <strong>Checks:</strong> $a=0,\ h=r$ (hemisphere): $\pi r\big[r^2-\frac{r^2}3\big]=\frac23\pi r^3$ <span class="tick">✓</span>. $a=-r,\ h=2r$ (whole sphere): $2\pi r\big[r^2-r^2+2r^2-\frac{4r^2}3\big]=\frac43\pi r^3$ <span class="tick">✓</span>. Cap ($a=r-h$, top of the sphere): $\frac13\pi h^2(3r-h)$; for $r=5$, $h=2$ this is $\frac{52\pi}3$.
-<em>Condition:</em> the formula needs $a\ge-r$ and $a+h\le r$ (the course does not say so).</p>
+<div class="math-display">$$\begin{aligned}&amp;V_y=\pi\Big[r^2h-a^2h-ah^2-\frac{h^3}3\Big]\\
+&amp;=\pi h\Big[r^2-a^2-ah-\frac{h^2}3\Big].\end{aligned}$$</div>
+<p>This agrees with the course's final line (sympy: difference $0$).</p>
+<p><strong>Checks:</strong> $a=0,\ h=r$ (hemisphere): $\pi r\big[r^2-\frac{r^2}3\big]=\frac23\pi r^3$ <span class="tick">✓</span>. $a=-r,\ h=2r$ (whole sphere): $2\pi r\big[r^2-r^2+2r^2-\frac{4r^2}3\big]=\frac43\pi r^3$ <span class="tick">✓</span>. Cap ($a=r-h$, top of the sphere): $\frac13\pi h^2(3r-h)$; for $r=5$, $h=2$ this is $\frac{52\pi}3$.</p>
+<p><em>Condition:</em> the formula needs $a\ge-r$ and $a+h\le r$ (the course does not say so).</p>
 <h4 id="u8-examples-h5" data-md-heading="Example 5 — Course Example 2 (p.119–120): $y=-x^2+3x$ about the $x$-axis">Example 5 — Course Example 2 (p.119–120): $y=-x^2+3x$ about the $x$-axis</h4>
 <p><strong>Limits:</strong> $-x^2+3x=0\Rightarrow x(3-x)=0\Rightarrow x=0,3$. The region lies above the axis ($y\ge0$ on $[0,3]$).
 $y^2=(-x^2+3x)^2=x^4-6x^3+9x^2$ (the course's expansion is right).</p>
-<div class="math-display">$$V=\pi\int_0^3(x^4-6x^3+9x^2)\,dx=\pi\Big[\frac{x^5}5-\frac{3x^4}2+3x^3\Big]_0^3=\pi\Big[\frac{243}5-\frac{243}2+81\Big]=\pi\cdot\frac{486-1215+810}{10}=\frac{81\pi}{10}\approx25.45 .$$</div>
+<div class="math-display">$$\begin{aligned}&amp;V=\pi\int_0^3(x^4-6x^3+9x^2)\,dx\\
+&amp;=\pi\Big[\frac{x^5}5-\frac{3x^4}2+3x^3\Big]_0^3\\
+&amp;=\pi\Big[\frac{243}5-\frac{243}2+81\Big]\\
+&amp;=\pi\cdot\frac{486-1215+810}{10}\\
+&amp;=\frac{81\pi}{10}\approx25.45 .\end{aligned}$$</div>
 <p>The course's answer $\frac{81\pi}{10}$ is correct.</p>
 <h4 id="u8-examples-h6" data-md-heading="Example 6 — About the $y$-axis (new): $y=4-x^2$, $0\le x\le2$, $y\ge0$">Example 6 — About the $y$-axis (new): $y=4-x^2$, $0\le x\le2$, $y\ge0$</h4>
 <p>The solid is a paraboloid bowl (apex $(0,4)$, rim radius $2$ at $y=0$). About the $y$-axis integrate in $y$: $x^2=4-y$, with $y$ from $0$ to $4$.</p>
-<div class="math-display">$$V=\pi\int_0^4(4-y)\,dy=\pi\Big[4y-\frac{y^2}2\Big]_0^4=\pi(16-8)=8\pi .$$</div>
-<p><em>(extra) Shells:</em> $2\pi\int_0^2x(4-x^2)\,dx=2\pi\big[2x^2-\frac{x^4}4\big]_0^2=2\pi(8-4)=8\pi$ <span class="tick">✓</span>. <em>Check:</em> half the cylinder $\pi\cdot2^2\cdot4=16\pi$ <span class="tick">✓</span>.</p>
+<div class="math-display">$$\begin{aligned}&amp;V=\pi\int_0^4(4-y)\,dy\\
+&amp;=\pi\Big[4y-\frac{y^2}2\Big]_0^4\\
+&amp;=\pi(16-8)\\
+&amp;=8\pi .\end{aligned}$$</div>
+<p><em>(extra) Shells:</em> $2\pi\int_0^2x(4-x^2)\,dx=2\pi\big[2x^2-\frac{x^4}4\big]_0^2=2\pi(8-4)=8\pi$ <span class="tick">✓</span>.</p>
+<p><em>Check:</em> half the cylinder $\pi\cdot2^2\cdot4=16\pi$ <span class="tick">✓</span>.</p>
 <h4 id="u8-examples-h7" data-md-heading="Example 7 — Washers about the $x$-axis (new, same idea as TMA 3 and 5): region between $y=x^2$ and $y=\sqrt x$">Example 7 — Washers about the $x$-axis (new, same idea as TMA 3 and 5): region between $y=x^2$ and $y=\sqrt x$</h4>
 <p><strong>Limits:</strong> $x^2=\sqrt x\Rightarrow x^4=x\Rightarrow x(x^3-1)=0\Rightarrow x=0,1$. On $(0,1)$: $\sqrt x\ge x^2$, so top $=\sqrt x$, bottom $=x^2$.</p>
-<div class="math-display">$$V=\pi\int_0^1\big(x-x^4\big)\,dx=\pi\Big[\frac{x^2}2-\frac{x^5}5\Big]_0^1=\pi\Big(\frac12-\frac15\Big)=\frac{3\pi}{10}.$$</div>
+<div class="math-display">$$\begin{aligned}&amp;V=\pi\int_0^1\big(x-x^4\big)\,dx\\
+&amp;=\pi\Big[\frac{x^2}2-\frac{x^5}5\Big]_0^1\\
+&amp;=\pi\Big(\frac12-\frac15\Big)\\
+&amp;=\frac{3\pi}{10}.\end{aligned}$$</div>
 <p>(Not $\pi\int(\sqrt x-x^2)^2dx$, which is the wrong formula.)</p>
 <h4 id="u8-examples-h8" data-md-heading="Example 8 — Same region about the $y$-axis (new)">Example 8 — Same region about the $y$-axis (new)</h4>
 <p>Write the curves as $x$ in terms of $y$: right curve $x=\sqrt y$ (from $y=x^2$), left curve $x=y^2$ (from $y=\sqrt x$). For $0&lt;y&lt;1$, $\sqrt y\ge y^2$, so outer radius $\sqrt y$, inner radius $y^2$:</p>
 <div class="math-display">$$V=\pi\int_0^1\big(y-y^4\big)\,dy=\frac{3\pi}{10}.$$</div>
-<p><em>(extra) Shells:</em> $2\pi\int_0^1x(\sqrt x-x^2)\,dx=2\pi\Big[\frac25x^{5/2}-\frac{x^4}4\Big]_0^1=2\pi\cdot\frac3{20}=\frac{3\pi}{10}$ <span class="tick">✓</span>. (Both axes give $\frac{3\pi}{10}$ here because the region is symmetric about $y=x$.)</p>
+<p><em>(extra) Shells:</em> $2\pi\int_0^1x(\sqrt x-x^2)\,dx=2\pi\Big[\frac25x^{5/2}-\frac{x^4}4\Big]_0^1=2\pi\cdot\frac3{20}=\frac{3\pi}{10}$ <span class="tick">✓</span>.</p>
+<p>(Both axes give $\frac{3\pi}{10}$ here because the region is symmetric about $y=x$.)</p>
 <h4 id="u8-examples-h9" data-md-heading="Example 9 — Axis not a coordinate axis (extra): $y=x^2$, $0\le x\le1$, about the line $y=-1$">Example 9 — Axis not a coordinate axis (extra): $y=x^2$, $0\le x\le1$, about the line $y=-1$</h4>
 <p>Distance from the axis to the curve is $x^2+1$ (outer radius); the $x$-axis is at distance $1$ (inner radius, the region does not touch the line $y=-1$):</p>
-<div class="math-display">$$V=\pi\int_0^1\big[(x^2+1)^2-1^2\big]dx=\pi\int_0^1(x^4+2x^2)\,dx=\pi\Big(\frac15+\frac23\Big)=\frac{13\pi}{15}.$$</div>
+<div class="math-display">$$\begin{aligned}&amp;V=\pi\int_0^1\big[(x^2+1)^2-1^2\big]dx\\
+&amp;=\pi\int_0^1(x^4+2x^2)\,dx\\
+&amp;=\pi\Big(\frac15+\frac23\Big)\\
+&amp;=\frac{13\pi}{15}.\end{aligned}$$</div>
 <h4 id="u8-examples-h10" data-md-heading="Example 10 — Generalising the sphere (new): ellipsoid">Example 10 — Generalising the sphere (new): ellipsoid</h4>
 <p>Rotate the upper half of $\dfrac{x^2}{A^2}+\dfrac{y^2}{B^2}=1$ about the $x$-axis. $y^2=B^2\Big(1-\dfrac{x^2}{A^2}\Big)$, $-A\le x\le A$.</p>
-<div class="math-display">$$V=\pi B^2\int_{-A}^{A}\Big(1-\frac{x^2}{A^2}\Big)dx=\pi B^2\Big[x-\frac{x^3}{3A^2}\Big]_{-A}^{A}=\pi B^2\cdot\frac{4A}3=\frac43\pi AB^2 .$$</div>
-<p>With $A=B=r$ this is the sphere <span class="tick">✓</span>. For $A=3$, $B=2$: $16\pi$.</p>
+<div class="math-display">$$\begin{aligned}&amp;V=\pi B^2\int_{-A}^{A}\Big(1-\frac{x^2}{A^2}\Big)dx\\
+&amp;=\pi B^2\Big[x-\frac{x^3}{3A^2}\Big]_{-A}^{A}\\
+&amp;=\pi B^2\cdot\frac{4A}3\\
+&amp;=\frac43\pi AB^2 .\end{aligned}$$</div>
+<p>With $A=B=r$ this is the sphere <span class="tick">✓</span>.</p>
+<p>For $A=3$, $B=2$: $16\pi$.</p>
 <h3 id="u8-mistakes" data-md-heading="Common mistakes">Common mistakes</h3>
 <ul>
 <li><strong>Forgetting the $\pi$</strong> (or writing $2\pi$ for discs). Discs: $\pi\int y^2dx$; the $2\pi$ belongs only to shells.</li>
@@ -2977,17 +3510,28 @@ $y^2=(-x^2+3x)^2=x^4-6x^3+9x^2$ (the course's expansion is right).</p>
 </ol>
 <details class="answers"><summary>Show answers</summary><div class="answers-body"><h4 class="answers-title" data-md-heading="Answers">Answers</h4><ol>
 <li>$V=\pi\int_0^2(x^2)^2dx=\pi\Big[\dfrac{x^5}5\Big]_0^2=\dfrac{32\pi}5\approx20.11$.</li>
-<li>Figure reading (solid between the $y$-axis and the curve, $y=1$ to $8$): $x=y^{1/3}$, $x^2=y^{2/3}$; $V=\pi\int_1^8y^{2/3}dy=\pi\cdot\dfrac35\big[y^{5/3}\big]_1^8=\dfrac{3\pi}5(32-1)=\dfrac{93\pi}5\approx58.43$. <em>(Reading "region under the curve" with shells: $2\pi\int_1^2x\cdot x^3dx=\dfrac{62\pi}5$. The course gives no answer; the figure supports $\frac{93\pi}5$. See Errata p.121.)</em></li>
-<li>Intersection: $y=\dfrac x2$ and $y^2=2x$ give $\dfrac{x^2}4=2x\Rightarrow x=0$ or $x=8$. For $0&lt;x&lt;8$: $\sqrt{2x}\ge\dfrac x2$ (e.g. $x=2$: $2&gt;1$), so top $y^2=2x$, bottom $y^2=\dfrac{x^2}4$. $V=\pi\int_0^8\Big(2x-\dfrac{x^2}4\Big)dx=\pi\Big[x^2-\dfrac{x^3}{12}\Big]_0^8=\pi\Big(64-\dfrac{128}3\Big)=\dfrac{64\pi}3\approx67.02$.</li>
-<li>$y^2=(3x^2+1)^2=9x^4+6x^2+1$. $V=\pi\Big[\dfrac{9x^5}5+2x^3+x\Big]_1^2=\pi\Big[\Big(\dfrac{288}5+16+2\Big)-\Big(\dfrac95+2+1\Big)\Big]=\pi\Big(\dfrac{279}5+15\Big)=\dfrac{354\pi}5\approx222.42$.</li>
-<li>Intersections: $x^2=2x\Rightarrow x=0,2$. On $(0,2)$ the line $y=2x$ is above $y=x^2$. $V=\pi\int_0^2\big(4x^2-x^4\big)dx=\pi\Big[\dfrac{4x^3}3-\dfrac{x^5}5\Big]_0^2=\pi\Big(\dfrac{32}3-\dfrac{32}5\Big)=\dfrac{64\pi}{15}\approx13.40$.</li>
-<li>$y^2=4\sin^2x=2(1-\cos2x)$. $V=\pi\int_0^{\pi/2}2(1-\cos2x)\,dx=2\pi\Big[x-\dfrac{\sin2x}2\Big]_0^{\pi/2}=2\pi\cdot\dfrac\pi2=\pi^2\approx9.87$.</li>
-<li>Cylinder: $\pi\int_0^hr^2dx=\pi r^2h$. Frustum: $\pi\int_0^h\Big(r_1+\dfrac{r_2-r_1}hx\Big)^2dx=\dfrac{\pi h}3\big(r_1^2+r_1r_2+r_2^2\big)$ (sympy: difference $0$; $r_1=0$ gives the cone).</li>
-<li>$\dfrac{3\pi}{10}$ about the $x$-axis ($\pi\int_0^1(x-x^4)dx$); about the $y$-axis also $\dfrac{3\pi}{10}$ (washers $\pi\int_0^1(y-y^4)dy$, shells $2\pi\int_0^1x(\sqrt x-x^2)dx$).</li>
-<li>Washers in $y$: outer radius $4$ (line $x=4$), inner radius $x=y^2$, $y\in[0,2]$. $V=\pi\int_0^2(16-y^4)\,dy=\pi\Big[16y-\dfrac{y^5}5\Big]_0^2=\pi\Big(32-\dfrac{32}5\Big)=\dfrac{128\pi}5\approx80.42$. (Shells: $2\pi\int_0^4x\sqrt x\,dx=\dfrac{128\pi}5$ <span class="tick">✓</span>.)</li>
-<li>$V=\pi\int_{3}^{5}(25-y^2)\,dy=\pi\Big[25y-\dfrac{y^3}3\Big]_3^5=\pi\Big[\Big(125-\dfrac{125}3\Big)-(75-9)\Big]=\pi\Big(\dfrac{250}3-66\Big)=\dfrac{52\pi}3\approx54.45$. (Formula $\frac13\pi h^2(3r-h)=\frac13\pi\cdot4\cdot13$ <span class="tick">✓</span>.)</li>
-<li>$V=\pi\int_0^1e^{2x}dx=\pi\Big[\dfrac{e^{2x}}2\Big]_0^1=\dfrac{\pi(e^2-1)}2\approx10.04$.</li>
-<li>$\dfrac43\pi AB^2$ with $A=3$, $B=2$: $V=\dfrac43\pi\cdot3\cdot4=16\pi\approx50.27$.</li>
+<li>
+<p>Figure reading (solid between the $y$-axis and the curve, $y=1$ to $8$): $x=y^{1/3}$, $x^2=y^{2/3}$; $V=\pi\int_1^8y^{2/3}dy=\pi\cdot\dfrac35\big[y^{5/3}\big]_1^8=\dfrac{3\pi}5(32-1)=\dfrac{93\pi}5\approx58.43$.</p>
+<p><em>(Reading "region under the curve" with shells: $2\pi\int_1^2x\cdot x^3dx=\dfrac{62\pi}5$. The course gives no answer; the figure supports $\frac{93\pi}5$. See Errata p.121.)</em>
+3. Intersection: $y=\dfrac x2$ and $y^2=2x$ give $\dfrac{x^2}4=2x\Rightarrow x=0$ or $x=8$.</p>
+<p>For $0&lt;x&lt;8$: $\sqrt{2x}\ge\dfrac x2$ (e.g. $x=2$: $2&gt;1$), so top $y^2=2x$, bottom $y^2=\dfrac{x^2}4$.</p>
+<p>$V=\pi\int_0^8\Big(2x-\dfrac{x^2}4\Big)dx=\pi\Big[x^2-\dfrac{x^3}{12}\Big]_0^8=\pi\Big(64-\dfrac{128}3\Big)=\dfrac{64\pi}3\approx67.02$.
+4. $y^2=(3x^2+1)^2=9x^4+6x^2+1$. $V=\pi\Big[\dfrac{9x^5}5+2x^3+x\Big]_1^2=\pi\Big[\Big(\dfrac{288}5+16+2\Big)-\Big(\dfrac95+2+1\Big)\Big]=\pi\Big(\dfrac{279}5+15\Big)=\dfrac{354\pi}5\approx222.42$.
+5. Intersections: $x^2=2x\Rightarrow x=0,2$. On $(0,2)$ the line $y=2x$ is above $y=x^2$.</p>
+<p>$V=\pi\int_0^2\big(4x^2-x^4\big)dx=\pi\Big[\dfrac{4x^3}3-\dfrac{x^5}5\Big]_0^2=\pi\Big(\dfrac{32}3-\dfrac{32}5\Big)=\dfrac{64\pi}{15}\approx13.40$.
+6. $y^2=4\sin^2x=2(1-\cos2x)$. $V=\pi\int_0^{\pi/2}2(1-\cos2x)\,dx=2\pi\Big[x-\dfrac{\sin2x}2\Big]_0^{\pi/2}=2\pi\cdot\dfrac\pi2=\pi^2\approx9.87$.
+7. Cylinder: $\pi\int_0^hr^2dx=\pi r^2h$.</p>
+<p>Frustum: $\pi\int_0^h\Big(r_1+\dfrac{r_2-r_1}hx\Big)^2dx=\dfrac{\pi h}3\big(r_1^2+r_1r_2+r_2^2\big)$ (sympy: difference $0$; $r_1=0$ gives the cone).
+8. $\dfrac{3\pi}{10}$ about the $x$-axis ($\pi\int_0^1(x-x^4)dx$).</p>
+<p>About the $y$-axis also $\dfrac{3\pi}{10}$ (washers $\pi\int_0^1(y-y^4)dy$, shells $2\pi\int_0^1x(\sqrt x-x^2)dx$).
+9. Washers in $y$: outer radius $4$ (line $x=4$), inner radius $x=y^2$, $y\in[0,2]$.</p>
+<p>$V=\pi\int_0^2(16-y^4)\,dy=\pi\Big[16y-\dfrac{y^5}5\Big]_0^2=\pi\Big(32-\dfrac{32}5\Big)=\dfrac{128\pi}5\approx80.42$.</p>
+<p>(Shells: $2\pi\int_0^4x\sqrt x\,dx=\dfrac{128\pi}5$ <span class="tick">✓</span>.)
+10. $V=\pi\int_{3}^{5}(25-y^2)\,dy=\pi\Big[25y-\dfrac{y^3}3\Big]_3^5=\pi\Big[\Big(125-\dfrac{125}3\Big)-(75-9)\Big]=\pi\Big(\dfrac{250}3-66\Big)=\dfrac{52\pi}3\approx54.45$.</p>
+<p>(Formula $\frac13\pi h^2(3r-h)=\frac13\pi\cdot4\cdot13$ <span class="tick">✓</span>.)
+11. $V=\pi\int_0^1e^{2x}dx=\pi\Big[\dfrac{e^{2x}}2\Big]_0^1=\dfrac{\pi(e^2-1)}2\approx10.04$.
+12. $\dfrac43\pi AB^2$ with $A=3$, $B=2$: $V=\dfrac43\pi\cdot3\cdot4=16\pi\approx50.27$.</p>
+</li>
 </ol>
 <p><em>All numerical and symbolic results in the examples and problems were checked with sympy 1.14 (script: <code>/tmp/mth102_scratch/unit8/check.py</code>).</em></p></div></details>
 <h3 id="u8-extra" data-md-heading="Extra practice (from outside sources)">Extra practice (from outside sources)</h3>
@@ -4226,11 +4770,36 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function markOverflow() {
-    var list = document.querySelectorAll('.katex-display, .table-scroll');
+    var list = document.querySelectorAll('.katex-display, .math-inline-wide, .table-scroll');
     for (var i = 0; i < list.length; i++) overflowHint(list[i]);
   }
 
+  // An inline formula cannot break across lines. Where one is wider than the
+  // text column (a phone at 360 px), it would paint past the right edge and be
+  // clipped by whatever clips the page. Promote just that formula to its own
+  // scrollable line so nothing is ever cut off.
+  function guardInlineMath() {
+    var list = document.querySelectorAll('.katex');
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i];
+      if (el.closest('.katex-display') || el.closest('.math-inline-wide')) continue;
+      var box = el.closest('p, li, td, th, h2, h3, h4, dd, dt');
+      if (!box) continue;
+      var cs = getComputedStyle(box);
+      var pad = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+      var avail = box.clientWidth - pad;
+      if (avail < 40) continue;
+      if (el.getBoundingClientRect().width > avail + 1) {
+        var wrap = document.createElement('span');
+        wrap.className = 'math-inline-wide';
+        el.parentNode.insertBefore(wrap, el);
+        wrap.appendChild(el);
+      }
+    }
+  }
+
   function layoutMath() {
+    guardInlineMath();
     markOverflow();
   }
 
